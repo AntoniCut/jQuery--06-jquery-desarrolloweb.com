@@ -1,0 +1,67 @@
+<!--  --------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  ----------  -->
+<!--  ----------  /01-manual-jquery/  ------------------  -->
+<!--  ----------  /05-recorrer-parrafos.html  ----------  -->
+<!--  --------------------------------------------------  -->
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Recorrer párrafos </title>
+    
+    <style>
+        
+        p {
+            border-radius: 1rem;
+            padding: 1rem;
+            color: #fff;
+            background-color: #ddd;
+        }
+
+        .rojo {
+            background-color: red;
+        }
+
+        .azul {
+            background-color: blue;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <p> item 1 </p>
+    <p> item 2 </p>
+    <p> item 3 </p>
+
+    <button id="rojo"> Rojo </button>
+    <button id="azul"> Azul </button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"> </script>
+
+    <script>
+        
+        document.getElementById('rojo').addEventListener('click', function () {
+            document.querySelectorAll('p').forEach(function (parrafo) {
+                parrafo.classList.add('rojo')
+                parrafo.classList.remove('azul')
+            })
+        })
+
+        $('#azul').on('click', function () {
+            $('p').addClass('azul');
+            $('p').removeClass('rojo');
+        })
+
+    </script>
+</body>
+
+</html>
