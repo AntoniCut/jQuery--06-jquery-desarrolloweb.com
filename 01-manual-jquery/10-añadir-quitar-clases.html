@@ -1,0 +1,61 @@
+<!--  -----------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  -------------  -->
+<!--  ----------  /01-manual-jquery/  ---------------------  -->
+<!--  ----------  /10-añadir-quitar-clases.html  ----------  -->
+<!--  -----------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Añadir y quitar clases cuando se producen eventos de usuario </title>
+
+    <style>
+        .clasecss {
+            background-color: #ff8800;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <div id="capa">
+        Esta capa es independiente y voy a añadir y eliminar clases css sobre ella
+    </div>
+
+    <br> <br>
+
+    <a href="https://desarrolloweb.com">Añadir y quitar clase en la capa de arriba </a>
+
+    <script src="../assets/jquery/core/jquery-3.7.1.min.js"> </script>
+
+    <script>
+        
+        $(document).ready(function () {
+            
+            $("a").mouseover(function () {
+                $("#capa").addClass("clasecss");
+            });
+            
+            $("a").mouseout(function () {
+                $("#capa").removeClass("clasecss");
+            });
+
+            $("a").click(function (event) {
+                event.preventDefault();
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>

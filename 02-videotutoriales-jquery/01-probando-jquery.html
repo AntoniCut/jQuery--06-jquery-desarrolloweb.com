@@ -1,0 +1,50 @@
+<!--  ---------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  -----------  -->
+<!--  ----------  /02-videotutoriales-jquery/  ----------  -->
+<!--  ----------  /01-probando-jquery.html  -------------  -->
+<!--  ---------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="esº">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Probando jQuery - Videotutoriales </title>
+
+    <script src="../assets/jquery/core/jquery-3.7.1.min.js"> </script>
+
+    <script>
+
+        $(document).ready(function () {
+            
+            $("#enlaceOcultar").click( function(event) {
+                event.preventDefault();
+                $("#estaPrueba").css('display', 'none');
+            });
+
+            $("#enlaceMostrar").click( function(event) {
+                $("#estaPrueba").css('display', 'block');
+            });
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id="estaPrueba">
+        Esta capa nos servirá para las pruebas
+    </div>
+
+    <br>
+
+    <a href="http://www.desarrollomultimedia.es" target="_blank" id="enlaceOcultar"> Ocultar Capa </a> <br>
+    <a href="https://desarrolloweb.com" target="_blank" id="enlaceMostrar"> Mostrar Capa </a>
+    
+</body>
+
+</html>
