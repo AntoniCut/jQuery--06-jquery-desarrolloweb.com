@@ -1,0 +1,60 @@
+<!--  ----------------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  ------------------  -->
+<!--  ----------  /01-manual-jquery/  --------------------------  -->
+<!--  ----------  /06-mostrar-ocultar-elementos/  --------------  -->
+<!--  ----------  /11-mostrar-ocultar-elementos.html  ----------  -->
+<!--  ----------------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 11 - Mostrar y Ocultar elementos de una página </title>
+</head>
+
+<body>
+    <form>
+        <p>
+            Nombre:
+            <br>
+            <input type="text" name="nombre">
+        </p>
+        <p>
+            <input type="checkbox" name="mayor_edad" value="1" id="mayoria_edad"> Soy mayor de edad
+        </p>
+        <div id="formulariomayores" style="display: none;">
+            Dato para mayores de edad: <input type="text" name="mayores_edad">
+        </div>
+    </form>
+
+    <script src="../assets/jquery/core/jquery-3.7.1.min.js"> </script>
+
+    <script>
+
+        $(document).ready(function () {
+
+            $("#mayoria_edad").click(function (evento) {
+
+                console.log(evento, $("#mayoria_edad").prop("checked"));
+
+                if ($("#mayoria_edad").prop("checked")) {
+
+                    $("#formulariomayores").css("display", "block");
+
+                } else {
+
+                    $("#formulariomayores").css("display", "none");
+                }
+            });
+
+        });
+
+    </script>
+</body>
+
+</html>

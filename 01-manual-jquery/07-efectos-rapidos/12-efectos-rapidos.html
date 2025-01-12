@@ -1,0 +1,90 @@
+<!--  --------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  ----------  -->
+<!--  ----------  /01-manual-jquery/  ------------------  -->
+<!--  ----------  /07-efectos-rapidos/  ----------------  -->
+<!--  ----------  /12-efectos-rapidos.html  ------------  -->
+<!--  --------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 12 - Efectos rápidos con jQuery </title>
+    <style>
+        
+        body {
+            font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        #capaefectos {
+            background-color: #885104;
+            color: #fff;
+            font-weight: bold;
+            padding: 10px;
+            max-width: 400px;
+            line-height: 1.4rem;
+        }
+
+    </style>
+</head>
+
+
+<body>
+    
+    <div id="capaefectos">
+        Este elemento de la página nos servirá para implementar algunos efectos rápidos!
+        <br><br>
+        jQuery para estas cosas es muy cómodo!
+    </div>
+
+    <p>
+        <a href="#" id="ocultar"> Ocultar la capa </a> |
+        <a href="#" id="mostrar"> Mostrar la capa </a>
+    </p>
+
+    <p>
+        Efectos slide:
+        <a href="#" id="slideup"> Slide Up </a> |
+        <a href="#" id="slidedown"> Slide Down </a>
+    </p>
+
+    <script src="../assets/jquery/core/jquery-3.7.1.min.js"> </script>
+
+    <script>
+    
+        $(document).ready(function () {
+
+            const capaEfectos = $("#capaefectos");
+
+            $("#ocultar").click(function (event) {
+                event.preventDefault();
+                capaEfectos.hide("slow");
+            });
+
+            $("#mostrar").click(function (event) {
+                event.preventDefault();
+                capaEfectos.show(3000);
+            });
+
+            $("#slideup").click(function (event) {
+                event.preventDefault();
+                capaEfectos.slideUp(3000);
+            });
+
+            $("#slidedown").click(function (event) {
+                event.preventDefault();
+                capaEfectos.slideDown("slow");
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>

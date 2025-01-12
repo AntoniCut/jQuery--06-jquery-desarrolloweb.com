@@ -1,6 +1,7 @@
 <!--  ------------------------------------------------------  -->
 <!--  ----------  /jquery-desarrolloweb.com/  --------------  -->
 <!--  ----------  /01-manual-jquery/  ----------------------  -->
+<!--  ----------  /04-primeros-pasos-jquery/  --------------  -->
 <!--  ----------  /09-primeros-pasos-jquery.html  ----------  -->
 <!--  ------------------------------------------------------  -->
 
@@ -12,7 +13,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Primeros pasos con jQuery </title>
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 9 - Primeros pasos con jQuery </title>
 </head>
 
 <body>
@@ -25,10 +27,12 @@
     <script>
         
         $(document).ready(function () {
+            
             $("a").click(function (evento) {
                 alert("Has pulsado el enlace...\nAhora serás enviado a DesarrolloWeb.com");
                 evento.preventDefault();
             });
+            
         });
 
     </script>
