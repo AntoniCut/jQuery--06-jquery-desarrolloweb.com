@@ -1,0 +1,65 @@
+<!--  ---------------------------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  -----------------------------  -->
+<!--  ----------  /01-manual-jquery/  -------------------------------------  -->
+<!--  ----------  /12-jquery-carga-combinada-cdn-local/  ------------------  -->
+<!--  ----------  /16-jquery-carga-combinada-con-modernizr.html  ----------  -->
+<!--  ---------------------------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 17 - jQuery Carga combinada por CDN y si falla por Local con la librería modernizr y yepnope </title>
+    
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/yepnope/1.0.1/yepnope.min.js"> </script>
+
+</head>
+
+<body>
+
+    <div id="version"> </div>
+
+    <script>
+        
+        yepnope({
+            
+            load: '//ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js-',
+            
+            complete: function () {
+                
+                if (!window.jQuery) {
+                    
+                    //  -----  Si jQuery no se cargó del CDN, cargar desde local  -----
+                    yepnope({
+                        load: '../assets/jquery/core/jquery-3.7.1.min.js',
+                        complete: function () {
+                            iniciarAplicacion(); // Iniciar solo cuando jQuery esté disponible
+                        }
+                    });
+
+                } else iniciarAplicacion();
+                
+            }
+
+        });
+
+        function iniciarAplicacion() {
+            
+            $(document).ready(function () {
+                
+                const jQueryVersion = $.fn.jquery;
+                console.warn('jQuery Version:', jQueryVersion);
+                $("#version").html(`<h1>Versión de jQuery: ${jQueryVersion}</h1>`);
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>

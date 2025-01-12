@@ -14,75 +14,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
-    <title> 13 - Callback de funciones jQuery </title>
-
-    <style>
-        
-        body {
-            font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        }
-
-        #micapa {
-            background-color: #885104;
-            color: #fff;
-            font-weight: bold;
-            padding: 10px;
-            max-width: 400px;
-            line-height: 1.4rem;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-        }
-
-        #botones {
-            position: fixed;
-            bottom: 2rem;
-        }
-
-    </style>
-
+    <title> 14 - Ajax tremendamente sencillo con jQuery </title>
 </head>
 
 <body>
 
-    <div id="micapa">
-        Este elemento de la página nos servirá para implementar algunos efectos encadenados con jQuery mediante un
-        callback de funciones.
-        <br> <br>
-        jQuery nos permite así asegurar que uno se hace después de otro!
-    </div>
+    <p> <a href="#" id="enlaceAjax"> Haz clic! - Carga con AJAX </a> </p>
+    <p> <a href="#" id="enlaceAjaxPHP"> Haz clic! - Carga con AJAX archivo PHP </a> </p>
 
-    <p id="botones">
-        <button id="efectos"> Procesar efectos sin callback </button>
-        <button id="original"> Poner en posición original </button>
-        <button id="callback"> Procesar efectos con callback </button>
-    </p>
+    <br> <hr> <br>
+
+    <div id="destinoAjax"> </div>
+    <div id="destinoAjaxPHP"> </div>
 
     <script src="../assets/jquery/core/jquery-3.7.1.min.js"> </script>
 
     <script>
-        
+
         $(document).ready(function () {
 
-            $("#original").click(function () {
-                $("#micapa").css({ top: 10, left: 10 });
+
+            $("#enlaceAjax").click(function (evento) {
+
+                //elimino el comportamiento por defecto del enlace
+                evento.preventDefault();
+
+                //Aquí pondría el código de la llamada a Ajax
+                $("#destinoAjax").load("contenido-ajax.html");
+
             });
 
-            $("#efectos").click(function () {
-                $("#micapa").fadeOut(2000);
-                $("#micapa").css({ top: 300, left: 200 });
-                $("#micapa").fadeIn(2000);
-            });
 
-            $("#callback").click(function () {
-                $("#micapa").fadeOut(1000, function () {
-                    $("#micapa").css({ 'top': 300, 'left': 200 });
-                    $("#micapa").fadeIn(1000);
+            $("#enlaceAjaxPHP").click(function (evento) {
+
+                //elimino el comportamiento por defecto del enlace
+                evento.preventDefault();
+
+                //Aquí pondría el código de la llamada a Ajax
+                $("#destinoAjaxPHP").load("recibe-parametros.php", { nombre: "Pepe", edad: 45 }, function () {
+                    alert("recibidos los datos por ajax");
                 });
+
             });
 
         });
+
     </script>
+
 </body>
 
 </html>

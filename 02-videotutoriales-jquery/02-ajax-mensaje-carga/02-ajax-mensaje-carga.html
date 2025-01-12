@@ -1,0 +1,67 @@
+<!--  ---------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  -----------  -->
+<!--  ----------  /02-videotutoriales-jquery/  ----------  -->
+<!--  ----------  /02-ajax-mensaje-caga  ---------------  -->
+<!--  ----------  /02-ajax-mensaje-caga.html  -----------  -->
+<!--  ---------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="esº">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> Ajax con mensaje de carga - Videotutoriales </title>
+
+    <script src="../assets/jquery/core/jquery-3.7.1.min.js"> </script>
+
+    <script>
+
+        $(document).ready(function () {
+            
+            $("#cargar").click( function(event) {
+                
+                event.preventDefault();
+
+                $("#cargando").css("display", "inline");
+                
+                $("#contenidoAjax").load("contenido-ajax.html", function() {
+                    $("#cargando").css("display", "none");
+                });
+
+                $("#contenidoAjaxPHP").load("cargar-ajax.php", function() {
+                    $("#cargando").css("display", "none");
+                });
+                               
+            });
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id="cargar"> 
+        <a> Cargar un contenido con Ajax. </a> 
+    </div>
+
+    <br> <hr>
+
+    <div id="contenidoAjax"> </div>
+
+    <br> <hr> <br>
+
+    <div id="contenidoAjaxPHP"> </div>
+    
+    <span id="cargando" style="display: none;"> Cargando... </span>
+    
+    
+   
+    
+</body>
+
+</html>
