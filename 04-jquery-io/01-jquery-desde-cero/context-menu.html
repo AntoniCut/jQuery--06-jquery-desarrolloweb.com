@@ -1,0 +1,145 @@
+<!--  --------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  ----------  -->
+<!--  ----------  /04-jquery-io/  ----------------------  -->
+<!--  ----------  /01-jquery-desde-cero/  --------------  -->
+<!--  ----------  /context-menuindex.html  -------------  -->
+<!--  --------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 1 - jQuery desde cero - jQuery IO </title>
+
+    <link rel="stylesheet" href="../assets/plugins/jquery-context-menu/jqcontext-menu.min.css">
+
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
+        integrity="sha512-xxxxxxxxxxxxxxxxxxxxxxxxxx" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer" 
+    />
+
+
+    <script 
+        src="https://code.jquery.com/jquery-1.7.2.min.js" 
+        integrity="sha256-R7aNzoy2gFrVs+pNJ6+SokH04ppcEqJ0yFLkNGoFALQ=" 
+        crossorigin="anonymous">
+    </script>
+
+    <script src="../assets/plugins/jquery-context-menu/jqcontext-menu.min.js"> </script>
+
+
+    <style>
+
+        body {
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+         #content {
+            width: 100%;
+            height: 100vh;
+            background-color: #dddddd;
+         }
+
+    </style>
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            console.warn('jQuery:', $.fn.jquery);
+
+
+            const myMenu = [
+                {
+                    icon: 'fas fa-angle-right',
+                    text: 'Add',
+                    dataKey: 'add'
+                },
+                {
+                    icon: 'fas fa-angle-right',
+                    text: 'Copy',
+                    dataKey: 'copy'
+                },
+                {
+                    icon: 'fas fa-angle-right',
+                    text: 'Add to Bookmarks',
+                    dataKey: 'bookmark'
+                },
+                {
+                    icon: 'fas fa-angle-right',
+                    text: 'Stats',
+                    dataKey: 'stats',
+                },
+                {
+                    icon: 'fas fa-angle-right',
+                    text: 'Delete',
+                    dataKey: 'bookmark'
+                }
+            ];
+
+            
+            $('#content').jqContextMenu({
+                contextMenu: myMenu,
+                defaultStyle:'jqcontext-menu-dark'
+            });
+
+            
+            $(document).on('mousedown', '#content #jqcontext-menu li', function () {
+                
+                var dataKey = $(this).attr('data-key');
+                console.log(dataKey);
+
+                if (dataKey == 'edit'){
+                    alert('you clicked "edit" button');
+                } else {
+                    alert('you clicked ' + dataKey + ' button');
+                }
+            });
+
+
+            $("#miCapa").css("background-color", "red");
+            $("#miCapa").slideUp(4000);
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id="content">
+
+        <div id="miCapa" style="height: 200px;"> Hola Mundo!!! </div>
+
+        <div data-key="lorem">
+
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae deleniti illum vitae assumenda. Quisquam repellat autem velit dolorum perferendis cumque, iste, cupiditate ipsum molestiae doloribus aperiam magnam, facere tempora sed!
+            Dolorum magni repudiandae maiores, est numquam placeat delectus vitae ipsam eveniet earum modi harum assumenda nam fugit fuga? Commodi eaque perspiciatis doloribus accusamus praesentium aliquam sequi reiciendis alias. Architecto, molestiae?
+            Harum consequuntur asperiores possimus cum expedita? Assumenda, expedita voluptas minima dolorem cupiditate, modi molestiae doloribus rerum, nostrum voluptatibus eveniet suscipit labore aspernatur culpa. Quas similique doloremque ut veritatis at iusto.
+            Dolorum ullam accusamus, praesentium voluptates quo quos aperiam. Animi soluta temporibus ipsam tempore fugit minima accusantium, excepturi perferendis ea qui quaerat. Explicabo laboriosam eos ex voluptates rem saepe exercitationem quo.
+            Soluta, facere. Labore accusamus quae non ex minima, sint ea, id quas, cumque tempora consectetur laudantium. Mollitia facilis earum incidunt exercitationem blanditiis possimus iusto! Eaque totam quibusdam maiores eligendi minima?
+            Cumque accusantium hic reprehenderit nostrum sequi voluptatibus distinctio neque iure, necessitatibus eos ea, saepe asperiores dolores voluptatem cupiditate! Soluta, corrupti eius! Doloremque nam quis hic nisi dolorem, dolore molestias voluptatibus.
+            Sint nostrum culpa quasi non reprehenderit, blanditiis similique quod dolorem, ad dolorum accusantium nisi sed fugiat magni pariatur iure reiciendis vel esse officiis architecto. Voluptatem quia voluptatum ipsum eum veniam.
+            Sequi necessitatibus libero amet qui? Assumenda molestias dolorum necessitatibus corporis labore ducimus nulla totam unde? Earum iure impedit eligendi dolorum saepe nesciunt rem laborum, non reprehenderit minima aut amet ab?
+            Neque accusamus vero voluptates fuga odio totam minus vitae, adipisci debitis facilis est modi dolor cupiditate maxime accusantium quod inventore dignissimos nisi qui tempore aliquid! Quo nihil similique quasi id?
+            Iste odio debitis pariatur id veritatis? Aliquam autem numquam quos, iste, repellat quidem, hic suscipit architecto ducimus voluptatum quisquam provident voluptatibus deleniti reiciendis. Asperiores aperiam culpa maiores, numquam rem dolorem?
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

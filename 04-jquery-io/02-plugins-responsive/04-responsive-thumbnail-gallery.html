@@ -1,0 +1,88 @@
+<!--  --------------------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  ----------------------  -->
+<!--  ----------  /04-jquery-io/  ----------------------------------  -->
+<!--  ----------  /02-plugins-responsive/  -------------------------  -->
+<!--  ----------  /04-responsive-thumbnail-galleryt.html  ----------  -->
+<!--  --------------------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    
+    <title> 2 - Plugins Responsive - Responsive Thumbnail Gallery - jQuery IO </title>
+
+
+    <!--  ----------  jQuery  ---------------------------------------------------------------------  -->
+    <script 
+        src="https://code.jquery.com/jquery-1.7.2.min.js"
+        integrity="sha256-R7aNzoy2gFrVs+pNJ6+SokH04ppcEqJ0yFLkNGoFALQ=" 
+        crossorigin="anonymous"
+    >
+    </script>
+
+    <script>
+        window.jQuery || document.write('<script src="../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>') 
+    </script>
+    <!--  -------------------------------------------------------------------------------------------------------  -->
+
+
+    <!--  -----  Estilos CSS  -----  -->
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+
+
+
+    <!--  -----  Plugin  --  responive-thumbnail-gallery.js  -----  -->
+    <script src="../assets/plugins/responsive-thumbnail-gallery/js/responsivethumbnailgallery.js"> </script>
+
+
+    <!--  -----  Código jQuery  -----  -->
+    <script>
+
+        $(function () {
+
+            console.warn('jQuery:', $.fn.jquery);
+
+            const gallery = new $.ThumbnailGallery( $('#gallery'), {
+                thumbImages: './img-gallery/thumbs/thumb',
+                smallImages: './img-gallery/small/image',
+                largeImages: './img-gallery/large/image',
+                count: 10,
+                thumbImageType: 'jpg',
+                imageType: 'jpg',
+                breakpoint: 800,
+                shadowStrength: 1
+            });
+
+        });
+
+    </script>
+
+</head>
+
+
+<body>
+
+    <div id="gallery">
+
+    </div>
+
+</body>
+
+</html>

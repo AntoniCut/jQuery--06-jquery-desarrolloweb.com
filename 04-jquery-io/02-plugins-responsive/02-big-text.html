@@ -1,0 +1,79 @@
+<!--  --------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  ----------  -->
+<!--  ----------  /04-jquery-io/  ----------------------  -->
+<!--  ----------  /02-plugins-responsive/  -------------  -->
+<!--  ----------  /01-big-text.html  -------------------  -->
+<!--  --------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 2 - Plugins Responsive - BigText - jQuery IO </title>
+
+    <!--  ----------  jQuery  ----------  -->
+    <script 
+        src="https://code.jquery.com/jquery-1.7.2.min.js"
+        integrity="sha256-R7aNzoy2gFrVs+pNJ6+SokH04ppcEqJ0yFLkNGoFALQ=" 
+        crossorigin="anonymous"
+    > 
+    </script>
+
+    <script> 
+        window.jQuery || document.write('<script src="../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>') 
+    </script>
+    <!--  ------------------------------  -->
+
+    <!--  -----  Plugin  --  bigtext.js  -----  -->
+    <script src="../assets/plugins/bigtext/bigtext.js"> </script>
+
+    <style>
+
+        #miCapa {
+            max-width: 1500px;
+            width: 50%;
+            background-color: #ccc;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+    </style>
+
+
+    <script>
+
+        $(function () {
+
+            console.warn('jQuery:', $.fn.jquery);
+
+            $("#miCapa").bigtext();
+            
+            $("#cambiaTexto").click( function() {
+                $("#capaInterna").text("Ahora pruebo otra cosa");
+                $("#miCapa").bigtext();
+            });
+
+        });
+
+    </script>
+
+</head>
+
+
+<body>
+
+    <div id="miCapa">
+        <div id="capaInterna"> TEXTO </div>
+        <div> Otra Cosa </div>
+        <div> Mariposa y lo que sea</div>
+    </div>
+
+    <a href="#" id="cambiaTexto"> Cambia Texto </a>
+
+</body>
+
+</html>

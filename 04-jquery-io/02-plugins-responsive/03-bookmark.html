@@ -1,0 +1,75 @@
+<!--  --------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  ----------  -->
+<!--  ----------  /04-jquery-io/  ----------------------  -->
+<!--  ----------  /02-plugins-responsive/  -------------  -->
+<!--  ----------  /01-big-text.html  -------------------  -->
+<!--  --------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 2 - Plugins Responsive - Book Mark - jQuery IO </title>
+
+    <!--  -----  Plugin  --  bookmark.css  -----  -->
+    <link rel="stylesheet" href="../assets/plugins/bookmark/jquery.bookmark.css">
+
+    <!--  ----------  jQuery  ----------  -->
+    <script src="https://code.jquery.com/jquery-1.7.2.min.js"
+        integrity="sha256-R7aNzoy2gFrVs+pNJ6+SokH04ppcEqJ0yFLkNGoFALQ=" crossorigin="anonymous">
+        </script>
+
+    <script>
+        window.jQuery || document.write('<script src="../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>') 
+    </script>
+    <!--  ------------------------------  -->
+
+    <!--  -----  Plugin  --  bookmark.js  -----  -->
+    <script src="../assets/plugins/bookmark/jquery.bookmark.min.js"> </script>
+
+    
+    <script>
+
+        $(function () {
+
+            console.warn('jQuery:', $.fn.jquery);
+
+            // Inicializar el plugin bookmark
+            $('#miCapa').bookmark({
+                columns: 4,        // Número de columnas
+                gap: 20,           // Espacio entre los elementos en píxeles
+                responsive: true   // Hacerlo responsive
+            });
+
+
+
+        });
+
+    </script>
+
+</head>
+
+
+<body>
+
+    <div id="miCapa">
+        <div class="item"> <img src="./imagenes/fondo1.jpg" alt="Imagen 1"> </div>
+        <div class="item"> <img src="./imagenes/fondo2.jpg" alt="Imagen 2"> </div>
+        <div class="item"> <img src="./imagenes/fondo3.jpg" alt="Imagen 3"> </div>
+        <div class="item"> <img src="./imagenes/fondo4.jpg" alt="Imagen 4"> </div>
+        <div class="item"> <img src="./imagenes/fondo5.jpg" alt="Imagen 5"> </div>
+        <div class="item"> <img src="./imagenes/fondo6.jpg" alt="Imagen 6"> </div>
+        <div class="item"> <img src="./imagenes/fondo7.jpg" alt="Imagen 7"> </div>
+        <div class="item"> <img src="./imagenes/fondo8.jpg" alt="Imagen 8"> </div>
+        <div class="item"> <img src="./imagenes/fondo9.jpg" alt="Imagen 9"> </div>
+        <div class="item"> <img src="./imagenes/fondo10.jpg" alt="Imagen 10"> </div>
+    </div>
+
+
+</body>
+
+</html>

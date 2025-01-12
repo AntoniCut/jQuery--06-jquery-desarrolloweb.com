@@ -1,0 +1,64 @@
+<!--  --------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  ----------  -->
+<!--  ----------  /04-jquery-io/  ----------------------  -->
+<!--  ----------  /02-plugins-responsive/  -------------  -->
+<!--  ----------  /01-fit-text.html  -------------------  -->
+<!--  --------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 2 - Plugins Responsive - Fit Text - jQuery IO </title>
+
+    <!--  ----------  jQuery  ----------  -->
+    <script src="https://code.jquery.com/jquery-1.7.2.min.js"
+        integrity="sha256-R7aNzoy2gFrVs+pNJ6+SokH04ppcEqJ0yFLkNGoFALQ=" crossorigin="anonymous">
+        </script>
+
+    <script>
+        window.jQuery || document.write('<script src="../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>') 
+    </script>
+    <!--  ------------------------------  -->
+
+    <!--  -----  Plugin  --  FitText.js  -----  -->
+    <script src="../assets/plugins/fittext/jquery.fittext.js"> </script>
+
+    <style>
+
+        h1 {
+            text-align: center;
+        }
+
+    </style>
+
+    <script>
+
+        $(function () {
+
+            console.warn('jQuery:', $.fn.jquery);
+
+            $("#fittext1").fitText();
+            $("#fittext2").fitText(1.2);
+            $("#fittext3").fitText(1.1, { minFontSize: '50px', maxFontSize: '75px' });
+        });
+
+    </script>
+
+</head>
+
+
+<body>
+
+    <h1 id="fittext1" style="font-size: 87.4px;">Squeeze with FitText</h1>
+    <h1 id="fittext2" style="font-size: 72.8333px;">Squeeze with FitText</h1>
+    <h1 id="fittext3" style="font-size: 75px;">Squeeze with FitText</h1>
+
+
+</body>
+
+</html>
