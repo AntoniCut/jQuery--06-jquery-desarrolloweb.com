@@ -1,0 +1,71 @@
+<!--  ------------------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  --------------------  -->
+<!--  ----------  /01-manual-jquery/  ----------------------------  -->
+<!--  ----------  /16-each-del-core-de-jquery/  ------------------  -->
+<!--  ----------  /22-recorrer-elementos-con-each.html  ----------  -->
+<!--  ------------------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 22 - Recorrido a elementos de un formulario con each para validarlo </title>
+</head>
+
+<body>
+
+    <form id="elform" action="enviar.php" method="post">
+        <p>
+            <label> Uno: </label> <br>
+            <input type="text" id="uno">
+        </p>
+
+        <p>
+            <label> Dos: </label> <br>
+            <input type="text" id="dos">
+        </p>
+
+        <p>
+            <label> Tres: </label> <br>
+            <input type="text" id="tres">
+        </p>
+
+        <button> Enviar </button>
+    </form>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <script>
+        window.jQuery || document.write('<script src="../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>')
+    </script>
+
+
+    <script>
+
+        const jQueryVersion = $.fn.jquery;
+        console.warn('jQuery Version:', jQueryVersion);
+
+        $('#elform').submit(function (e) {
+            
+            $('input', '#elform').each(function () {
+                
+                if (this.value == '') {
+                    alert('Todos los campos input deben tener un valor');
+                    e.preventDefault();
+                    return false;
+                }
+
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

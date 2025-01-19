@@ -1,0 +1,66 @@
+<!--  ------------------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  --------------------  -->
+<!--  ----------  /01-manual-jquery/  ----------------------------  -->
+<!--  ----------  /16-each-del-core-de-jquery/  ------------------  -->
+<!--  ----------  /22-recorrer-elementos-con-each.html  ----------  -->
+<!--  ------------------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 22 - Recorrido a divisiones para poner colores </title>
+    
+    <style>
+        div {
+            font-size: 1.5rem;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div> red </div>
+    <div> blue </div>
+    <div> red </div>
+    <div> white </div>
+    <div> red </div>
+    <div> green </div>
+    <div> orange </div>
+    <div> red </div>
+    <div> nada </div>
+    <div> red </div>
+    <div> blue </div>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <script>
+        window.jQuery || document.write('<script src="../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>')
+    </script>
+    
+
+    <script>
+        
+        const jQueryVersion = $.fn.jquery;
+        console.warn('jQuery Version:', jQueryVersion);
+
+        $("div").each(function (i) {
+            
+            elemento = $(this);
+            if (elemento.html() == "white") return true;
+            if (elemento.html() == "nada") return false;
+            elemento.css("color", elemento.html());
+        });
+
+    </script>
+</body>
+
+</html>
