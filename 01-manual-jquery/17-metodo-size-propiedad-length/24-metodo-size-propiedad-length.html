@@ -1,0 +1,55 @@
+<!--  -------------------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  ---------------------  -->
+<!--  ----------  /01-manual-jquery/  -----------------------------  -->
+<!--  ----------  /17-metodo-size-propiedad-length/  --------------  -->
+<!--  ----------  /22-metodo-size-propiedad-length.html  ----------  -->
+<!--  -------------------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 24 - Método size() y propiedad length </title>
+</head>
+
+<body>
+
+    <p> Esto es un párrafo normal </p>
+    <p class="mitexto"> Esto es un párrado de la clase "mitexto" </p>
+    <div> Un div normal </div>
+    <div class="mitexto"> Ahora un div de la clase "mitexto" </div>
+
+    <script 
+        src="https://code.jquery.com/jquery-1.7.2.min.js" 
+        integrity="sha256-R7aNzoy2gFrVs+pNJ6+SokH04ppcEqJ0yFLkNGoFALQ=" 
+        crossorigin="anonymous">
+    </script>
+
+    <script>
+        window.jQuery || document.write('<script src="../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>')
+    </script>
+
+    <script>
+        
+        $(document).ready(function () {
+            
+            const jQueryVersion = $.fn.jquery;
+            console.warn('jQuery Version:', jQueryVersion);
+            //selecciono todos los elementos de la clase "mitexto"
+            var ElementosMitexto = $(".mitexto");
+            
+            //muestro el número de los párrafos encontrados
+            alert("Hay " + ElementosMitexto.size() + " elementos de la clase mitexto con el método size()");
+            alert("Hay " + ElementosMitexto.length + " elementos de la clase mitexto con la propiedad length");
+        });
+
+    </script>
+
+</body>
+
+</html>
