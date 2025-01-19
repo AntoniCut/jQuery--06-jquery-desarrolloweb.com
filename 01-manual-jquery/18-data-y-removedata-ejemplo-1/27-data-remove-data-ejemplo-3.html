@@ -1,0 +1,123 @@
+<!--  ------------------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  --------------------  -->
+<!--  ----------  /01-manual-jquery/  ----------------------------  -->
+<!--  ----------  /18-data-y-removedata/  ------------------------  -->
+<!--  ----------  /27-data-y-removedata-ejemplo-3.html  ----------  -->
+<!--  ------------------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 27 - Ejemplos de uso de la función data() y removeData() del core de jQuery </title>
+</head>
+
+<body>
+
+    <h1> Ejemplo data() con enlaces </h1>
+
+    <form id="formul">
+
+        <p>
+            <label for="name"> Nombre: </label>
+            <input type="text" id="name" name="name" value="Miguel">
+        </p>
+
+        <p>
+            <label for="surname"> Apellidos: </label>
+            <input type="text" id="surname" name="surname" value="Alvarez">
+        </p>
+
+        <p>
+            <label for="sex"> Sexo: </label>
+            <select id="sex" name="sex">
+                <option value="h" selected> Hombre </option>
+                <option value="m"> Mujer </option>
+            </select>
+        </p>
+
+    </form>
+
+    <p>
+        <button id="guardar"> Guardar estado </button>
+        <button id="restaurar"> Restaurar estado </button>
+        <button id="eliminar"> Borrar </button>
+    </p>
+
+    <div id="mensaje">
+        Mensaje...
+    </div>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <script>
+        window.jQuery || document.write('<script src="../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>')
+    </script>
+
+    <script>
+
+        $(document).ready(function () {
+
+            const jQueryVersion = $.fn.jquery;
+            console.warn('jQuery Version:', jQueryVersion);
+
+            let formulario = $("#formul");
+            let mensaje = $("#mensaje");
+
+            $("#guardar").click(function (evento) {
+
+                let dataObject = {
+                    name: $('#name', formulario).prop('value'),
+                    surname: $('#surname', formulario).prop('value'),
+                    sex: $('#sex', formulario).prop('value'),
+                }
+
+                formulario.data("estado", dataObject);
+                mensaje.html('He guardado el estado actual del formulario: ');
+
+            });
+
+            $("#restaurar").click(function (evento) {
+                
+                let estado = formulario.data('estado');
+
+                if (estado) {
+                    
+                    // Restaurar los valores en el formulario
+                    for (let index in estado) {
+                        let valor = estado[index];
+                        if (valor) $('#' + index).prop('value', valor);
+                    }
+
+                    // Construir un mensaje con todos los campos y sus valores
+                    let mensajeTexto = 'He restaurado el valor del formulario guardado:<br>';
+                    for (let campo in estado) {
+                        mensajeTexto += `${campo}: ${estado[campo]}<br>`;
+                    }
+
+                    // Mostrar el mensaje
+                    mensaje.html(mensajeTexto);
+
+                } else mensaje.html('No hay datos almacenados');
+                
+            });
+
+
+            $("#eliminar").click(function (evento) {
+                formulario.removeData("estado");
+                mensaje.html('Hemos borrado cualquier dato guardado anteriormente');
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>

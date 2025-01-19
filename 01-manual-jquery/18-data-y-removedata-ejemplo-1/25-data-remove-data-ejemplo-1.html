@@ -1,0 +1,77 @@
+<!--  ------------------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  --------------------  -->
+<!--  ----------  /01-manual-jquery/  ----------------------------  -->
+<!--  ----------  /18-data-y-removedata/  ------------------------  -->
+<!--  ----------  /25-data-y-removedata-ejemplo-1.html  ----------  -->
+<!--  ------------------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 25 - Ejemplo completo de data() y removedata() </title>
+</head>
+
+<body>
+
+    <div id="division">
+        En esta división (elemento id="division") voy a guardar datos con la función data y luego los voy a leer
+    </div>
+
+    <br>
+
+    <form name="formul">
+        Escribe un valor a guardar, leer o eliminar:
+        <input type="text" name="valor" id="valor">
+        <br>
+        <input type="button" value="guardar dato" id="guardar">
+        <input type="button" value="leer dato" id="leer">
+        <input type="button" value="eliminar dato" id="eliminar">
+    </form>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <script>
+        window.jQuery || document.write('<script src="../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>')
+    </script>
+
+    <script>
+
+        $(document).ready(function () {
+
+            const jQueryVersion = $.fn.jquery;
+            console.warn('jQuery Version:', jQueryVersion);
+
+            $("#guardar").click(function (evento) {
+                
+                var valor = document.formul.valor.value;
+                //Esta misma línea de código se puede codificar así también con jQuery
+                //var valor = $("#valor").attr("value");
+                $("#division").data("midato", valor);
+                $("#division").html('He guardado en este elemento (id="division") un dato llamado "midato" con el valor "' + valor + '"');
+            });
+
+            $("#leer").click(function (evento) {
+                
+                valor = $("#division").data("midato");
+                $("#division").html('En este elemento (id="division") leo un dato llamado "midato" con el valor "' + valor + '"');
+            });
+
+            $("#eliminar").click(function (evento) {
+                
+                $("#division").removeData("midato");
+                $("#division").html('Acabo de eliminar del elemento (id="division") el dato llamado "midato"');
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>

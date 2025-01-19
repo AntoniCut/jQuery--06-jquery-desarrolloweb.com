@@ -1,0 +1,100 @@
+<!--  ------------------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  --------------------  -->
+<!--  ----------  /01-manual-jquery/  ----------------------------  -->
+<!--  ----------  /18-data-y-removedata/  ------------------------  -->
+<!--  ----------  /26-data-y-removedata-ejemplo-2.html  ----------  -->
+<!--  ------------------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 26 - Ejemplos de uso de la función data() del core de jQuery </title>
+
+    <style>
+        .help {
+            margin-top: 0.5rem;
+            opacity: 0.6;
+            font-size: 0.85rem;
+        }
+
+        #mensaje {
+            padding: 0.5rem 1rem;
+            background-color: bisque;
+            border: 2px solid #666;
+            border-radius: 1rem;
+        }
+
+        button {
+            margin: 0.2rem 0;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1> Ejemplo data() con enlaces </h1>
+
+    <section>
+        <a href="#" id="enlace1"> Enlace 1 </a> <br>
+        <a href="#" id="enlace2"> Enlace 2 </a> <br>
+        <a href="#" id="enlace3"> Enlace 3 </a>
+    </section>
+
+    <p class="help"> Haz clic en los enlaces para ver el valor </p>
+
+    <div id="mensaje">
+        Mensaje...
+    </div>
+
+    <p>
+        <button id="guardar"> guardar "midato" con valor "mivalor" en todos los enlaces </button> <br>
+        <button id="guardarenlace1"> guardar "midato" con valor "otro valor" en el enlace 1 </button>
+    </p>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <script>
+        window.jQuery || document.write('<script src="../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>')
+    </script>
+
+    <script>
+
+        $(document).ready(function () {
+
+            const jQueryVersion = $.fn.jquery;
+            console.warn('jQuery Version:', jQueryVersion);
+
+            $("a").click(function (evento) {
+                
+                evento.preventDefault();
+                
+                valorAlmacenado = $(this).data("midato");
+                $("#mensaje").html("En el enlace <b>" + $(this).attr("id") + "</b> tiene el dato 'midato' como '" + valorAlmacenado + "'");
+            });
+
+            $("#guardar").click(function (evento) {
+                
+                $("a").data("midato", "mivalor");
+                $("#mensaje").html('He guardado en todos los enlaces un dato llamado "midato" con el valor "mivalor"');
+            });
+
+            $("#guardarenlace1").click(function (evento) {
+                
+                $("#enlace1").data("midato", "otro valor");
+                $("#mensaje").html('He guardado en el enlace1 un dato llamado "midato" con el valor "otro valor"');
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
