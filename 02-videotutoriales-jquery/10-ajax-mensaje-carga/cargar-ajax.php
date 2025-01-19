@@ -8,6 +8,5 @@
 
 <?php
     sleep(3);
-    echo ("<h1> He tardado 3 segundos en ejecutar esta página... </h1>");
-    echo "<br> <hr>";
-?>
+    echo "<h1> He tardado 3 segundos en ejecutar esta página... </h1>";
+

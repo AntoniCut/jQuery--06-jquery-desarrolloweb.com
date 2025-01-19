@@ -1,0 +1,49 @@
+<!--  ---------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  -----------  -->
+<!--  ----------  /02-videotutoriales-jquery/  ----------  -->
+<!--  ----------  /06-core-de-jquery-video-2/  ----------  -->
+<!--  ----------  /index.html  --------------------------  -->
+<!--  ---------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="esº">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 6 - Core de jQuery - Video 2 - Videotutoriales </title>
+
+    <script src="../assets/jquery/core/jquery-3.7.1.min.js"> </script>
+
+    <script>
+
+        $(function () {
+            
+            $("<h1> Título, <i> otra cosa </i> </h1>").appendTo($("#division"));
+            
+            var mielemento = $("<h2> Título 2, <i> otra cosa tambien </i> </h2>");
+            mielemento.css("color", "#00ff00");
+            mielemento.appendTo("#division");
+
+            var mielemento2 = $("<h3> Título 3, <i> mas cosas </i> </h3>");
+            var cuerpo = $(document.body);
+            mielemento2.appendTo(cuerpo);
+
+            $("<p> párrafo </p> <ul> <li> uno </li> <li> 2 </li> </ul>").appendTo($(document.body));
+            
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id="division"> </div>
+    
+    
+</body>
+
+</html>

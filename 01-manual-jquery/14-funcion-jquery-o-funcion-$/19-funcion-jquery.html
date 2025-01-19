@@ -1,0 +1,51 @@
+<!--  -------------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  ---------------  -->
+<!--  ----------  /01-manual-jquery/  -----------------------  -->
+<!--  ----------  /14-funcion-jquery-o-funcion-$/  ----------  -->
+<!--  ----------  /19-funcion-jquery.html  ------------------  -->
+<!--  -------------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 19 - Funcion jQuery </title>
+</head>
+
+<body>
+
+    <p> Esto es el cuerpo de la página, que tiene poca cosa... </p>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js----"></script>
+
+    <script>
+        window.jQuery || document.write('<script src="../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>')
+    </script>
+
+    <div id="version"> </div>
+
+    <script>
+
+        $(document).ready(function () {
+
+            const jQueryVersion = $.fn.jquery;
+            console.warn('jQuery Version:', jQueryVersion);
+
+            var nuevosElementos = $("<div> <b> Estos elementos son nuevos... </b>. <h1> Título...</h1> </div>");
+            nuevosElementos.appendTo("body");
+
+            var doc = $(document.body);
+            doc.css('background-color', '#ff8833');
+
+        });
+
+    </script>
+
+</body>
+
+</html>

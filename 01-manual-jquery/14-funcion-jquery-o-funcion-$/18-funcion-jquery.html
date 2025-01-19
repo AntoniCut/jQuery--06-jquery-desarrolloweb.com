@@ -1,0 +1,69 @@
+<!--  -------------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  ---------------  -->
+<!--  ----------  /01-manual-jquery/  -----------------------  -->
+<!--  ----------  /14-funcion-jquery-o-funcion-$/  ----------  -->
+<!--  ----------  /18-funcion-jquery.html  ------------------  -->
+<!--  -------------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 18 - Funcion jQuery </title>
+</head>
+
+<body>
+
+    <h1> Función jQuery </h1>
+
+    <p> Esta función permite seleccionar elementos de la página. </p>
+
+    <ul id="lista">
+        <li> Item lista </li>
+        <li> Item Lista 2 </li>
+    </ul>
+    <ul>
+        <li> Elem </li>
+        <li> Elem 2 </li>
+    </ul>
+
+    <div id="elem1"> Este elemento se llama elem1 </div>
+    <div id="elem2"> Este otro elemento se llama elem2 </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js----"></script>
+
+    <script>
+        window.jQuery || document.write('<script src="../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>')
+    </script>
+
+    <div id="version"> </div>
+
+    <script>
+
+        $(document).ready(function () {
+
+            const jQueryVersion = $.fn.jquery;
+            console.warn('jQuery Version:', jQueryVersion);
+
+            console.log($('li').length);
+            console.log($('li', '#lista').length);
+
+            let elem1 = $("#elem1"); //podríamos haber escrito: let elem1 = jQuery("#elem1");
+            
+            elem1.css("background-color", "#ff9999");
+
+            let divs = $("div"); //podríamos haber escrito: let elem1 = jQuery("#elem1");
+            divs.css("font-size", "32pt");
+
+        });
+
+    </script>
+
+</body>
+
+</html>

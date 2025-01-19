@@ -1,0 +1,57 @@
+<!--  ---------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  -----------  -->
+<!--  ----------  /02-videotutoriales-jquery/  ----------  -->
+<!--  ----------  /06-core-de-jquery-video-1/  ----------  -->
+<!--  ----------  /index.html  --------------------------  -->
+<!--  ---------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="esº">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 6 - Core de jQuery - Video 1 - Videotutoriales </title>
+
+    <script src="../assets/jquery/core/jquery-3.7.1.min.js"> </script>
+
+    <script>
+
+        $(document).ready(function () {
+            
+            $("#micapa").css("color", "red");
+            $("#otracapa").fadeOut(5000);
+            
+            $(".elementolista").css("background-color", "#ff8800");
+
+            $("li").mouseenter(function() {
+                $(document.body).css('background-color', "#ffddaa");
+            });
+
+            $("li").mouseleave(function() {
+                $(document.body).css('background-color', "#ffffff");
+            });
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id="micapa"> Una capa cualquiera </div>
+    <div id="otracapa"> Otra capa en la página </div>    
+
+    <ul>
+        <li class="elementolista"> Elemento lista 1 </li>
+        <li class="elementolista"> Elemento lista segundo </li>
+        <li> Otro elemento </li>
+        <li> Ultimo list item! </li>
+    </ul>
+    
+</body>
+
+</html>
