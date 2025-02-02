@@ -2,7 +2,7 @@
 <!--  ----------  /jquery-desarrolloweb.com/  ------------------------  -->
 <!--  ----------  /02-videotutoriales-jquery/  -----------------------  -->
 <!--  ----------  /01-aprende-jquery-introduccion-eventos/  ----------  -->
-<!--  ----------  /01-introduccion-jquery.html  ----------------------  -->
+<!--  ----------  /02-eventos-jquery.html  ---------------------------  -->
 <!--  ----------------------------------------------------------------  -->
 
 
@@ -10,14 +10,14 @@
 <html lang="es">
 
 <head>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
-    <title> 1 - Introducción jQuery - Videotutoriales </title>
+    <title> 2 - Eventos jQuery - Videotutoriales </title>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"> </script>
-    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"> </script>
+
     <script>
         window.jQuery || document.write('<script src="../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>')
     </script>
@@ -25,14 +25,26 @@
     <style>
         
         #micapa {
-            font-size: 1.5em;
-            font-weight: bold;
+            cursor: pointer;
         }
 
-        .error {
-            color: red;
-            background: #fcc;
-            padding: 20px;
+        #cookies {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            background: #666;
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        #cookies a {
+            color: #ff9;
+            background-color: #000;
+            padding: 6px;
+            border: 1px solid #333;
         }
 
     </style>
@@ -41,16 +53,7 @@
 
 <body>
 
-    <div id="micapa"> Hola mundo!!! </div>
-    contenido............................
-
-    <P class="parrafo"> dfsdfsdf </P>
-    <P> sdfsdf </P>
-    <P class="parrafo"> sdfsdf </P>
-    <P> sdfsdfsdf sdf dsf </P>
-    <P class="parrafo"> sd fdssdfsdf </P>
-
-    <div class="parrafo"> efefertertgegergtrrthty thth etyj </div>
+    <div id="micapa"> Haz clic aquí </div>
 
     <script>
 
@@ -62,9 +65,19 @@
             const jQueryVersion = $.fn.jquery;
             console.warn('jQuery Version:', jQueryVersion);
 
-            $("#micapa").addClass('error');
+            var tam = 2;
 
-            $("p.parrafo").css("color", "#0f0");
+            $("#micapa").on("click", funcionManejadora);
+
+            function funcionManejadora() {
+                
+                //$("#micapa").css("color", "blue");
+                $("#micapa").css({
+                    "color": "blue",
+                    "font-size": tam + "em"
+                });
+                tam += 0.3;
+            }
 
         });
 
