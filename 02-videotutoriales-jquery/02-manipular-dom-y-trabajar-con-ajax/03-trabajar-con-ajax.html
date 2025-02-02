@@ -1,0 +1,89 @@
+<!--  --------------------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  ----------------------  -->
+<!--  ----------  /02-videotutoriales-jquery/  ---------------------  -->
+<!--  ----------  /02-manipular-dom-y-trabajar-con-ajax/  ----------  -->
+<!--  ----------  /03-trabajar-con-ajax.html  ----------------------  -->
+<!--  --------------------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 3 - Trabajar con AJAX en jQuery - Videotutoriales </title>
+
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"> </script>
+
+    <script>
+        window.jQuery || document.write('<script src="../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>')
+    </script>
+
+    <style type="text/css">
+        
+        #cargando {
+            display: none;
+        }
+        
+    </style>
+
+</head>
+
+<body>
+
+    <a href="#" id="enlaceajax"> Traer Ajax </a>
+
+    <div id="contenido"> </div>
+
+    <div id="cargando">
+        <img src="loading.gif">
+    </div>
+
+    <form name="formulario" id="f1">
+        Ciudad: <input type="text" name="ciudad" value="Value del elemento"> <br>
+        Barrio: <input type="text" name="barrio" value="Value del elemento"> <br>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <script>
+
+        $(document).ready(function () {
+
+            const jQueryVersion = $.fn.jquery;
+            console.warn('jQuery Version:', jQueryVersion);
+
+            $("#enlaceajax").on("click", function (e) {
+                e.preventDefault();
+                $("#contenido").load("./trae-esto-por-ajax.php");
+            });
+
+            $(document).ajaxStart(function () {
+                $("#cargando").css("display", "block");
+            });
+
+            $(document).ajaxComplete(function () {
+                $("#cargando").css("display", "none");
+            });
+
+
+            $("#f1").on("submit", function (e) {
+                e.preventDefault();
+                $.post(
+                    "./envia.php",
+                    $("#f1").serialize(),
+                    function (respuesta) {
+                        $("#contenido").html(respuesta);
+                    }
+                );
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>

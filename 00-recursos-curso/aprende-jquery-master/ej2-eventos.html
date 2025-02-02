@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Ejemplo jQuery</title>
+    <style>
+    
+    #cookies{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        background: #666;
+        font-size: 1.2em;
+        text-align: center;
+    }
+    
+    #cookies a{
+        color: #ff9;
+        background-color: #000;
+        padding: 6px;
+        border: 1px solid #333;
+    }
+       
+    </style>
+</head>
+
+<body>
+    <div id="micapa">Haz clic aquí</div>
+    
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        //onload ejcutar después que la página termina de cargar!!!! imagenes, frames, iframes, css, etc.
+        
+        $(document).on("ready", function(){
+            var tam = 2;
+            
+            $("#micapa").on("click",funcionManejadora);
+            
+            function funcionManejadora() {
+                //$("#micapa").css("color", "blue");
+                $("#micapa").css({
+                    "color": "blue",
+                    "font-size": tam + "em"
+                });
+                tam += 0.3;
+            }
+            
+            
+        });
+        
+    </script>
+    
+</body>
+</html>
