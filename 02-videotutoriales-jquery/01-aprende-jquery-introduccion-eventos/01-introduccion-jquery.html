@@ -1,0 +1,72 @@
+<!--  ---------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  -----------  -->
+<!--  ----------  /02-videotutoriales-jquery/  ----------  -->
+<!--  ----------  /05-probando-jquery/  ------------------  -->
+<!--  ----------  /index.html  ---------------------------  -->
+<!--  ---------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 1 - Introducción jQuery - Videotutoriales </title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"> </script>
+    
+    <script>
+        window.jQuery || document.write('<script src="../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>')
+    </script>
+
+    <style>
+        
+        #micapa {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .error {
+            color: red;
+            background: #fcc;
+            padding: 20px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div id="micapa"> Hola mundo!!! </div>
+    contenido............................
+
+    <P class="parrafo"> dfsdfsdf </P>
+    <P> sdfsdf </P>
+    <P class="parrafo"> sdfsdf </P>
+    <P> sdfsdfsdf sdf dsf </P>
+    <P class="parrafo"> sd fdssdfsdf </P>
+
+    <div class="parrafo"> efefertertgegergtrrthty thth etyj </div>
+
+    <script>
+
+        $(document).ready(function () {
+
+            const jQueryVersion = $.fn.jquery;
+            console.warn('jQuery Version:', jQueryVersion);
+
+            $("#micapa").addClass('error');
+
+            $("p.parrafo").css("color", "#0f0");
+
+        });
+
+    </script>
+
+</body>
+
+</html>
