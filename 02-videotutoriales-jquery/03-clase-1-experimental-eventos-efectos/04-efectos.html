@@ -57,6 +57,7 @@
             <p> Esto es lo que se mostraría con datos adicionales... </p>
             <p> Una información larga... </p>
         </div>
+        
     </div>
 
     <script>
@@ -67,20 +68,17 @@
             console.warn('jQuery Version:', jQueryVersion);
 
             $("#elemento")
-                
                 .children("a")
-                
                 .on("click", function () {
-
                     console.log($(this).next());
                     const elem = $(this);
                     elem
                         .next()
                         .toggle(1500, function () {
-                            if (elem.next().css("display") == "none") 
+                            if (elem.next().css("display") === "none") 
                                 elem.children("span").text("+");
                             else 
-                            elem.children("span").text("-");
+                                elem.children("span").text("-");
                     
                         });
             });
