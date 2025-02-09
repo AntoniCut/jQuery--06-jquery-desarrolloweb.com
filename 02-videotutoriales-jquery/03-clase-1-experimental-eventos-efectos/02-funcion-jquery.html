@@ -1,0 +1,67 @@
+<!--  -----------------------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  -------------------------  -->
+<!--  ----------  /02-videotutoriales-jquery/  ------------------------  -->
+<!--  ----------  /03-clase-1-experimental-eventos-efectos/  ----------  -->
+<!--  ----------  /02-funcion-jquery.html  ----------------------------  -->
+<!--  -----------------------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 2 - Función jQuery - Clase Experimental 1 - Eventos + Efectos - Videotutoriales </title>
+
+    <script src="https://code.jquery.com/jquery-1.8.1.min.js"
+        integrity="sha256-/BhPlt0YeU4gTEEHWgCSO+fo5Wh0QjHXTy/fiSH3jSk=" crossorigin="anonymous">
+        </script>
+
+    <script>
+        window.jQuery || document.write('<script src="../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>')
+    </script>
+
+    <style>
+        
+        #micapa {
+            font-size: 150%;
+            background-color: red;
+            padding: 30px;
+            height: 350px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div id="micapa"> Hola!!!!! </div>
+
+    <script>
+
+        $(document).ready(function () {
+
+            const jQueryVersion = $.fn.jquery;
+            console.warn('jQuery Version:', jQueryVersion);
+
+            //  funcion jQuery $()
+            //  extiende "algo" carac. framework
+            //  - ojb nativos js
+            //  - selector CSS
+            //  - generar elementos "en linea"
+
+            $("#micapa").slideUp(5000);
+            $("<br> <img src='eventos-efectos-jquery.png' />").appendTo($("#micapa"));
+            //$("#micapa").append($("<br> <img src='eventos-efectos-jquery.png' />"));
+
+        });
+
+    </script>
+
+</body>
+
+</html>
