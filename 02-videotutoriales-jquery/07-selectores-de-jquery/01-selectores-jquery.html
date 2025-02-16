@@ -1,0 +1,108 @@
+<!--  ----------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  ------------  -->
+<!--  ----------  /02-videotutoriales-jquery/  -----------  -->
+<!--  ----------  /07-selectores-de--jquery  -------------  -->
+<!--  ----------  /01-selectores-jquery.html  ------------  -->
+<!--  ----------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="esº">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 7 - Selectores de jQuery - Video 7 - Videotutoriales </title>
+
+    <script 
+        src="https://code.jquery.com/jquery-1.3.2.min.js"
+        integrity="sha256-yDcKLQUDWenVBazEEeb0V6SbITYKIebLySKbrTp2eJk=" 
+        crossorigin="anonymous"
+    > </script>
+
+    <script>
+        window.jQuery || document.write('<script src="../../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>')
+    </script>
+
+    <style>
+        
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .parraforojo {
+            color: red;
+        }
+
+        .parrafonegrita {
+            font-weight: bold;
+        }
+
+    </style>
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            const jQueryVersion = $.fn.jquery;
+            console.warn('jQuery Version:', jQueryVersion);
+
+            $("#micapa").css("color", "#ff8800");
+            $(".parraforojo, .parrafonegrita").css("background-color", "#ff8800");
+            $("h1, #otracapa").css("background-color", "green");
+            //$("*").css("font-size", "36px");
+
+            $("#boton").click(function () {
+                
+                let selector = $("#camposelector").val().trim(); // Obtener el valor y eliminar espacios en blanco
+
+                if (selector === "") {
+                    alert("Escriba algo en el campo de texto");
+                    return;
+                }
+
+                let camposSeleccionados = $(selector);
+
+                if (camposSeleccionados.length === 0) 
+                    alert("El selector no coincide con ningún elemento en la página. Intente con: h1, p, .parraforojo, .parrafonegrita, #micapa, #otracapa");
+                
+                else {
+                    camposSeleccionados.fadeOut("slow", function () {
+                        camposSeleccionados.fadeIn("slow");
+                    });
+                }
+            });
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <h1> Selectores con jQuery </h1>
+
+    <p> Esto es un párrafo </p>
+    <p class="parraforojo"> Esto es un párrafo con la clase (Clase de CSS) "parraforojo" </p>
+    <p class="parraforojo parrafonegrita"> Esto es otro párrafo clases "parraforojo" y clase "parrafonegrita" </p>
+
+    <div id="micapa"> Esto es una division con identificador único id="micapa" </div>
+    <div id="otracapa"> Division o capa con identificador "otracapa" </div>
+
+    <p> Párrafo con id="miparrafo" y class="parrafonegrita" </p>
+
+    <br>
+    <hr> <br>
+
+    <form>
+        Selector:
+        <input type="text" name="camposelector" id="camposelector">
+        <input type="button" id="boton" value="Ver que elementos seleccionamos">
+    </form>
+
+</body>
+
+</html>
