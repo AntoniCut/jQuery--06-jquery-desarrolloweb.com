@@ -1,0 +1,121 @@
+<!--  ------------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  --------------  -->
+<!--  ----------  /04-jquery-io/  --------------------------  -->
+<!--  ----------  /04-librerias-kendo-ui/  -----------------  -->
+<!--  ----------  /01-grid-ejemplo-kendo-ui.html  ----------  -->
+<!--  ------------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 4 - Librerias Kendo UI - Grid Ejemplo - jQuery IO </title>
+
+    <!-- Estilos de Kendo UI -->
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2024.1.130/styles/kendo.common.min.css">
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2024.1.130/styles/kendo.default.min.css">
+
+    <!-- jQuery (requerido por Kendo UI) -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Kendo UI -->
+    <!-- <script src="https://kendo.cdn.telerik.com/2024.1.130/js/kendo.all.min.js"> </script> -->
+    <script src="https://kendo.cdn.telerik.com/2024.1.130/js/kendo.web.min.js"></script>
+
+
+    <!-- Código de Licencia Kendo UI -->
+    <script>
+        kendo.ui.Loading.hide();
+        kendo.ui.setOptions({
+            licenseKey: "eyJhbGciOiJSUzI1NiIsInR5cCI6IlRlbGVyaWsgTGljZW5zZSBLZXkifQ.eyJ0eXBlIjoidGVsZXJpay1saWNlbnNlIiwibGljZW5zZUlkIjoiOTRlZTM0MDYtMDM4NS00MjAxLWIxMmItZTRiM2FmZDljOGQ5IiwidXNlcklkIjoiZmZjMmRkNjItNDRjMi00N2RmLTk5NGYtMmUyZGE2OTFmODQ4IiwiaWF0IjoxNzM5NzMzMTE0LCJsaWNlbnNlcyI6WyJleUpoYkdjaU9pSlNVekkxTmlJc0luUjVjQ0k2SWxSbGJHVnlhV3NnVEdsalpXNXpaU0JGZG1sa1pXNWpaU0o5LmV5SmpiMlJsSWpvaVMwVk9SRTlWU1VOUFRWQk1SVlJGSWl3aWRIbHdaU0k2SW5SeWFXRnNJaXdpWlhod2FYSmhkR2x2YmlJNk1UYzBNak14TmpneU5pd2lkWE5sY2tsa0lqb2labVpqTW1Sa05qSXRORFJqTWkwME4yUm1MVGs1TkdZdE1tVXlaR0UyT1RGbU9EUTRJaXdpYkdsalpXNXpaVWxrSWpvaU9UUmxaVE0wTURZdE1ETTROUzAwTWpBeExXSXhNbUl0WlRSaU0yRm1aRGxqT0dRNUluMC52QmhMQkEzekMwcHFiYlZ0RFl1dkxtVEJiLXJhcXEyUG1hZFlBVHBQd2V0MlJFQklHcW42UEx5X1FrcHVhc2RrY09tWURCdmp4aUtlQ3F0NTE2SzRIRTd2Z2h6dmxlcV9TUlNWZllocFF6akNxTGJwSk5udnpMYnRpbjVhbFRDdnFHWHVSbDFuVVBSR19pSGF2UWp5NXgyaFEzNWlMYk5Kb2NHY3ZyWUowclpzRDhRWW4zdFBZSzl3UFVNNF9GN3lvTHd1WHFERWxOWE95RElnajJ5Z3VTU3VrQ0Y0UVBSYjVmSElmR25zOUpnMm82d1ZwQ2JsUzdldHRyX0pENmRHNE55WWptbmd6a1lDQVpHMkprN1lZTldadjBrOGJSY3VObV9rRDZyRW9hMlNGa0Nkd2wwRmR5VHhBaUtsTk5pUnBtMjkxMXJpeE90VG83OE9CdnhpU2ciLCJleUpoYkdjaU9pSlNVekkxTmlJc0luUjVjQ0k2SWxSbGJHVnlhV3NnVEdsalpXNXpaU0JGZG1sa1pXNWpaU0o5LmV5SjBlWEJsSWpvaWRYTmhaMlVpTENKMWMyVnlTV1FpT2lKbVptTXlaR1EyTWkwME5HTXlMVFEzWkdZdE9UazBaaTB5WlRKa1lUWTVNV1k0TkRnaUxDSnNhV05sYm5ObFNXUWlPaUk1TkdWbE16UXdOaTB3TXpnMUxUUXlNREV0WWpFeVlpMWxOR0l6WVdaa09XTTRaRGtpZlEuZmpWenFQdWJtcVYxX28yRlpYRHNVUnFFdVpWdTRGQ3Y4X2lRQWpNTlVyY2hTR3dMaDBLYmdKS19HMFhWR1ZmUU9iZkVzcnQzcXBCdGRyV3VvOXY5aExxaWhfb0ZqaVFIVzRqNzlZeGJsV19ablpGcHlVb3lYM19xSkdzMHhfUkpyVEJEVGVuWldlZi1Fb1hWMmpXejl5NHBob3BuMkJIOUE5SzhpSVhmWUpWRmZfV3hTeVdFaG96QUZaejM5NW54cW1sVk4zbUV1cDVUSGpCZW9McWdkZm1MN1NCWmNiNHltWDZCRElhdTZJRmxlaE1LeFhtVmw2bTVlbzdfVFcwRHVuTlA2d3FHa0w0dVNEdFJ5akdDWDVGQjhoZDZXUjFtVW5CbHJzbld4NUs2RlI0OVN2SENRd000QTJoOUZEeDdMYVBqMWNWM3ByNjFoWDYxb1RLb0d3Il0sInByb2R1Y3RzIjpbeyJjb2RlIjoiS0VORE9VSUNPTVBMRVRFIiwibGljZW5zZUV4cGlyYXRpb25EYXRlIjoxNzQyMzE2ODI2LCJ0cmlhbCI6dHJ1ZX1dLCJhdWQiOiJhKioqKioqKipAZyoqKiouY29tIiwibGljZW5zZUhvbGRlciI6ImEqKioqKioqKkBnKioqKi5jb20iLCJpbnRlZ3JpdHkiOiIwMHlZQXk1OVg4aTJKNkNkK3ExNHAyZ2F3bG9SSEJRMnVHYklWNVBrZWpNPSJ9.iiFXpg_MSBJuDWBv1QIHycm_sZq6ws7MIGgpjQ-JStH0wdxQgPHhzpg6KxWPL9dKqU1dzKW9Xdz1s8oFqMKEcKIiOcwztB6c3HJ49RzcPo0x-tNbOLXAoC31gWrmWzZaHyVPn3_LpOtrdjOouGPraYehbq7x2dS2EZZuoEsgNWJRyJk1byE2HNH3ycoe5Cif2Uz7Nyl8WY_aAWadb62ZbWWCZxb5V_m8pvmq8-9X0mkffCE0NxkO3ZFAtHgoszPpVmMi6zQXdhV9tTe4cdnu3YSroyXwk2--pfj6pgwNtR-9wh8YobeT7YxWASJyo3PZUyaWQlyrl1qUrtGJ2hWoMg"
+        });
+    </script>
+       
+
+</head>
+
+
+<body>
+
+    <div id="grid"> </div>
+
+    <script>
+
+        $(function () {
+
+            const jQueryVersion = $.fn.jquery;
+            console.warn('jQuery Version:', jQueryVersion);
+
+            console.warn("Kendo UI Loaded:", typeof kendo !== "undefined");
+            console.warn("Kendo UI Grid Disponible:", typeof kendo.ui.Grid !== "undefined");
+
+            if (typeof kendo.ui.Grid === "undefined") {
+                console.error("Error: Kendo UI no cargó correctamente.");
+                return;
+            }
+
+            // Inicializar el Grid
+            $("#grid").kendoGrid({
+                
+                sortable: true,
+                height: 400,
+                scrollable: true,
+                groupable: true,
+                
+                pageable: {
+                    refresh: true,
+                    pageSize: 5
+                },
+                
+                dataSource: {
+                    data: dameArray(),
+                    schema: {
+                        model: {
+                            fields: {
+                                id: { type: "number" },
+                                nombre: { type: "string" },
+                                edad: { type: "number" }
+                            }
+                        }
+                    }
+                },
+                
+                columns: [
+                    { field: "id", title: "ID", width: "60px" },
+                    { field: "nombre", title: "Nombre Cliente", width: "200px" },
+                    { field: "edad", title: "Edad", width: "40px" }
+                ],
+
+                dataBound: function() {
+                    if(this.dataSource.group().length == 0) {
+                        setTimeout(function() {
+                            $(".k-grouping-header").html("Arrastra la columna para agrupar");
+                        });
+                    }
+                }
+
+
+            });
+
+            function dameArray() {
+                return [
+                    { id: 1, nombre: "Miguel", edad: 37 },
+                    { id: 2, nombre: "Juan", edad: 27 },
+                    { id: 3, nombre: "Lola", edad: 52 },
+                    { id: 4, nombre: "Luis", edad: 18 }
+                ];
+            }
+
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>
