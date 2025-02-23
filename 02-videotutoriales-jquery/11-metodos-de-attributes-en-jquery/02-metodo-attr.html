@@ -1,0 +1,66 @@
+<!--  ---------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  -----------  -->
+<!--  ----------  /02-videotutoriales-jquery/  ----------  -->
+<!--  ----------  /11-selectores-de--jquery  ------------  -->
+<!--  ----------  /01-metodo-attr.html  -----------------  -->
+<!--  ---------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="esº">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 11 - Metodos de Attributes en jQuery - Método attr - Videotutoriales </title>
+
+    <script 
+        src="https://code.jquery.com/jquery-1.4.2.min.js" 
+        integrity="sha256-4joqTi18K0Hrzdj/wGed9xQOt/UuHuur+CeogYJkPFk=" 
+        crossorigin="anonymous"
+    > </script>
+
+    <script>
+        window.jQuery || document.write('<script src="../../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>')
+    </script>
+
+</head>
+
+
+<body>
+
+    <h1> Métodos de Attributes con jQuery </h1>
+
+    <h2> Trabajo con el Método attr </h2>
+
+    <textarea id="texto" cols="30" rows="8"> Escribe lo que quieras que tenga HTML... </textarea> <br> <br>
+    
+    <button id="previsualizar"> Clic para previsualizar el HTML </button> <br> <br>
+
+    <br> <br> <hr> <br> <br>
+    <div id="resultado"> </div>
+    
+
+    <script>
+
+        $(document).ready(function () {
+
+            const jQueryVersion = $.fn.jquery;
+            console.warn('jQuery Version:', jQueryVersion);
+
+
+            $('#previsualizar').click(function () {
+                
+                let textoTextarea = $('#texto').val();
+                $('#resultado').html(textoTextarea);
+
+            });
+            
+        });
+
+    </script>
+
+</body>
+
+</html>

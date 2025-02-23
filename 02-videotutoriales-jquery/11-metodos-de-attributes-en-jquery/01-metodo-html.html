@@ -1,0 +1,94 @@
+<!--  ---------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  -----------  -->
+<!--  ----------  /02-videotutoriales-jquery/  ----------  -->
+<!--  ----------  /11-selectores-de--jquery  ------------  -->
+<!--  ----------  /01-metodo-html.html  -----------------  -->
+<!--  ---------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="esº">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 11 - Metodos de Attributes en jQuery - Método HTML - Videotutoriales </title>
+
+    <script 
+        src="https://code.jquery.com/jquery-1.4.2.min.js" 
+        integrity="sha256-4joqTi18K0Hrzdj/wGed9xQOt/UuHuur+CeogYJkPFk=" 
+        crossorigin="anonymous"
+    > </script>
+
+    <script>
+        window.jQuery || document.write('<script src="../../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>')
+    </script>
+
+</head>
+
+
+<body>
+
+    <h1> Métodos de Attributes con jQuery </h1>
+
+    <h2> Trabajo con el Método HTML </h2>
+
+    <ul>
+        <li> Campo 1 </li>
+        <li> Campo 2 </li>
+        <li> Campo 3 </li>
+    </ul>
+
+    <p class="p1">
+        Este párrafo tambien lo meto para hacer cosas con el.
+        <small> Además, muestro algo con otra etiqueta </small>
+    </p>
+
+    <p> Otro párrafo </p>
+
+    <button id="boton1"> Haz clic </button>
+    <button id="boton2"> Haz clic también </button>
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            const jQueryVersion = $.fn.jquery;
+            console.warn('jQuery Version:', jQueryVersion);
+
+
+            $('#boton1').click(function () {
+                
+                //  -----  muestro el contenido HTML de la etiqueta ul  -----
+                alert($("ul").html());
+
+                //  -----  muestro el contenido del primer párrafo si hay mas de uno  -----
+                alert($("p").html());
+
+                //  -----  muestro el contenido del ultimo párrafo  -----
+                alert($("p:last").html());
+            });
+
+
+            $('#boton2').click(function () {
+                
+                //  -----  altero el contenido HTML de elementos  -----
+
+                $("p").html("Asi estoy alterando el <b> HTML </b> de todos los párrafos");
+                
+                setTimeout(() => {
+                    $("p:first").html("Asi estoy alterando el <b> HTML </b> de todos los párrafos");
+                    $("p.p1").html("<span style='color: #ff0000;'> O los <i> párrafos de una <b> única </b> clase de CSS </i> </span>");    
+                }, 2000);
+                                        
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
