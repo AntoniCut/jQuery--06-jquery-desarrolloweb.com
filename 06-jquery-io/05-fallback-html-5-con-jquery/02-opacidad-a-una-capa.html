@@ -1,0 +1,91 @@
+<!--  -------------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  ---------------  -->
+<!--  ----------  /06-jquery-io/  ---------------------------  -->
+<!--  ----------  /05-fallback-html-5-con-jquery/  ----------  -->
+<!--  ----------  /02-opacidad-a-una-capa.html  -------------  -->
+<!--  -------------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 5 - Opacidad a una Capa con Modernizr y jQuery - jQuery IO </title>
+
+    <script src="../assets/plugins/modernizr/modernizr-opacity-animation.js"> </script>
+
+    <script src="https://code.jquery.com/jquery-1.12.1.min.js"
+        integrity="sha256-I1nTg78tSrZev3kjvfdM5A5Ak/blglGzlaZANLPDl3I=" crossorigin="anonymous"> </script>
+
+    <style>
+        
+        body {
+            width: 100%;
+            max-width: 600px;
+            height: 100vh;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #moderno img {
+            opacity: 0.5;
+        }
+
+        img {
+            margin-left: 100px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <hr>
+    <h1> Opacidad a una Capa </h1>
+    <hr>
+
+    <section id="moderno">
+        <img src="../assets/imagenes/jquery-banner.png">
+    </section>
+
+    <section>
+        <img src="../assets/imagenes/jquery-banner.png">
+    </section>
+
+
+    <script>
+
+        //const jQueryVersion = $.fn.jquery;
+        //console.warn('jQuery Version:', jQueryVersion);
+
+        console.warn("Modernizr:", Modernizr);
+        
+
+        if (Modernizr.opacity) alert('Modernizr acepta el opacity');
+        
+        else {
+            
+            alert('Modernizr No acepta el opacity');
+
+            $(function() {
+
+                $("#moderno").css('opacity', 0.2);
+
+            })
+               
+        }
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+<!--  --------------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  ----------------  -->
+<!--  ----------  /06-jquery-io/  ----------------------------  -->
+<!--  ----------  /05-fallback-html-5-con-jquery/  -----------  -->
+<!--  ----------  /01-fallback.html  -------------------------  -->
+<!--  --------------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 5 - FallBack HTML5 con jQuery - jQuery IO </title>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.1.min.js" integrity="sha256-I1nTg78tSrZev3kjvfdM5A5Ak/blglGzlaZANLPDl3I=" crossorigin="anonymous"></script>
+
+    <style>
+        
+        body {
+            width: 100%;
+            max-width: 600px;
+            height: 100vh;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .fecha {
+            width: 200px;
+            height: 40px;
+            margin: 50px auto;
+            font-size: 18px;
+            text-align: center;
+        }
+        
+    </style>
+
+</head>
+
+<body>
+
+    <hr>
+    <h1> FallBack HTML 5 con jQuery </h1>
+    <hr>
+
+    <br> <br>
+    <form>
+        <h2> Campo Fecha con HTML5 </h2>
+        <input type="date" id="htmlFecha" name="fecha" class="fecha">
+    </form>
+
+    <br> <br>
+    <h2> Campo Fecha con jQueryUI </h2>
+    <form>
+        <input type="text" id="jQueryFecha" name="fecha" class="fecha">
+    </form>
+    <br> <br>
+
+    <script>
+
+        // $(function () {
+
+        //     const jQueryVersion = $.fn.jquery;
+        //     const jQueryUIVersion = $.ui
+        //     console.warn('jQuery Version:', jQueryVersion, '\njQueryUI Version', jQueryUIVersion);
+
+        //     $("#jQueryFecha").datepicker();
+
+        // });
+
+        //console.warn("Modernizr:", Modernizr);
+        //console.warn("Modernizr.inputtypes:", Modernizr.inputtypes);
+        //console.warn("Modernizr.inputtypes.date:", Modernizr.inputtypes?.date);
+
+        // Modernizr.on('inputtypes', function () {
+        //     if (!Modernizr.inputtypes.date) {
+        //         // Cargar jQuery UI solo si 'input[type="date"]' no es soportado
+        //         $.getScript("../assets/jquery/ui/jquery-ui.min.js", function () {
+        //             // Inicializar el datepicker
+        //             $("#jQueryFecha").datepicker();
+        //         });
+        //     }
+        // });
+
+
+        Modernizr.load({
+            test: Modernizr.inputtypes.date,
+            nope: [
+                "../assets/css/ui/jquery-ui.min.css",
+                "../assets/jquery/ui/jquery-ui.min.js"
+            ],
+            complete: function () {
+                if (!Modernizr.inputtypes.date) {
+                    console.log("Cargando jQuery UI...");
+
+                    // Esperar a que jQuery UI termine de cargarse antes de aplicar datepicker
+                    setTimeout(function () {
+                        if ($.fn.datepicker) {
+                            console.log("jQuery UI cargado correctamente.");
+                            $("#jQueryFecha").datepicker();
+                        } else {
+                            console.error("Error: jQuery UI no se cargó correctamente.");
+                        }
+                    }, 500); // Pequeña espera para asegurar que los scripts se cargaron
+                }
+            }
+        });
+
+
+
+        // Modernizr.load({
+
+        //     test: Modernizr.inputtypes.date,
+        //     nope: [
+        //         "../assets/css/ui/jquery-ui.min.css",
+        //         "../assets/jquery/ui/jquery-ui.min.js",
+        //     ],
+
+        //     complete: function () {
+
+        //         if (!Modernizr.inputtypes.date) {
+        //             $("#jQueryFecha").datepicker();
+        //         }
+        //     }
+        // });
+
+    </script>
+
+</body>
+
+</html>

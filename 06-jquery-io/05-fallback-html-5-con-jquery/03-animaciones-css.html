@@ -1,0 +1,116 @@
+<!--  -------------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  ---------------  -->
+<!--  ----------  /06-jquery-io/  ---------------------------  -->
+<!--  ----------  /05-fallback-html-5-con-jquery/  ----------  -->
+<!--  ----------  /03-animaciones-css.html  -----------------  -->
+<!--  -------------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 5 - Animacione CSS - jQuery IO </title>
+
+    <script 
+        src="https://code.jquery.com/jquery-1.12.1.min.js"
+        integrity="sha256-I1nTg78tSrZev3kjvfdM5A5Ak/blglGzlaZANLPDl3I=" 
+        crossorigin="anonymous"
+    > </script>
+
+    <style>
+        
+        body {
+            width: 100%;
+            height: 100vh;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .mueve-css {
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            color: white;
+            background-color: red;
+            position: absolute;
+            top: 150px;
+            animation: muevete 8s infinite;
+        }
+
+        @keyframes muevete {
+            0% { left: 10%; }
+            25% { left: 50%; }
+            50% { left: 80%;}
+            75% { left: 50%;}
+            100% { left: 10%; }
+        }
+
+        #muevejQuery {
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            color: white;
+            background-color: blueviolet;
+            position: absolute;
+            top: 400px;
+            left: 10%;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <hr>
+    <h1> Animaciones CSS </h1>
+    <hr>
+
+    <section class="mueve-css"> con CSS </section>
+    <section id="muevejQuery"> con jQuery </section>
+
+    <script>
+
+        $(document).ready(function () {
+            
+            $muevejQuery = $("#muevejQuery");
+            
+            //$muevejQuery.css({left: '10%'})
+
+            function animar() {
+                $muevejQuery.animate({ left: '50%' }, 2000)   // Mueve a la mitad
+                .animate({ left: '80%' }, 2000)   // Mueve a la derecha
+                .animate({ left: '50%' }, 2000)   // Regresa al centro
+                .animate({ left: '10%' }, 2000);  // Regresa a la izquierda
+            }
+
+             //  -----  Llama a la animación de forma continua sin usar setInterval  -----
+             function loopAnimar() {
+                
+                animar();
+
+                //  -----  Llama de nuevo después de 8 segundos (tiempo total de la animación)  -----
+                setTimeout(loopAnimar, 8000);  
+            }
+
+            //  -----  Inicia el ciclo de animación  -----
+            loopAnimar(); 
+                        
+        });
+
+    </script>
+  
+
+</body>
+
+</html>
