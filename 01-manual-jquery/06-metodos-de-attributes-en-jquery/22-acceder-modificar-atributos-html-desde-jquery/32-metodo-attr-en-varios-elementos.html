@@ -1,0 +1,73 @@
+<!--  --------------------------------------------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  ----------------------------------------------  -->
+<!--  ----------      /01-manual-jquery/  --------------------------------------------------  -->
+<!--  ----------          /06-metodos-de-attributes-en-jquery/  ----------------------------  -->
+<!--  ----------              /22-acceder-modificar-atributos-html-desde-jquery/  ----------  -->
+<!--  ----------                  /32-metodo-attr-en-varios-elementos.html  ----------------  -->
+<!--  --------------------------------------------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 32 - Metodo attr cuando tenemos varios elementos </title>
+
+    <script 
+        src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" 
+        crossorigin="anonymous"
+    > </script>
+
+    <script>
+        window.jQuery || document.write('<script src="../../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>')
+    </script>
+
+</head>
+
+<body>
+
+    <p>
+        <a href="http://www.elpais.com" title="Diario El País"> El País </a> <br>
+        <a href="http://www.mozilla.org" title="Fundación Mozilla"> Mozilla Fundation </a> <br>
+        <a href="http://es.openoffice.org/" title="Suite de programas de oficina"> Open Office </a>
+    </p>
+
+    <p>
+        <button id="primerTitle"> Acceder solo al primer title </button>
+        <button id="todosTitles"> Acceder a todos los title </button>
+    </p>
+
+
+    <script>
+
+        $(document).ready(function (e) {
+
+            const jQueryVersion = $.fn.jquery;
+            console.warn('jQuery Version:', jQueryVersion);
+
+            $("#primerTitle").click(function () {
+                alert($("a").attr("title"));
+            });
+
+            $("#todosTitles").click(function () {
+                
+                $("a").each(function (i) {
+                    
+                    let titulo = $(this).attr("title");
+                    alert("Atributo title del enlace " + i + ": " + titulo);
+                    
+                });
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!--  --------------------------------------------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  ----------------------------------------------  -->
+<!--  ----------      /01-manual-jquery/  --------------------------------------------------  -->
+<!--  ----------          /06-metodos-de-attributes-en-jquery/  ----------------------------  -->
+<!--  ----------              /22-acceder-modificar-atributos-html-desde-jquery/  ----------  -->
+<!--  ----------                  /31-cambiar-atributo-src.html  ----------------------------  -->
+<!--  --------------------------------------------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 31 - Cambiar atributo src </title>
+
+    <script 
+        src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" 
+        crossorigin="anonymous"
+    > </script>
+
+    <script>
+        window.jQuery || document.write('<script src="../../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>')
+    </script>
+
+</head>
+
+<body>
+
+    <p> <img src="https://placehold.co/300x100/red/white" alt="imagen placeholder" id="imagen"> </p>
+
+    <p>
+        <button id="cambiarImagenAzul"> Cambiar imagen a azul </button>
+        <button id="cambiarImagenVerde"> Cambiar imagen a verde </button>
+        <button id="cambiarAlt"> Cambiar atributo alt </button>
+    </p>
+
+
+    <script>
+
+        $(document).ready(function (e) {
+
+            const jQueryVersion = $.fn.jquery;
+            console.warn('jQuery Version:', jQueryVersion);
+
+            $("#cambiarImagenAzul").click(function () {
+                $("#imagen").attr("src", "https://placehold.co/300x100/blue/yellow");
+            });
+
+            $("#cambiarImagenVerde").click(function () {
+                $("#imagen").attr("src", "https://placehold.co/300x100/green/aqua");
+            });
+
+            $("#cambiarAlt").click(function () {
+                let alt = $("#imagen").attr("alt", "Este es el nuevo alt de la imagen");
+                console.log( alt.attr('alt') );
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
