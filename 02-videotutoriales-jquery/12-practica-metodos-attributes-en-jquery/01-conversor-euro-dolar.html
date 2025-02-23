@@ -1,0 +1,260 @@
+<!--  ------------------------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  --------------------------  -->
+<!--  ----------  /02-videotutoriales-jquery/  -------------------------  -->
+<!--  ----------  /12-practica-metodos-attributes-en-jquery/  ----------  -->
+<!--  ----------  /01-conversor-euro-dolar.html  -----------------------  -->
+<!--  ------------------------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="esº">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 12 - Herramienta de Cámbio Dolar-Euro - Videotutoriales </title>
+
+    <script src="https://code.jquery.com/jquery-1.4.2.min.js"
+        integrity="sha256-4joqTi18K0Hrzdj/wGed9xQOt/UuHuur+CeogYJkPFk=" crossorigin="anonymous"> </script>
+
+    <script>
+        window.jQuery || document.write('<script src="../../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>')
+    </script>
+
+    <style>
+        body {
+            width: 100%;
+            margin: 20px auto;
+            font-family: tahoma, verdana, arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .layout__content {
+            width: 50%;
+            margin: 100px auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .moneda {
+            width: 300px;
+            height: 300px;
+            border-radius: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .caja-dentro {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        #cajaBotonConvertir {
+            width: 128px;
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .dolar {
+            background: url(./bandera-usa.png);
+        }
+
+        .euro {
+            background: url(./bandera-europa.jpg);
+        }
+
+        #cantidad {
+            width: 200px;
+            height: 50px;
+            text-align: center;
+            font-size: 1.6em;
+            line-height: 2em;
+        }
+
+        #monedaOrigen {
+            margin-top: 3px;
+        }
+
+        #resultadoConversion {
+            font-size: 1.6em;
+            line-height: 2em;
+            text-align: center;
+            background-color: #fff;
+            width: 200px;
+            height: 50px;
+            margin: auto;
+            margin-top: 3px;
+        }
+
+        #nombreMonedaDestino {
+            margin: auto;
+            margin-top: 3px;
+            width: 70px;
+            /* padding: 5px; */
+            font-size: 1em;
+            text-align: center;
+            background-color: #fff;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <hr>
+    <h1> Conversor Euro € a Dolar $ </h1>
+    <hr>
+
+    <div class="layout__content">
+
+        <div id="cajaOrigen" class="moneda">
+
+            <div class="caja-dentro">
+
+                <input type="number" id="cantidad" value=0>
+
+                <select id="monedaOrigen">
+                    <option value="euro" selected> Euro </option>
+                    <option value="dolar" selected> Dolar </option>
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <div id="cajaBotonConvertir">
+            <button id="botonConvertir"> Convertir </button>
+        </div>
+
+
+        <div id="cajaDestino" class="moneda">
+
+            <div class="caja-dentro">
+
+                <div id="resultadoConversion"> </div>
+
+                <div id="nombreMonedaDestino"> </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            const jQueryVersion = $.fn.jquery;
+            console.warn('jQuery Version:', jQueryVersion);
+
+            const relacionDolarEuro = 0.8;
+
+
+            function convertir() {
+                
+                let cantidad = parseFloat($("#cantidad").val()) || 0; // ✅ Usar .val() y convertir a número
+                let monedaOrigen = $("#monedaOrigen").val();
+                let resultado = 0;
+
+                if (monedaOrigen == "dolar")
+                    //  -----  convierto a euro  ----- 
+                    resultado = cantidad * relacionDolarEuro;
+                else
+                    //  -----  convierto a dolar  -----
+                    resultado = cantidad / relacionDolarEuro;
+
+                //  -----  y guardo el resultado en el texto de la capa resultadoConversion  -----
+                $("#resultadoConversion").html(resultado.toFixed(2)); // ✅ Mostrar con 2 decimales
+            }
+
+
+            // function convertir() {
+
+            //     let cantidad = $("#cantidad").attr("value");
+            //     let monedaOrigen = $("#monedaOrigen").val();
+
+            //     if (monedaOrigen == "dolar")
+            //         //  -----  convierto a euro y guardo el resultado en el texto de la capa resultadoConversion  -----
+            //         $("#resultadoConversion").html(cantidad * relacionDolarEuro);
+
+            //     else
+            //         //  -----  convierto a dolar y guardo el resultado en el texto de la capa resultadoConversion  -----
+            //         $("#resultadoConversion").html(cantidad / relacionDolarEuro);
+
+            // }
+
+            function personalizacionSegunCambio() {
+
+                let monedaOrigen = $("#monedaOrigen").val();
+
+                if (monedaOrigen == "dolar") {
+
+                    //  -----  en la caja de origen personalizo la clase para mostrar que tengo dolares  -----
+                    $("#cajaOrigen").addClass('dolar');
+                    $("#cajaOrigen").removeClass('euro');
+
+                    //  -----  en la caja de destino personalizo la clase para mostrar que tengo euros  -----
+                    $("#cajaDestino").addClass('euro');
+                    $("#cajaDestino").removeClass('dolar');
+
+                    //  -----  la moneda destino es euro  -----
+                    $("#nombreMonedaDestino").html('Euros');
+                }
+
+                else {
+
+                    //  -----  en la caja de origen personalizo la clase para mostrar que tengo euros  -----
+                    $("#cajaOrigen").addClass('euro');
+                    $("#cajaOrigen").removeClass('dolar');
+
+                    //  -----  en la caja de destino personalizo la clase para mostrar que tengo dolares  -----
+                    $("#cajaDestino").addClass('dolar');
+                    $("#cajaDestino").removeClass('euro');
+
+                    //  -----  la moneda destino es dolar  -----
+                    $("#nombreMonedaDestino").html('Dolares');
+                }
+
+            }
+
+            //  -----  personalización de la moneda segun el cambio al iniciar la página  -----
+            personalizacionSegunCambio();
+
+            //  -----  asocio la función convertir al evento de click en el botón  -----
+            $("#botonConvertir").click(convertir)
+
+            //  -----  asocio la función personalizacionSegunCambio al evento change del select -----
+            $("#monedaOrigen").change(function () {
+
+                personalizacionSegunCambio();
+                convertir();
+            });
+
+            //  -----  asocio la funcion convertir al evento change del campo de texto  -----
+            $("#cantidad").change(convertir);
+
+
+        });
+
+    </script>
+
+</body>
+
+</html>
