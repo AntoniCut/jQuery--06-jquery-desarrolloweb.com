@@ -1,0 +1,60 @@
+<!--  --------------------------------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  ----------------------------------  -->
+<!--  ----------  /01-manual-jquery/  ------------------------------------------  -->
+<!--  ----------  /06-metodos-de-attributes-en-jquery/  ------------------------  -->
+<!--  ----------  /22-acceder-modificar-atributos-html-desde-jquery/  ----------  -->
+<!--  ----------  /34-metodo-attr.html  ----------------------------------------  -->
+<!--  ---------------------------------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 34 - Método attr </title>
+
+    <script src="https://code.jquery.com/jquery-1.3.2.min.js"
+        integrity="sha256-yDcKLQUDWenVBazEEeb0V6SbITYKIebLySKbrTp2eJk=" crossorigin="anonymous"> </script>
+
+    <script>
+        window.jQuery || document.write('<script src="../../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>')
+    </script>
+
+</head>
+
+<body>
+
+    <form>
+        <input type="text" class="fecha">
+        <input type="text" class="nofecha">
+        <input type="text" class="fecha">
+    </form>
+
+
+    <script>
+
+        $(document).ready(function (e) {
+
+            const jQueryVersion = $.fn.jquery;
+            console.warn('jQuery Version:', jQueryVersion);
+
+
+            $('input.fecha').attr("value", function (indiceArray) {
+                
+                //  -----  indiceArray tiene el índice de este elemento en el objeto jQuery  -----
+                let f = new Date();
+
+                return f.getDate() + "/" + (f.getMonth() + 1) + "/" + f.getFullYear() + " - " + f.getHours() + ":" + f.getMinutes() + ":" + f.getSeconds();
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
