@@ -1,0 +1,128 @@
+<!--  ---------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  -----------  -->
+<!--  ----------  /02-videotutoriales-jquery/  ----------  -->
+<!--  ----------  /13-metodos-css-de-jquery/  -----------  -->
+<!--  ----------  /01-metodos-css.html  -----------------  -->
+<!--  ---------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="esº">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 13 - Métodos CSS de jQuery - Videotutoriales </title>
+
+    <script 
+        src="https://code.jquery.com/jquery-1.4.2.min.js"
+        integrity="sha256-4joqTi18K0Hrzdj/wGed9xQOt/UuHuur+CeogYJkPFk=" 
+        crossorigin="anonymous"
+    > </script>
+
+    <script>
+        window.jQuery || document.write('<script src="../../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>')
+    </script>
+
+    <style>
+        
+        h1 {
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <hr>
+    <h1> Metodos CSS de jQuery </h1>
+    <hr>
+
+    <div id="miCapa1" style="color: red;"> hola! </div> <br><br>
+    <div id="miCapa2"> green </div> <br> <br>
+    
+    <a href="#" id="fondoGris"> Poner fondo gris </a> <br>
+    <a href="#" id="fondoNaranja"> Poner fondo naranja </a> <br>
+    <a href="#" id="ocultarMostrar"> Ocultar / Mostrar </a> <br>
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            const jQueryVersion = $.fn.jquery;
+            console.warn('jQuery Version:', jQueryVersion);
+
+            let $miCapa2 = $("#miCapa2");
+
+
+            //  -----  Podremos acceder a alguna de sus propiedades css de la siguiente manera:  -----
+            console.log('\n', $("#miCapa1").css("color"));
+
+            $miCapa2.css("color", "green");
+
+            $miCapa2.css({
+                "background-color": "#ff8800",
+                "position": "absolute",
+                "width": "150px",
+                "top": "100px",
+                "left": "200px"
+            });
+
+
+            $("#fondoGris").click( function(e) {
+                e.preventDefault();
+                $miCapa2.css("backgroundColor", "#999");
+            });
+
+
+            $("#fondoNaranja").click( function(e) {
+                e.preventDefault();
+                $miCapa2.css("backgroundColor", "#f80");
+            });
+
+
+            $("#ocultarMostrar").click( function(e) {
+                
+                e.preventDefault();
+                                
+                let mostrandose = $miCapa2.css("display");
+
+                if(mostrandose == "block")
+                    $miCapa2.css("display", "none");
+                else
+                    $miCapa2.css("display", "block");
+
+            });
+
+
+            $miCapa2.mouseover(function () {
+
+                let antiguoLeft = parseInt($(this).css("left"));
+                //alert (antiguoLeft);
+                $(this).css("left", antiguoLeft + 10 + "px");
+            });
+
+
+            $miCapa2.click(function () {
+                
+                $(this).css("width", function (index, value) {
+                    //alert (value);
+                    let aumento = prompt("cuanto quieres aumentar?", "25");
+                    return (parseInt(value) + parseInt(aumento)) + "px";
+                });
+            });
+                        
+
+        });
+               
+
+    </script>
+
+</body>
+
+</html>
