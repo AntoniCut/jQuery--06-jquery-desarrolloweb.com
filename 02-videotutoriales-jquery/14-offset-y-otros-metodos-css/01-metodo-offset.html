@@ -1,0 +1,173 @@
+<!--  -------------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  ---------------  -->
+<!--  ----------  /02-videotutoriales-jquery/  --------------  -->
+<!--  ----------  /14-offset-y-otros-metodos-css/  ----------  -->
+<!--  ----------  /01-metodos-css.html  ---------------------  -->
+<!--  -------------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="esº">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 14 - Offset y otros Métodos CSS - Videotutoriales </title>
+
+    <script src="https://code.jquery.com/jquery-1.4.2.min.js"
+        integrity="sha256-4joqTi18K0Hrzdj/wGed9xQOt/UuHuur+CeogYJkPFk=" crossorigin="anonymous"> </script>
+
+    <script>
+        window.jQuery || document.write('<script src="../../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>')
+    </script>
+
+    <style>
+        h1 {
+            text-align: center;
+            margin: 10px;
+        }
+
+        .elementos {
+            position: absolute;
+            border: 1px solid #ccc;
+            display: none;
+        }
+
+        .elementos a {
+            display: block;
+            margin: 5px;
+        }
+
+        .mas {
+            background: url(mas.png) no-repeat right transparent;
+        }
+
+        .menos {
+            background: url(menos.png) no-repeat right transparent;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <hr>
+    <h1> Offset de jQuery </h1>
+    <hr>
+
+    <br> <br>
+    <form>
+        Campo de texto que puede estar donde quiera:
+        <input type="text" size="12" id="miCampo" class="mas">
+    </form>
+
+    <script>
+
+        $(document).ready(function () {
+
+            const jQueryVersion = $.fn.jquery;
+            console.warn('jQuery Version:', jQueryVersion);
+
+            //  -----  referencias al HTML  -----
+            let $miCampo = $("#miCampo");
+
+            //alert(' h1 - top: ' + $("h1").offset().top + 'px - left: ' + $("h1").offset().left + 'px');
+
+
+            //  -----  click sobre el input  -----
+            $miCampo.click(function () {
+
+                let elem = $(this);
+
+                if (elem.data("caparel") == null) {
+
+                    //  -----  creamos una capa que contendra los 5 enlaces  -----
+                    let capaElementos = $("<div class='elementos'></div>");
+                    let enlacesHTML = "";
+
+                    //  -----  creamos los enlaces  -----
+                    for (let i = 0; i < 5; i++) {
+                        enlacesHTML += "<a href='#'> Enlace " + (i + 1) + " </a>";
+                    }
+
+                    //  -----  Posicionar la capa de elementos justo al lado del campo input  -----
+                    let tamanoCampo = elem.innerWidth();
+                    let alturaCampo = elem.innerHeight();
+                    //alert(tamanoCampo);
+
+                    capaElementos.css({
+                        top: elem.offset().top + (alturaCampo + 20) + "px",
+                        left: elem.offset().left + "px",
+                        width: tamanoCampo + "px"
+                    });
+
+                    //  -----  Añadir los enlaces a la capaElementos y la capa elementos al documento  -----
+                    capaElementos.append(enlacesHTML);
+                    $("body").append(capaElementos);
+
+                    //  -----  Mostrar enlaces con efecto De arriba hacia abajo  -----
+                    capaElementos.slideDown();
+
+                    //  -----  Evento click para los enlaces mostrar en el input el texto del enlace  -----
+                    //  -----  Evento delegate para versiones de jquere < a 1.7  -----
+                    $(document).delegate(".elementos a", "click", function (e) {
+                        
+                        e.preventDefault();
+                        
+                        elem.val($(this).text());
+                        capaElementos.slideUp();
+
+                        //  -----  quitar la clase menos y añadir la clase mas  -----
+                        elem.addClass('mas');
+                        elem.removeClass('menos');
+                        
+                    });
+
+                    //  -----  Guardar una referencia a la capaElementos en el campo input  -----
+                    elem.data("caparel", capaElementos);
+
+                    //  -----  quitar la clase mas y añadir la clase menos  -----
+                    elem.removeClass('mas');
+                    elem.addClass('menos');
+
+                } else {
+
+                    //  -----  es que ya se habia creado la capa con los enlaces  -----
+                    capaElementos = elem.data("caparel");
+                    
+                    //  -----  tengo que ver el valor display de capaElementos  -----
+                    let displayCapaElementos = capaElementos.css("display");
+                    
+                    if(displayCapaElementos == "none") {
+                        
+                        capaElementos.slideDown();
+                        
+                        //  -----  quitar la clase mas y añadir la clase menos  -----
+                        elem.removeClass('mas');
+                        elem.addClass('menos');
+                    }
+                        
+                    else {
+                        capaElementos.slideUp();
+
+                        //  -----  quitar la clase menos y añadir la clase mas  -----
+                        elem.addClass('mas');
+                        elem.removeClass('menos');
+                        
+                    }
+                        
+                }
+
+            });
+
+        });
+
+
+    </script>
+
+</body>
+
+</html>
