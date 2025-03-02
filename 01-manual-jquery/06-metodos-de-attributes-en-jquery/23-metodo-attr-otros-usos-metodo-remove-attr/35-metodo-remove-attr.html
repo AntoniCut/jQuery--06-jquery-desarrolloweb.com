@@ -1,10 +1,10 @@
-<!--  --------------------------------------------------------------------------  -->
-<!--  ----------  /jquery-desarrolloweb.com/  ----------------------------------  -->
-<!--  ----------  /01-manual-jquery/  ------------------------------------------  -->
-<!--  ----------  /06-metodos-de-attributes-en-jquery/  ------------------------  -->
-<!--  ----------  /22-acceder-modificar-atributos-html-desde-jquery/  ----------  -->
-<!--  ----------  /35-metodo-remove-attr.html  ---------------------------------  -->
-<!--  --------------------------------------------------------------------------  -->
+<!--  -----------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  -------------  -->
+<!--  ----------  /01-manual-jquery/  ---------------------  -->
+<!--  ----------  /07-metodos-de-css-de-jquery/  ----------  -->
+<!--  ----------  /25-metodos-de-css-de-jquery/  ----------  -->
+<!--  ----------  /36-metodo-css.html  --------------------  -->
+<!--  -----------------------------------------------------  -->
 
 
 <!DOCTYPE html>
@@ -15,33 +15,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
-    <title> 35 - Método removeAttr </title>
+    <title> 36 - Método CSS de jQuery </title>
 
-    <script 
-        src="https://code.jquery.com/jquery-1.3.2.min.js"
-        integrity="sha256-yDcKLQUDWenVBazEEeb0V6SbITYKIebLySKbrTp2eJk=" 
-        crossorigin="anonymous"
-    > </script>
+    <script src="https://code.jquery.com/jquery-1.3.2.min.js---"
+        integrity="sha256-yDcKLQUDWenVBazEEeb0V6SbITYKIebLySKbrTp2eJk=" crossorigin="anonymous"> </script>
 
     <script>
         window.jQuery || document.write('<script src="../../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>')
     </script>
 
+    <style>
+        
+        h1 {
+            text-align: center;
+        }
+
+        #miCapa4 {
+            width: 200px;
+            padding: 20px;
+            color: white;
+            background-color: cadetblue;
+            text-align: center;
+        }
+
+    </style>
+
 </head>
 
 <body>
 
-    <table width="50">
-        <tr>
-            <td nowrap>
-                Esta celda tiene un nowrap, con lo que todo el texto se muestra en la misma línea!
-                Pero realmente la tabla mide 50 pixeles de anchura, luego tendrían que aparece varias líneas!
-            </td>
-        </tr>
-    </table>
-        
-    <input type="Button" id="boton" value="Quitar nowrap">
+    <hr>
+    <h1> Métodos CSS de jQuery </h1>
+    <hr> <br>
 
+    <div id="miCapa1" style="color: red;"> hola! </div> <br>
+    <div id="miCapa2"> green </div> <br>
+    <div id="miCapa3"> Desplazamiento </div> <br>
+    <div id="miCapa4"> Aumento </div> <br>
 
     <script>
 
@@ -50,9 +60,37 @@
             const jQueryVersion = $.fn.jquery;
             console.warn('jQuery Version:', jQueryVersion);
 
-            $("#boton").click(function(i){
-                $("td").removeAttr("noWrap");
+            //  -----  Podremos acceder a alguna de sus propiedades css de la siguiente manera:  -----
+            console.log('\n', $("#miCapa1").css("color"));
+
+            $("#miCapa2").css("color", "green");
+
+            $("#miCapa3").css({
+                "color": "white",
+                "background-color": "#ff8800",
+                "position": "absolute",
+                "width": "150px",
+                "top": "100px",
+                "left": "200px"
             });
+
+
+            $("#miCapa3").mouseover(function () {
+
+                let antiguoLeft = parseInt($(this).css("left"));
+                //alert (antiguoLeft);
+                $(this).css("left", antiguoLeft + 10 + "px");
+            });
+
+
+            $("#miCapa4").click(function () {
+                
+                $(this).css("width", function (index, value) {
+                    alert (value);
+                    let aumento = prompt("cuanto quieres aumentar?", "25");
+                    return (parseInt(value) + parseInt(aumento)) + "px";
+                });
+            })
 
         });
 
