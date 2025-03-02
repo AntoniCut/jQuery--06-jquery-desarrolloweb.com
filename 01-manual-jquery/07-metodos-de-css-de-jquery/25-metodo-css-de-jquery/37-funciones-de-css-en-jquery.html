@@ -1,0 +1,137 @@
+<!--  -----------------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  -------------------  -->
+<!--  ----------  /01-manual-jquery/  ---------------------------  -->
+<!--  ----------  /07-metodos-de-css-de-jquery/  ----------------  -->
+<!--  ----------  /25-metodos-de-css-de-jquery/  ----------------  -->
+<!--  ----------  /37-funciones-de-css-en-jquery.html  ----------  -->
+<!--  -----------------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 37 - Funciones de CSS en jQuery </title>
+
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"
+        integrity="sha256-VAvG3sHdS5LqTT+5A/aeq/bZGa/Uj04xKxY8KM/w9EE=" crossorigin="anonymous"> </script>
+    <script>
+        window.jQuery || document.write('<script src="../../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>')
+    </script>
+
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        #miCapa4 {
+            width: 200px;
+            padding: 20px;
+            color: white;
+            background-color: cadetblue;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <hr>
+    <h1> Funciones CSS en jQuery de dimensiones y posición </h1>
+    <hr>
+
+    <p> Probando funciones de localización de elementos en la página... </p>
+
+    <div id="capa1" style="padding: 24px; background-color: #ffccdd; float: left; border: 2px dotted #666;">
+        <h2> capa1: </h2>
+        Voy a crear esta capa para ver lo que mide y donde está posicionada.
+    </div>
+
+    <br style="clear: both;">
+
+    <div style="margin: 10px;">
+        <button id="botondimensiones" type="button"> Dimensiones de capa1 </button>
+        <button id="botonposicion" type="button"> Posicion de capa1 </button>
+        <button id="botontamano" type="button"> Cambiar tamaño capa1 </button>
+        <button id="botonmargen" type="button"> Cambiar margen capa1 </button>
+    </div>
+
+    <div style="margin: 10px;">
+        <button id="botondimensionesc2" type="button"> Dimensiones de capa2 </button>
+        <button id="botonposicionc2" type="button"> Posicion de capa2 </button>
+    </div>
+
+    <br>
+    Desplaza la página hacia abajo para ver la capa2...
+    <br> <br>
+    ...
+
+    <br> <br>
+    <div id="capa2" style="background-color:#ccc; border-bottom: 5px solid #999; margin-left: 10px;">
+        Esta capa está muy hacia abajo!!
+    </div>
+
+    <script>
+
+        function dimensionCapa(capa) {
+
+            let elemento = $(capa);
+            let dimensiones = "";
+
+            dimensiones += "Dimensiones internas: " + elemento.innerWidth() + "x" + elemento.innerHeight();
+            dimensiones += "\nDimensiones externas: " + elemento.outerWidth() + "x" + elemento.outerHeight();
+            alert(dimensiones);
+        }
+
+        function posicionCapa(capa) {
+            
+            let elemento = $(capa);
+            let posicion = "";
+
+            posicion += "Posición relativo al documento:\nLEFT: " + elemento.offset().left + "\nTOP:" + elemento.offset().top;
+            posicion += "\n\nPosición si no tuviera margen:\nLEFT: " + elemento.position().left + "\nTOP:" + elemento.position().top;
+            alert(posicion);
+        }
+
+
+        $(document).ready(function (e) {
+
+            const jQueryVersion = $.fn.jquery;
+            console.warn('jQuery Version:', jQueryVersion);
+
+            $("#botondimensiones").click(function () {
+                dimensionCapa("#capa1");
+            });
+
+            $("#botonposicion").click(function () {
+                posicionCapa("#capa1");
+            });
+
+            $("#botontamano").click(function () {
+                $("#capa1").css("width", 200);
+            });
+
+            $("#botonmargen").click(function () {
+                $("#capa1").css("margin", 20);
+            });
+
+            $("#botondimensionesc2").click(function () {
+                dimensionCapa("#capa2");
+            });
+
+            $("#botonposicionc2").click(function () {
+                posicionCapa("#capa2");
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
