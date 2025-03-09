@@ -1,0 +1,192 @@
+<!--  ----------------------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  ------------------------  -->
+<!--  ----------  /02-videotutoriales-jquery/  -----------------------  -->
+<!--  ----------  /15-videopractica-metodos-css-de-jquery/  ----------  -->
+<!--  ----------  /01-videopractica-metodos-css-jquery.html  ---------  -->
+<!--  ----------------------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="esº">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 15 - Videopractica Metodos CSS de jQuery - Videotutoriales </title>
+
+    <script 
+        src="https://code.jquery.com/jquery-1.5.min.js" 
+        integrity="sha256-IpJ49qnBwn/FW+xQ8GVI/mTCYp9Z9GLVDKwo5lu5OoM=" 
+        crossorigin="anonymous"
+    > </script>
+    
+    <script>
+        window.jQuery || document.write('<script src="../../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>')
+    </script>
+
+    <style>
+        
+        body {
+            width: 100%;
+            max-width: 1024px;
+            margin: 0 auto;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 10px;
+        }
+
+        
+
+        input {
+            padding: 10px;
+        }
+
+        .campo {
+            margin-bottom: 10px;
+        }
+
+        .etiq {
+            width: 100px;
+            display: block;
+            float: left;
+        }
+
+        .explicacion {
+            border: 1px solid #aaf;
+            background-color: #ddf;
+            padding: 10px;
+            display: none;
+            position: absolute;
+        }
+
+        .btn-enviar {
+            padding: 10px 20px;
+            margin: 10px;
+            font-weight: bold;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            color: white;
+            background-color: cornflowerblue;
+            transition: all 300 ms ease-in-out;
+        }
+
+        .btn-enviar:hover {
+            background-color: rgb(33, 76, 155);
+        }
+        
+    </style>
+
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            const jQueryVersion = $.fn.jquery;
+            console.warn('jQuery Version:', jQueryVersion);
+
+
+            //  -----  referencias al HTML  -----
+            $campoExplicado = $(".campo-explicado");
+            $btnEnviar = $(".btn-enviar");
+
+
+            //  -----  genero un evento focus, para mostrar la explicacion cuando se ponga el foco  -----
+            //  -----  en un campo de formulario. Esto lo hago para todos los campos  -------------------
+            
+            $campoExplicado.focus(function() {
+                
+                let campo = $(this);
+                //  -----  extraigo el nombre del campo  -----
+                let nombreCampo = $(this).attr('name');
+                console.log('\nfocus: ', nombreCampo);
+
+                //  -----  extraigo posicion y dimensiones del campo del formulario  -----
+                let posicionCampo = campo.offset();
+                let anchuraCampo = campo.outerWidth();
+                console.log('posicion:', posicionCampo, " - anchura:", anchuraCampo)
+
+                $("#explicacion" + nombreCampo).css({
+                    display: "block",
+                    top: posicionCampo.top,
+                    left: (posicionCampo.left + anchuraCampo + 10) + "px"
+                });
+
+            });
+
+
+            //  -----  genero un evento blur, para eliminar la explicacion cuando se pierde el foco  -----
+            //  -----  en un campo de formulario. Esto lo hago para todos los campos  --------------------
+            $campoExplicado.blur(function() {
+
+                //  -----  extraigo el nombre del campo  -----
+                let nombreCampo = $(this).attr('name');
+                console.log('\nblur: ', nombreCampo);
+
+                $("#explicacion" + nombreCampo).css("display", "none");
+
+            });
+
+
+            $btnEnviar.click(function(event) {
+                event.preventDefault();
+            });
+        
+
+        });
+
+</script>
+
+
+</head>
+
+
+<body>
+
+    <hr>
+    <h1> Videopractica Metodos CSS de jQuery <br> Formulario con campos que se explican. </h1>
+    <hr>
+
+    <br> <br>
+    
+    <form>
+        
+        <div class="campo">
+            <label for="nombre" class="etiq"> Nombre </label>
+            <input type="text" name="nombre" id="nombre" class="campo-explicado">
+        </div>
+
+        <div class="campo">
+            <label for="apellidos" class="etiq"> Apellidos </label>
+            <input type="text" name="apellidos" id="apellidos" class="campo-explicado">
+        </div>
+
+        <div class="campo">
+            <label for="edad" class="etiq"> Edad </label>
+            <input type="text" name="edad" id="edad" class="campo-explicado">
+        </div>
+
+        <div class="campo">
+            <label for="comentario" class="etiq"> Comentario </label>
+            <textarea name="comentario" id="comentario" cols="30" rows="5" class="campo-explicado"> </textarea>
+        </div>
+
+        <input type="submit" value="Enviar" class="btn-enviar">
+
+    </form>
+
+
+    <div id="explicacionnombre" class="explicacion"> Escribe tu nombre. </div>
+    <div id="explicacionapellidos" class="explicacion"> Escribe tus dos apellidos. </div>
+    <div id="explicacionedad" class="explicacion"> Escribe tu edad, recuerda que tienes que ser mayor de 18 años. </div>
+    <div id="explicacioncomentario" class="explicacion"> Escribe tus comentarios para saber tu opinión. </div>
+  
+
+</body>
+
+</html>
