@@ -1,0 +1,274 @@
+<!--  --------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  ----------  -->
+<!--  ----------  /06-jquery-io/  ----------------------  -->
+<!--  ----------  /07-plugin-dependencia/  -------------  -->
+<!--  ----------  /01-social-example.html  -------------  -->
+<!--  --------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 7 - Social Sharing - ¿ Plugin Dependencia ? - jQuery IO </title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.9em;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #socialBox {
+            display: none;
+            width: 100%;
+            height: 25px;
+            line-height: 25px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            color: #f0f0f0;
+            background-color: #2b2d30;
+            border-bottom: solid 2px #141517;
+            text-align: center;
+        }
+
+        #socialBox #url {
+            float: left;
+            margin-left: 200px;
+            text-align: center;
+        }
+
+        #socialBox #close {
+            float: right;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        #socialBox a:link {
+            color: #f0f0f0;
+            text-decoration: none;
+        }
+
+        #socialBox a:visited {
+            color: #f0f0f0;
+            text-decoration: none;
+        }
+
+        #socialBox a:hover {
+            color: #f0f0f0;
+            text-decoration: underline;
+        }
+
+        #socialBox a:active {
+            color: #f0f0f0;
+            text-decoration: none;
+        }
+    </style>
+
+
+    <!--  ----------  jQuery  ----------  -->
+    <script src="https://code.jquery.com/jquery-1.8.0.min.js"
+        integrity="sha256-jFdOCgY5bfpwZLi0YODkqNXQdIxKpm6y5O/fy0baSzE=" crossorigin="anonymous">
+        </script>
+
+    <script>
+        window.jQuery || document.write('<script src="../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>') 
+    </script>
+    <!--  ------------------------------  -->
+
+    <script>
+
+        function socializame(url) {
+
+            $socialBoxUrl.text(url);
+
+            let texto = encodeURIComponent("Te recomiendo esta Web!");
+
+            let facebook = `<a href='https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}' target='_blank'> Facebook! </a>`;
+            let twitter = `<a href='https://twitter.com/share?url=${encodeURIComponent(url)}&text=${texto}' target='_blank'> Twitter! </a>`;
+            let mail = `<a href='mailto:?subject=${texto}' target='_blank'> Email! </a>`;
+
+            let buttons = facebook + twitter + mail;
+            $socialBoxButtons.html(buttons);
+        }
+
+
+        $(document).on('ready', function () {
+
+            const jQueryVersion = $.fn.jquery;
+            console.warn('jQuery:', jQueryVersion);
+
+            $("body").append(`
+                <div id='socialBox'> 
+                    <span id='url'> </span>
+                    <span id='buttons'> </span>
+                    <span id='close'> [X] </span>
+                </div>
+            `);
+
+            $socialBox = $("#socialBox");
+            $socialBoxUrl = $("#socialBox #url");
+            $socialBoxButtons = $("#socialBox #buttons");
+            $socialBoxClose = $("#socialBox #close");
+
+        });
+
+
+        $(document).on('click', '.social', function (e) {
+
+            e.preventDefault();
+
+            $socialBox.slideDown();
+
+            let enlace = $(this).attr("href");
+            socializame(enlace);
+
+        });
+
+
+        $(document).on("click", "#socialBox #close", function () {
+            $socialBox.slideUp();
+        });
+
+    </script>
+
+</head>
+
+
+<body>
+
+    <br> <br> <br>
+    <hr>
+    <h1> Social Sharing </h1>
+    <hr>
+
+    <section>
+
+        <article>
+
+            <h2> Titulo del Articulo 1 </h2>
+
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Blanditiis aspernatur deleniti, odio iusto aliquid alias ad omnis distinctio,
+                eum tempore doloribus. Consequatur explicabo ipsa provident veniam nihil rem nam molestiae.
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Blanditiis aspernatur deleniti, odio iusto aliquid alias ad omnis distinctio,
+                eum tempore doloribus. Consequatur explicabo ipsa provident veniam nihil rem nam molestiae.
+            </p>
+
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Blanditiis aspernatur deleniti, odio iusto aliquid alias ad omnis distinctio,
+                eum tempore doloribus. Consequatur explicabo ipsa provident veniam nihil rem nam molestiae.
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Blanditiis aspernatur deleniti, odio iusto aliquid alias ad omnis distinctio,
+                eum tempore doloribus. Consequatur explicabo ipsa provident veniam nihil rem nam molestiae.
+            </p>
+
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Blanditiis aspernatur deleniti, odio iusto aliquid alias ad omnis distinctio,
+                eum tempore doloribus. Consequatur explicabo ipsa provident veniam nihil rem nam molestiae.
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Blanditiis aspernatur deleniti, odio iusto aliquid alias ad omnis distinctio,
+                eum tempore doloribus. Consequatur explicabo ipsa provident veniam nihil rem nam molestiae.
+            </p>
+
+            <a class="social" href="miweb.es/blog/articulos/articulo/enlace-al-articulo-uno.html"> Compartir </a>
+            &nbsp; &nbsp;
+            <a href="#"> Ver más </a>
+
+        </article>
+
+
+        <article>
+
+            <h2> Titulo del Articulo 2 </h2>
+
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Blanditiis aspernatur deleniti, odio iusto aliquid alias ad omnis distinctio,
+                eum tempore doloribus. Consequatur explicabo ipsa provident veniam nihil rem nam molestiae.
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Blanditiis aspernatur deleniti, odio iusto aliquid alias ad omnis distinctio,
+                eum tempore doloribus. Consequatur explicabo ipsa provident veniam nihil rem nam molestiae.
+            </p>
+
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Blanditiis aspernatur deleniti, odio iusto aliquid alias ad omnis distinctio,
+                eum tempore doloribus. Consequatur explicabo ipsa provident veniam nihil rem nam molestiae.
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Blanditiis aspernatur deleniti, odio iusto aliquid alias ad omnis distinctio,
+                eum tempore doloribus. Consequatur explicabo ipsa provident veniam nihil rem nam molestiae.
+            </p>
+
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Blanditiis aspernatur deleniti, odio iusto aliquid alias ad omnis distinctio,
+                eum tempore doloribus. Consequatur explicabo ipsa provident veniam nihil rem nam molestiae.
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Blanditiis aspernatur deleniti, odio iusto aliquid alias ad omnis distinctio,
+                eum tempore doloribus. Consequatur explicabo ipsa provident veniam nihil rem nam molestiae.
+            </p>
+
+            <a class="social" href="miweb.es/blog/articulos/articulo/enlace-al-articulo-dos.html"> Compartir </a>
+            &nbsp; &nbsp;
+            <a href="#"> Ver más </a>
+
+        </article>
+
+
+        <article>
+
+            <h2> Titulo del Articulo 3 </h2>
+
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Blanditiis aspernatur deleniti, odio iusto aliquid alias ad omnis distinctio,
+                eum tempore doloribus. Consequatur explicabo ipsa provident veniam nihil rem nam molestiae.
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Blanditiis aspernatur deleniti, odio iusto aliquid alias ad omnis distinctio,
+                eum tempore doloribus. Consequatur explicabo ipsa provident veniam nihil rem nam molestiae.
+            </p>
+
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Blanditiis aspernatur deleniti, odio iusto aliquid alias ad omnis distinctio,
+                eum tempore doloribus. Consequatur explicabo ipsa provident veniam nihil rem nam molestiae.
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Blanditiis aspernatur deleniti, odio iusto aliquid alias ad omnis distinctio,
+                eum tempore doloribus. Consequatur explicabo ipsa provident veniam nihil rem nam molestiae.
+            </p>
+
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Blanditiis aspernatur deleniti, odio iusto aliquid alias ad omnis distinctio,
+                eum tempore doloribus. Consequatur explicabo ipsa provident veniam nihil rem nam molestiae.
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Blanditiis aspernatur deleniti, odio iusto aliquid alias ad omnis distinctio,
+                eum tempore doloribus. Consequatur explicabo ipsa provident veniam nihil rem nam molestiae.
+            </p>
+
+            <a class="social" href="miweb.es/blog/articulos/articulo/enlace-al-articulo-tres.html"> Compartir </a>
+            &nbsp; &nbsp;
+            <a href="#"> Ver más </a>
+
+        </article>
+
+    </section>
+
+    <br> <br>
+
+
+</body>
+
+</html>
