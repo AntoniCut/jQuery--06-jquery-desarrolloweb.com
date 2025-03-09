@@ -1,0 +1,24 @@
+<html>
+<head>
+	<title>galeria thumbnail</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="responsivethumbnailgallery.js"></script>
+	<script type="text/javascript">
+	$(function() {
+		var gallery = new $.ThumbnailGallery($('#galeria'), {
+	        thumbImages: 'miniaturas/img',
+	        smallImages: 'pequenas/img',
+	        largeImages: 'grandes/img',
+	        count: 6,
+	        thumbImageType: 'jpg',
+	        imageType: 'jpg',
+	        breakpoint: 250,
+	        shadowStrength: 1
+	    });
+	});
+	</script>
+</head>
+<body>
+<div id="galeria"></div>
+</body>
+</html>

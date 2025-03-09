@@ -1,0 +1,7 @@
+PLUGINS RESPONSIVE #jQueryIO
+
+bigtext
+https://github.com/zachleat/BigText
+
+Demo y explicaciones
+http://www.zachleat.com/web/bigtext-makes-text-big/

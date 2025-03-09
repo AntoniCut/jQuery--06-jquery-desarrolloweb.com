@@ -1,0 +1,37 @@
+<html>
+<head>
+	<title>bigtext</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="bigtext.js"></script>
+	<style type="text/css">
+	#micapa{
+		max-width: 500px;
+		width:50%;
+		background-color: #ccc;
+		margin: 0 auto;
+		padding: 20px;
+	}
+	#micapa div{
+		line-height: 0.875em;
+	}
+	</style>
+	<script type="text/javascript">
+		$(function() {
+			$("#micapa").bigtext();
+
+			$("#cambiatexto").click(function(){
+				$("#capainterna").text("Ahora pruebo otra cosa");
+				$("#micapa").bigtext();
+			})
+		});
+	</script>
+</head>
+<body>
+<div id="micapa">
+<div id="capainterna">Plugins</div>
+<div>jQuery</div>
+<div>Responsive</div>
+</div>
+<a href="#" id="cambiatexto">cambiatexto</a>
+</body>
+</html>

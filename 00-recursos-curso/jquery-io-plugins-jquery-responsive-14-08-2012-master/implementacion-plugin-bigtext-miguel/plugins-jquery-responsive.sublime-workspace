@@ -1,0 +1,497 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"bac",
+				"background-position"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"borde",
+				"border-radius"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"pa",
+				"padding-left"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"paddi",
+				"padding"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"baco",
+				"background-color"
+			],
+			[
+				"inl",
+				"inline"
+			],
+			[
+				"he",
+				"header"
+			],
+			[
+				"fo",
+				"font-size"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"t",
+				"text-align"
+			],
+			[
+				"banners",
+				"bannerslat"
+			],
+			[
+				"border-",
+				"border-bottom"
+			],
+			[
+				"marg",
+				"margin-bottom"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"fot",
+				"font-size"
+			],
+			[
+				"ar",
+				"article\tTag"
+			],
+			[
+				"se",
+				"serif"
+			],
+			[
+				"inli",
+				"inline-block"
+			],
+			[
+				"clar",
+				"clearfix"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"backgrounn",
+				"background-position"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "big-text.html",
+			"settings":
+			{
+				"buffer_size": 791,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/LESS-build/LESS.sublime-build",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 285.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 512.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/windowsfat32/plugins-jquery-responsive"
+	],
+	"file_history":
+	[
+		"/C/xampp/htdocs/jquery/06-jquery-desarrolloweb.com/00-recursos-curso/jquery-io-plugins-jquery-responsive-14-08-2012-master/implementacion-plugin-bigtext-miguel/thumbnailgallery/galeria.html",
+		"/home/miguel/Escritorio/imagegallery/johnpolacek-ResponsiveThumbnailGallery-46cb2e2/index.html",
+		"/windowsfat32/plugins-jquery-responsive/bigtext.txt",
+		"/windowsfat32/desarrolloweb-actual/configuracion/config.php",
+		"/windowsfat32/DW responsive/HTML-DW-Responsive/index.html",
+		"/windowsfat32/DW responsive/HTML-DW-Responsive/css/style.css",
+		"/home/miguel/.config/sublime-text-2/Packages/User/imgsprite.sublime-snippet",
+		"/windowsfat32/recursos web/iconos/Web2Icons_PNG/Icons/Netvibes_24x24.png",
+		"/home/miguel/.config/sublime-text-2/Packages/LESS-build/LESS.sublime-build",
+		"/home/miguel/Escritorio/prueba.less",
+		"/home/miguel/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
+		"/home/miguel/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
+		"/windowsfat32/DW responsive/HTML-DW-Responsive/js/script.js",
+		"/home/miguel/.config/sublime-text-2/Packages/Package Control/Package Control.sublime-settings",
+		"/windowsfat32/DW responsive/HTML-DW-Responsive/404.html",
+		"/home/miguel/Documentos/protocolos-servicios-aplicacion-dns.html"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"div#accnavlocaliza",
+			"locali",
+			"box-sha",
+			"piefin",
+			"div#piefin",
+			"footer#pieprincipal .seccionpie{",
+			"seccion",
+			"footer#principal div#todopie",
+			"box-shadow",
+			"nav",
+			"div#contenido",
+			"local",
+			"localiza",
+			"#buscador",
+			"div#buscador",
+			"localiza",
+			"footer#pieprincipal",
+			"#icousuario",
+			"#usuarios",
+			"usuarios",
+			"div#conte",
+			"{\n",
+			"span",
+			"#powered",
+			"div#powered",
+			"seccionpie",
+			"aside",
+			"contenido",
+			"fb20",
+			"section",
+			"#usu",
+			"#us",
+			"#usuar",
+			"usuar",
+			"footer",
+			"div",
+			"h2",
+			"div",
+			"footer",
+			"0.7",
+			"container",
+			"script",
+			">\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "big-text.html",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 791,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"indent": 1.0,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 0.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 64.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "plugins-jquery-responsive.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				".html",
+				"index.html"
+			],
+			[
+				"",
+				"css/style.css"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 226.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
