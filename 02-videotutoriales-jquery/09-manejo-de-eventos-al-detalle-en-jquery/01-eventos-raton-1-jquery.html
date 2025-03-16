@@ -1,0 +1,74 @@
+<!--  ------------------------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  --------------------------  -->
+<!--  ----------  /02-videotutoriales-jquery/  -------------------------  -->
+<!--  ----------  /09-manejo-de-eventos-al-detalle-en-jquery  ----------  -->
+<!--  ----------  /01-eventos-raton-1-jquery.html  ---------------------  -->
+<!--  ------------------------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="esº">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 9 - Eventos de Ratón 1 en jQuery - Video 1 - Videotutoriales </title>
+
+    <script 
+        src="https://code.jquery.com/jquery-1.4.2.min.js" 
+        integrity="sha256-4joqTi18K0Hrzdj/wGed9xQOt/UuHuur+CeogYJkPFk=" 
+        crossorigin="anonymous"
+    > </script>
+
+    <script>
+        window.jQuery || document.write('<script src="../../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>')
+    </script>
+
+    <style>
+        
+        h1 {
+            text-align: center;
+        }
+
+    </style>
+
+    <script>
+
+        $(document).ready(function () {
+
+            const jQueryVersion = $.fn.jquery;
+            console.warn('jQuery Version:', jQueryVersion);
+
+            $(document).mousemove(function(e) {
+                
+                $("#micapa").text(e.pageX + " / " + e.pageY);
+
+                $("#micapa").css({
+                    top: e.pageY,
+                    left: e.pageX
+                });
+
+            });
+                     
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <hr>
+    <h1> Eventos de Ratón - Mousemove </h1>
+    <hr>
+        
+    <div 
+        id="micapa" 
+        style="width: 150px; background-color: #ff8800; padding: 10px; position: absolute; text-align: center;">
+        Esto es una Capa!!!
+    </div>
+   
+</body>
+
+</html>

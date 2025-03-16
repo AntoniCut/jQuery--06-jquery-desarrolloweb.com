@@ -1,0 +1,91 @@
+<!--  ------------------------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  --------------------------  -->
+<!--  ----------  /02-videotutoriales-jquery/  -------------------------  -->
+<!--  ----------  /09-manejo-de-eventos-al-detalle-en-jquery  ----------  -->
+<!--  ----------  /03-mas-sobre-eventos-en-jquery.html  ----------------  -->
+<!--  ------------------------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 9 - Mas sobre Eventos en jQuery - Video 3 - Videotutoriales </title>
+
+    <script 
+        src="https://code.jquery.com/jquery-1.4.2.min.js"
+        integrity="sha256-4joqTi18K0Hrzdj/wGed9xQOt/UuHuur+CeogYJkPFk=" 
+        crossorigin="anonymous"
+    > </script>
+
+    <script>
+        window.jQuery || document.write('<script src="../../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>')
+    </script>
+
+    <style>
+        
+        h1 {
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #micapa {
+            display: none;
+        }
+
+    </style>
+
+    <script>
+
+        $(document).ready(function () {
+
+            const jQueryVersion = $.fn.jquery;
+            console.warn('jQuery Version:', jQueryVersion);
+
+            $("#mitexto").bind("click focus blur keydown keyup", function(e) {
+
+                $("#mensaje").html( $("#mensaje").html() + "<br> se ha producido un evento de tipo " + e.type);
+            });
+
+            $("button").click(function() {
+                $("#mitexto").unbind("keydown keyup click");
+            });
+
+            $(document.body).click(function(e) {
+
+                $("#mensaje").html( $("#mensaje").html() + "<br> Has hecho clic en " + e.target.nodeName);
+
+            });
+            
+           
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <hr>
+    <h1> Mas sobre Eventos - Manejadores de Eventos con bind() </h1>
+    <hr>
+
+    <form method="post" action="#">
+
+        <input type="text" name="texto" id="mitexto">
+
+    </form>
+
+    <br>
+    <button> Desactivar keydown, keyup y click </button>
+    <br>
+    <div id="mensaje"> </div>
+
+    
+
+</body>
+
+</html>
