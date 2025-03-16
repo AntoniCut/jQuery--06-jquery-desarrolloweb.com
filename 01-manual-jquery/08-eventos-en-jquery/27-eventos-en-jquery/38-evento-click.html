@@ -1,0 +1,80 @@
+<!--  --------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  ----------  -->
+<!--  ----------  /01-manual-jquery/  ------------------  -->
+<!--  ----------  /08-eventos-en-jquery/  --------------  -->
+<!--  ----------  /27-eventos-en-jquery/  --------------  -->
+<!--  ----------  /38-evento-click.html  ---------------  -->
+<!--  --------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 38 - Evento Click de jQuery </title>
+
+    <script 
+        src="https://code.jquery.com/jquery-1.11.1.min.js" 
+        integrity="sha256-VAvG3sHdS5LqTT+5A/aeq/bZGa/Uj04xKxY8KM/w9EE=" 
+        crossorigin="anonymous"
+    > </script>
+
+    <script>
+        window.jQuery || document.write('<script src="../../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>')
+    </script>
+
+    <style>
+        
+        h1 {
+            text-align: center;
+        }
+
+        a {
+            border-radius: 5px;
+            padding: 20px;
+            color: white;
+            background-color: cadetblue;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        a:hover {
+            background-color: rgb(25, 104, 107);
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <hr>
+    <h1> Evento Click </h1>
+    <hr> <br>
+
+    <a class="mienlace" href="https://desarrolloweb.com/articulos/eventos-jquery.html"> Eventos en jQuery de desarrolloweb.com </a>
+    
+
+    <script>
+
+        $(document).ready(function () {
+
+            const jQueryVersion = $.fn.jquery;
+            console.warn('jQuery Version:', jQueryVersion);
+
+            $(".mienlace").click(function(mievento){
+                mievento.preventDefault();
+                alert("Has hecho clicnComo he hecho preventDefault, no te llevaré al href");
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>

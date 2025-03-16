@@ -1,0 +1,80 @@
+<!--  --------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  ----------  -->
+<!--  ----------  /01-manual-jquery/  ------------------  -->
+<!--  ----------  /08-eventos-en-jquery/  --------------  -->
+<!--  ----------  /27-eventos-en-jquery/  --------------  -->
+<!--  ----------  /38-evento-dbclick.html  -------------  -->
+<!--  --------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 39 - Trabajando con Eventos - Click y Doble Click de jQuery </title>
+
+    <script 
+        src="https://code.jquery.com/jquery-1.11.1.min.js" 
+        integrity="sha256-VAvG3sHdS5LqTT+5A/aeq/bZGa/Uj04xKxY8KM/w9EE=" 
+        crossorigin="anonymous"
+    > </script>
+
+    <script>
+        window.jQuery || document.write('<script src="../../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>')
+    </script>
+
+    <style>
+        
+        h1 {
+            text-align: center;
+        }
+            
+    </style>
+
+</head>
+
+<body>
+
+    <hr>
+    <h1> Trabajando con Eventos - Click y Doble Click </h1>
+    <hr> <br>
+
+    <div id="micapa" style="padding: 10px; background-color: #ffcc99; width: 150px; float: left;"> Hazme doble click </div>
+    <div id="mensaje" style="padding: 10px; margin-left: 180px;"> Aquí voy a colocar mensajes para que los leas... </div>
+    
+
+    <script>
+
+        let numClics = 0;
+        let numDobleClics = 0;
+
+        $(document).ready(function () {
+
+            const jQueryVersion = $.fn.jquery;
+            console.warn('jQuery Version:', jQueryVersion);
+
+            $("#micapa").dblclick(function(e){
+                
+                numDobleClics++;
+                $("#mensaje").html("Doble Clic " + numDobleClics);
+            
+            });
+
+
+            $("#micapa").click(function(e){
+                
+                numClics++;
+                $("#mensaje").html("Clic " + numClics);
+            });
+           
+        });
+
+    </script>
+
+</body>
+
+</html>
