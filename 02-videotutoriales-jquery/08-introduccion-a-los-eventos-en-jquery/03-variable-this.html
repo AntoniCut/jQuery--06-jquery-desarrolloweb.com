@@ -1,0 +1,92 @@
+<!--  ----------------------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  ------------------------  -->
+<!--  ----------  /02-videotutoriales-jquery/  -----------------------  -->
+<!--  ----------  /08-introduccion-a-los-eventos-en-jquery  ----------  -->
+<!--  ----------  /03-variable-this.html  ----------------------------  -->
+<!--  ----------------------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="esº">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 8 - Objeto THIS - Video 3 de 3 - Videotutoriales </title>
+
+    <script 
+        src="https://code.jquery.com/jquery-1.4.2.min.js" 
+        integrity="sha256-4joqTi18K0Hrzdj/wGed9xQOt/UuHuur+CeogYJkPFk=" 
+        crossorigin="anonymous"
+    > </script>
+
+    <script>
+        window.jQuery || document.write('<script src="../../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>')
+    </script>
+
+    <style>
+        
+        h1 {
+            text-align: center;
+        }
+
+    </style>
+
+    <script>
+
+        $(document).ready(function () {
+
+            const jQueryVersion = $.fn.jquery;
+            console.warn('jQuery Version:', jQueryVersion);
+
+            //  -----  defino un evento para dblclick en el elemento p  -----
+            $("p").dblclick(function(e) {
+
+                $("p").css("text-align", "center");
+                
+            });
+
+
+            //  -----  defino un evento para dblclick en el elemento p  -----
+            $("p").click(function(e) {
+
+                //  -----  this dentro de las funciones de eventos hace referencia al elemento  -----
+                //  -----  pero this es un objeto del DOM sin extender con jQuery.              -----
+
+                console.log('\nthis', this);
+                console.log('$(this)', $(this));
+
+                let elementoParrafo = $(this);
+
+                if(elementoParrafo.css("text-align") != "center") 
+                    elementoParrafo.css("text-align", "center");    
+                
+                else
+                    elementoParrafo.css("text-align", "left");
+                
+            });
+
+           
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <hr>
+    <h1> Objeto THIS </h1>
+    <hr>
+    
+    <p> Voy a poner varios párrafos de texto </p>
+    <p> Sigo metiendo etiquetas con varios párrafos </p>
+    <p> Con tres o cuatro párrafos tengo de sobra </p>
+    <p> Este es el ultimo </p>
+
+    <hr>
+       
+</body>
+
+</html>

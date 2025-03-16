@@ -1,0 +1,92 @@
+<!--  ----------------------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  ------------------------  -->
+<!--  ----------  /02-videotutoriales-jquery/  -----------------------  -->
+<!--  ----------  /08-introduccion-a-los-eventos-en-jquery  ----------  -->
+<!--  ----------  /02-objeto-evento-en-jquery.html  ------------------  -->
+<!--  ----------------------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="esº">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 8 - Objeto Evento en jQuery - Video 2 de 3 - Videotutoriales </title>
+
+    <script 
+        src="https://code.jquery.com/jquery-1.4.2.min.js" 
+        integrity="sha256-4joqTi18K0Hrzdj/wGed9xQOt/UuHuur+CeogYJkPFk=" 
+        crossorigin="anonymous"
+    > </script>
+
+    <script>
+        window.jQuery || document.write('<script src="../../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>')
+    </script>
+
+    <style>
+        
+        h1 {
+            text-align: center;
+        }
+
+    </style>
+
+    <script>
+
+        $(document).ready(function () {
+
+            const jQueryVersion = $.fn.jquery;
+            console.warn('jQuery Version:', jQueryVersion);
+
+            //  -----  defino un evento para click en el elemento h1  -----
+            $("h1").click(function(e) {
+
+                //  -----  aquí pongo las sentencias a ejecutar cuando se haga clic sobre el h1  -----
+                $("h1").css("color", "red");
+            });
+
+            //  -----  defino un evento al entrar en el h1  -----
+            $("h1").mouseover(function(e) {
+                $("h1").css("font-weight", "normal");
+            });
+
+            //  -----  defino un evento para click en el enlace  -----
+            $("#enlacedw").click(function(e) {
+
+                //  -----  e es el objeto evento que se ha producido  -----
+                e.preventDefault();
+                alert("pulsaste el enlace");
+
+            });
+
+            $(document).mousemove(function(e) {
+
+                $("#coordenadas").text(" (" + e.pageX +", " + e.pageY + ")");
+            });
+           
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <hr>
+    <h1> Probando Eventos (haz clic aquí) - Objeto Evento en jQuery </h1>
+    <hr>
+    <h1> Esto es otro h1 </h1>
+    <hr>
+
+    <a href="https://desarrolloweb.com" id="enlacedw"> Ir a Desarrolloweb.com </a>
+
+    <div id="coordenadas" style="font-size: 4em; text-align: center;">
+
+    </div>
+    
+   
+</body>
+
+</html>
