@@ -1,0 +1,71 @@
+<!--  ------------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  --------------  -->
+<!--  ----------  /01-manual-jquery/  ----------------------  -->
+<!--  ----------  /08-eventos-en-jquery/  ------------------  -->
+<!--  ----------  /31-eventos-de-teclado-jquery/  ----------  -->
+<!--  ----------  /43-eventos-teclado-2.html  --------------  -->
+<!--  ------------------------------------------------------ -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 43 - Eventos Teclado 2 de jQuery </title>
+
+    <script src="https://code.jquery.com/jquery-1.4.1.min.js"
+        integrity="sha256-LOx49zn73f7YUs15NNJTDnzEyPFLOGc7A7pfuICtTMc=" crossorigin="anonymous"> </script>
+
+    <script>
+        window.jQuery || document.write('<script src="../../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>')
+    </script>
+
+    <style>
+        
+        h1 {
+            text-align: center;
+        }
+        
+    </style>
+
+    <script>
+
+        $(document).ready(function () {
+
+            const jQueryVersion = $.fn.jquery;
+            console.warn('jQuery Version:', jQueryVersion);
+
+            $("#mitexto").keypress(function(e){
+              e.preventDefault();
+                $("#loescrito").html(e.which + ": " + String.fromCharCode(e.which))
+            });
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <hr>
+    <h1> Trabajando con eventos de Teclado </h1>
+    <hr> <br>
+
+    <h2> Averiguar qué tecla se está pulsando </h2>
+   
+    <form>
+      <textarea cols=200 rows=2 id="mitexto"> Escribe algo aquí! </textarea>
+      <br>
+      <b> Tecla pulsada: </b>
+      <br>
+      <div id="loescrito"> </div>
+   </form>
+   
+</body>
+
+</html>
