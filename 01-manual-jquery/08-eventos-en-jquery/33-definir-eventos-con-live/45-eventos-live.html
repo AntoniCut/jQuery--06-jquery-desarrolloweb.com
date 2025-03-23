@@ -1,0 +1,93 @@
+<!--  -----------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  -------------  -->
+<!--  ----------  /01-manual-jquery/  ---------------------  -->
+<!--  ----------  /08-eventos-en-jquery/  -----------------  -->
+<!--  ----------  /33-definir-eventos-con-live/  ----------  -->
+<!--  ----------  /44-eventos-live.html  ------------------  -->
+<!--  -----------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 45 - Definir Eventos con Live de jQuery </title>
+
+    <script src="https://code.jquery.com/jquery-1.4.1.min.js"
+        integrity="sha256-LOx49zn73f7YUs15NNJTDnzEyPFLOGc7A7pfuICtTMc=" crossorigin="anonymous"> </script>
+
+    <script>
+        window.jQuery || document.write('<script src="../../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>')
+    </script>
+
+    <style>
+        
+        h1 {
+            text-align: center;
+        }
+
+        .verde{
+            color: green;
+        }
+        
+    </style>
+
+    <script>
+
+        function operaEvento(evento){
+            $("#loescrito").html($("#loescrito").html() + evento.type + ": " + evento.which + ", ")
+        }
+
+        $(document).ready(function () {
+
+            const jQueryVersion = $.fn.jquery;
+            console.warn('jQuery Version:', jQueryVersion);
+
+            $(".verde").live("click", function(e){
+                
+                var elem = $(this);
+                if (elem.html()!="Hiciste clic!!") {
+                    elem.html("Hiciste clic!!");
+                } else {
+                    elem.html("Hiciste de nuevo clic!!");
+                }
+            })
+   
+            $("#insertarelem").click(function(e){
+                var nuevoElemento = $('<div class="verde"> Este elemento se ha creado e insertado dinamicamente (haz clic) </div> <br>');
+                nuevoElemento.appendTo($(document.body));
+            });
+            
+            $("#ponerclaseverde").click(function(e){
+                $("#noverde").addClass("verde");
+            });
+            
+
+        });
+
+
+    </script>
+
+</head>
+
+<body>
+
+    <hr>
+    <h1> Definir eventos con Live </h1>
+    <hr> <br>
+
+    <div class="verde"> Esta capa tiene la clase verde (haz clic) </div> <br>
+    <div class="verde"> Segunda capa donde coloco la clase verde </div> <br>
+    <div id="noverde"> Tercera capa que no es verde </div> <br> 
+    <div class="verde"> Otra con clase verde </div> <br> <br>
+
+    <input type=button value="insertar nuevo elemento verde" id="insertarelem"> &nbsp; &nbsp; &nbsp; &nbsp;
+    <input type=button value="Poner la clase verde en el div que no la tiene" id="ponerclaseverde"> <br> <br>
+   
+</body>
+
+</html>
