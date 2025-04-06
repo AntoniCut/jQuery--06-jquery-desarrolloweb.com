@@ -1,0 +1,81 @@
+<!--  --------------------------------------------------------------------  -->
+<!--  ----------  /jquery-desarrolloweb.com/  ----------------------------  -->
+<!--  ----------  /06-jquery-io/  ----------------------------------------  -->
+<!--  ----------  /09-clase-2-experimental-formularios-y-ajax/  ----------  -->
+<!--  ----------  /02-formularios-y-ajax.html  ---------------------------  -->
+<!--  --------------------------------------------------------------------  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> 2 - Formularios y AJAX - Clase Experimental 2 - Formularios y AJAX - Videotutoriales </title>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"> </script>
+
+    <script>
+        window.jQuery || document.write('<script src="../assets/jquery/core/jquery-3.7.1.min.js">\x3C/script>')
+    </script>
+
+</head>
+
+<body>
+
+    <form action="./enviar.php" id="f1">
+        
+        Nombre: <input type="text" name="nombre"> <br> <br>
+        Edad: <input type="text" name="edad"> <br> <br>
+
+        Intereses <br>
+        <textarea name="intereses"> </textarea> <br> <br>
+
+        Sexo:
+        <select name="sexo">
+            <option value="H"> Hombre </option>
+            <option value="M"> Mujer </option>
+        </select>
+        <br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <br> <hr> <br>
+    
+    <div id="resultado"> </div>
+
+
+    <script>
+
+        $(document).on("ready", function () {
+
+            const jQueryVersion = $.fn.jquery;
+            console.warn('jQuery Version:', jQueryVersion);
+
+            $("#f1").on("submit", function (evento) {
+                
+                evento.preventDefault();
+                const form = $(this);
+                
+                $.post(
+                    form.attr("action"), 
+                    form.serialize(), 
+                    function (datos) {
+                        //codigo a ej resp. ajax
+                        $("#resultado").html(datos);
+                        console.log(form.serialize());
+                    }
+                );
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
