@@ -11,19 +11,12 @@
 
 
 import { loadJQueryByCdnOLocal } from "../../../assets/plugins/load-jquery-by-cdn-local.js";
+import { jQueryConfigCdnLocal_3_6 } from "../../../assets/jquery/config-jquery/jquery-config-cdn-local-3.6.js";
 import { demo2 } from "./assets/js/demo2.js";
 
 
-//  ----------  Carga de jQuery  ----------
-const jQueryConfig = {
-
-    srcCdnJQuery: "https://code.jquery.com/jquery-1.11.0.min.js",
-    integrityCdnJQuery: "sha256-spTpc4lvj4dOkKjrGokIrHkJgNA0xMS98Pw9N7ir9oI=",
-    crossOriginCdnJQuery: "anonymous",
-    referrePolicyCdnJQuery: "no-referrer",
-    srcLocalJQuery: "../../../assets/jquery/core/jquery-3.7.1.min.js",
-}
-
+//  ----------  Carga de jQuery y Script  ----------
+const jQueryConfig = jQueryConfigCdnLocal_3_6;
 const scriptMain = demo2;
 
 
