@@ -4,15 +4,16 @@
     ----------  /01-manual-jquery/  ---------------------
     ----------  /01-introduccion-jquery/  ---------------
     ----------  /02-demos-muy-simples/  -----------------
-    ----------  /01-demo1/  -----------------------------
-    ----------  /assets/css/demo1.css  ------------------
+    ----------  /02-demo2/  -----------------------------
+    ----------  /assets/css/demo2.css  ------------------
     -----------------------------------------------------
 */
 
 
-.main__demo1 {
+.main__demo2 {
     max-width: 102.4rem;
     width: 100%;
+    height: 25rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -20,10 +21,19 @@
     border-radius: 0.5rem;
 }
 
-
 #capa {
     padding: 2rem; 
     color: #fff;
     background-color: #ff8800;
+    font-weight: bold;
+    text-align: center;
+}
+
+#mensaje {
+    display: none;
+    padding: 2rem;
+    color: #fff;
+    background-color: #8cc3e2;
+    font-weight: bold;
     text-align: center;
 }

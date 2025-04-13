@@ -21,6 +21,7 @@
 .header__logo-jquery {
     width: 5rem;
     height: 5rem;
+    cursor: pointer;
 }
 
 .header__logo-jquery:hover {

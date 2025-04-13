@@ -1,10 +1,13 @@
-<!--  ----------------------------------------------------------  -->
-<!--  ----------  /jquery-desarrolloweb.com/  ------------------  -->
-<!--  ----------      /01-manual-jquery/  ----------------------  -->
-<!--  ----------          /01-introduccion-jquery/  ------------  -->
-<!--  ----------              /02-demos-muy-simples/  ----------  -->
-<!--  ----------                  /01-demo1.html  --------------  -->
-<!--  ----------------------------------------------------------  -->
+<!--  
+    -----------------------------------------------------
+    ----------  /06-jquery-desarrolloweb.com/  ----------
+    ----------  /01-manual-jquery/  ---------------------
+    ----------  /01-introduccion-jquery/  ---------------
+    ----------  /02-demos-muy-simples/  -----------------
+    ----------  /01-demo1/  -----------------------------
+    ----------  /index.html  ----------------------------
+    -----------------------------------------------------
+-->
 
 
 <!DOCTYPE html>
@@ -14,21 +17,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
-    <title> 1 - Demo cambiar color jQuery </title>
+    <link rel="shortcut icon" href="../../../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> Demo 1 - cambiar color jQuery - 1. Introducción jQuery </title>
+
+    <link rel="stylesheet" href="../../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../../assets/css/layout.css">
+    <link rel="stylesheet" href="./assets/css/demo1.css">
+
+    
 </head>
 
 <body>
 
-    <div id="capa" style="padding: 10px; background-color: #ff8800">Haz clic en un botón</div>
+    <div class="layout">
 
-    <p>
-        <input type="button" value="Botón A" onclick="$('#capa').html('Has hecho clic en el botón <b>A</b>')">
-        <input type="button" value="Botón B" onclick="$('#capa').html('Recibido un clic en el botón <b>B</b>')">
-    </p>
+        <header class="layout__header">
+            <img class="header__logo-jquery" src="../../../assets/favicon/jquery-favicon-original.ico" alt="Logo jQuery">
+            <h1 class="header__title"> Demo 1 - cambiar color jQuery </h1>
+            <img class="header__logo-jquery" src="../../../assets/favicon/jquery-favicon-original.ico" alt="Logo jQuery">
+        </header>
 
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
-        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous">
+        <main class="layout__main">
+
+            <section class="main__demo1 background-main">
+
+                <div id="capa"> Haz clic en un botón </div>
+
+                <div class="btn__container">
+                    <input type="button" value="Botón A" onclick="$('#capa').html('Has hecho clic en el botón <b> A </b>')">
+                    <input type="button" value="Botón B" onclick="$('#capa').html('Recibido un clic en el botón <b> B </b>')">
+                </div>
+
+            </section>
+           
+        </main>
+
+    </div>
+
+    
+    <script 
+        src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" 
+        crossorigin="anonymous">
     </script>
 
 </body>

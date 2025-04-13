@@ -1,10 +1,13 @@
-<!--  ----------------------------------------------------------  -->
-<!--  ----------  /jquery-desarrolloweb.com/  ------------------  -->
-<!--  ----------      /01-manual-jquery/  ----------------------  -->
-<!--  ----------          /01-introduccion-jquery/  ------------  -->
-<!--  ----------              /02-demos-muy-simples/  ----------  -->
-<!--  ----------                  /02-demo2.html  --------------  -->
-<!--  ----------------------------------------------------------  -->
+<!--  
+    -----------------------------------------------------
+    ----------  /06-jquery-desarrolloweb.com/  ----------
+    ----------  /01-manual-jquery/  ---------------------
+    ----------  /01-introduccion-jquery/  ---------------
+    ----------  /01-demos-muy-simples/  -----------------
+    ----------  /02-demo2/  -----------------------------
+    ----------  /index.html  ----------------------------
+    -----------------------------------------------------
+-->
 
 
 <!DOCTYPE html>
@@ -15,26 +18,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
-    <title> 2 - Demo ocultar y mostrar un elemento con jQuery </title>
+    <title> Demo 2 ocultar y mostrar un elemento con jQuery - 1. Introducción jQuery </title>
+
+    <link rel="stylesheet" href="../../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../../assets/css/layout.css">
+    <link rel="stylesheet" href="./assets/css/demo2.css">
+
+    <script type="module" src="./main.js"> </script>
+
 </head>
+
 
 <body>
 
-    <div id="capa" style="padding: 10px; background-color: #ff8800;">Pon el ratón encima de esta capa</div>
-    <br>
-    <div id="mensaje" style="display: none;">Has puesto el ratón encima!! <br>(Ahora quítalo de la capa)</div>
+    <div class="layout">
 
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
-        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <header class="layout__header">
+            <img class="header__logo-jquery" src="../../../assets/favicon/jquery-favicon-original.ico" alt="Logo jQuery">
+            <h1 class="header__title"> Demo 2 - Mostrar un elemento con jQuery </h1>
+            <img class="header__logo-jquery" src="../../../assets/favicon/jquery-favicon-original.ico" alt="Logo jQuery">
+        </header>
 
-    <script>
-        $("#capa").mouseenter(function (evento) {
-            $("#mensaje").css("display", "block");
-        });
-        $("#capa").mouseleave(function (evento) {
-            $("#mensaje").css("display", "none");
-        });
-    </script>
+        <main class="layout__main">
+
+            <section class="main__demo2 background-main">
+
+                <div id="capa"> Pon el ratón encima de esta capa </div>
+                
+                <div id="mensaje"> 
+                    Has puesto el ratón encima!! 
+                    <br> (Ahora quítalo de la capa)
+                </div>
+                
+            </section>
+           
+        </main>
+
+    </div>
+   
+   
 </body>
 
 </html>

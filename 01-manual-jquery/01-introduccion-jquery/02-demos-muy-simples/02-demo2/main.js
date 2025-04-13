@@ -1,16 +1,17 @@
 /*
-    -------------------------------------------------------
-    ----------  /curso-jquery-escuela-it.com/  ------------
-    ----------  /12-eventos-de-teclado-y-raton/  ----------
-    ----------  /01-seguir-movimiento-raton/  -------------
-    ----------  /main.js  ---------------------------------
-    -------------------------------------------------------
+    -----------------------------------------------------
+    ----------  /06-jquery-desarrolloweb.com/  ----------
+    ----------  /01-manual-jquery/  ---------------------
+    ----------  /01-introduccion-jquery/  ---------------
+    ----------  /02-demos-muy-simples/  -----------------
+    ----------  /02-demo2/  -----------------------------
+    ----------  /main.js  -------------------------------
+    -----------------------------------------------------
 */
 
 
-import { loadJQueryByCdnOLocal } from "../../assets/plugins/load-jquery-by-cdn-local.js";
-import { seguirMovimientoRaton } from "./assets/js/seguir-movimiento-raton.js";
-
+import { loadJQueryByCdnOLocal } from "../../../assets/plugins/load-jquery-by-cdn-local.js";
+import { demo2 } from "./assets/js/demo2.js";
 
 
 //  ----------  Carga de jQuery  ----------
@@ -20,10 +21,10 @@ const jQueryConfig = {
     integrityCdnJQuery: "sha256-spTpc4lvj4dOkKjrGokIrHkJgNA0xMS98Pw9N7ir9oI=",
     crossOriginCdnJQuery: "anonymous",
     referrePolicyCdnJQuery: "no-referrer",
-    srcLocalJQuery: "../../assets/jquery/core/jquery-1.11.1.min.js",
+    srcLocalJQuery: "../../../assets/jquery/core/jquery-3.7.1.min.js",
 }
 
-const scriptMain = seguirMovimientoRaton;
+const scriptMain = demo2;
 
 
 //  -----  Ejecutamos las Promesa  -----
