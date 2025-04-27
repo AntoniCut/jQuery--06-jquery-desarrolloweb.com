@@ -1,0 +1,42 @@
+/*
+    ------------------------------------------------------------------
+    ----------  /06-jquery-desarrolloweb.com/  -----------------------
+    ----------  /01-manual-jquery/  ----------------------------------
+    ----------  /src/styles/  ----------------------------------------
+    ----------  /02-primeros-pasos-jquery-por-la-practica/  ----------
+    ----------  /01-pasos-jquery-en-web.css  -------------------------
+    ------------------------------------------------------------------
+*/
+
+
+.layout__main {
+    margin-top: 15rem;
+    margin-bottom: 5rem;
+}
+
+.main__pasos-jquery-en-web {
+    max-width: 160rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 3rem;
+    border-radius: 0.5rem;
+}
+
+a {
+    padding: 2rem;
+    color: #fff;
+    background-color: rgb(147, 182, 248);
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+    border-radius: 5px;
+}
+
+a:hover {
+    padding: 2rem;
+    color: #fff;
+    background-color: rgb(32, 74, 153);
+    cursor: pointer;
+}

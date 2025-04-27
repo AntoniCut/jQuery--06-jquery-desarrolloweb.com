@@ -1,0 +1,48 @@
+/*
+    ------------------------------------------------------------------
+    ----------  /06-jquery-desarrolloweb.com/  -----------------------
+    ----------  /01-manual-jquery/  ----------------------------------
+    ----------  /src/styles/  ----------------------------------------
+    ----------  /02-primeros-pasos-jquery-por-la-practica/  ----------
+    ----------  /03-mostrar-ocultar-elementos.css  -------------------
+    ------------------------------------------------------------------
+*/
+
+
+.layout__main {
+    margin-top: 15rem;
+    margin-bottom: 5rem;
+}
+
+.layout__title {
+    font-size: 2.4rem;
+}
+
+.main__mostrar-ocultar-elementos {
+    max-width: 102.4rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 3rem;
+    border-radius: 0.5rem;
+}
+
+form {
+    width: 300px;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem;
+    border-radius: 0.5rem;
+    background-color:rgb(217, 240, 193);
+}
+
+.form__control {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
