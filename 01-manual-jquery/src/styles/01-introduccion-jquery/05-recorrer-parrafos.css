@@ -19,10 +19,17 @@
     border-radius: 0.5rem;
 }
 
-
-#capa {
-    padding: 2rem; 
+p {
+    border-radius: 1rem;
+    padding: 1rem;
     color: #fff;
-    background-color: #ff8800;
-    text-align: center;
+    background-color: #ddd;
+}
+
+.rojo {
+    background-color: red;
+}
+
+.azul {
+    background-color: blue;
 }

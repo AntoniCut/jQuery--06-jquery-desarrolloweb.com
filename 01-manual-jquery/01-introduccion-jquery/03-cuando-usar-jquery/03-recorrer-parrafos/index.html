@@ -1,11 +1,13 @@
-<!--  ------------------------------------------------------------------  -->
-<!--  ----------  /jquery-desarrolloweb.com/  --------------------------  -->
-<!--  ----------      /01-manual-jquery/  ------------------------------  -->
-<!--  ----------          /01-introduccion-jquery/  --------------------  -->
-<!--  ----------              /03-cuando-usar-jquery/  -----------------  -->
-<!--  ----------                  /05-recorrer-parrafos.html  ----------  -->
-<!--  ------------------------------------------------------------------  -->
-
+<!--  
+    -----------------------------------------------------
+    ----------  /06-jquery-desarrolloweb.com/  ----------
+    ----------  /01-manual-jquery/  ---------------------
+    ----------  /01-introduccion-jquery/  ---------------
+    ----------  /03-cuando-usar-jquery/  ----------------
+    ----------  /03-recorrer-parrafos/  -----------------
+    ----------  /index.html  ----------------------------
+    -----------------------------------------------------
+-->
 
 
 <!DOCTYPE html>
@@ -13,48 +15,63 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
-    <title> 5 - Recorrer párrafos </title>
-    
-    <style>
-        
-        p {
-            border-radius: 1rem;
-            padding: 1rem;
-            color: #fff;
-            background-color: #ddd;
-        }
+    <link rel="shortcut icon" href="/06-jquery-desarrolloweb.com/01-manual-jquery/src/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> Recorrer Párrafos - 1. Manual jQuery - 1. Introducción jQuery </title>
 
-        .rojo {
-            background-color: red;
-        }
+    <link rel="stylesheet" href="/06-jquery-desarrolloweb.com/01-manual-jquery/src/styles/reset.css">
+    <link rel="stylesheet" href="/06-jquery-desarrolloweb.com/01-manual-jquery/src/styles/layout.css">
+    <link rel="stylesheet" href="/06-jquery-desarrolloweb.com/01-manual-jquery/src/styles/01-introduccion-jquery/05-recorrer-parrafos.css">
 
-        .azul {
-            background-color: blue;
-        }
-
-    </style>
+    <script type="module" src="/06-jquery-desarrolloweb.com/01-manual-jquery/01-introduccion-jquery/03-cuando-usar-jquery/03-recorrer-parrafos//main.js"> </script>
 
 </head>
 
 
 <body>
 
-    <p> item 1 </p>
-    <p> item 2 </p>
-    <p> item 3 </p>
+    <div class="layout">
 
-    <button id="rojo"> Rojo </button>
-    <button id="azul"> Azul </button>
+        <header class="layout__header">
+            <img class="header__logo-jquery" src="/06-jquery-desarrolloweb.com/01-manual-jquery/src/favicon/jquery-favicon-original.ico" alt="Logo jQuery">
+            <h1 class="header__title"> Recorrer Párrafos - Introducción jQuery </h1>
+            <img class="header__logo-jquery" src="/06-jquery-desarrolloweb.com/01-manual-jquery/src/favicon/jquery-favicon-original.ico" alt="Logo jQuery">
+        </header>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"> </script>
+        <main class="layout__main">
 
-    <script>
-        
-        
+            <section class="main__recorrer-parrafos main__background">
 
-    </script>
+                <p> item 1 </p>
+                <p> item 2 </p>
+                <p> item 3 </p>
+
+                <div class="btn__container">
+                    <button id="rojo"> Rojo </button>
+                    <button id="azul"> Azul </button>
+                </div>
+                
+            </section>
+           
+        </main>
+
+
+        <footer class="layout__footer">
+            
+            <header class="footer__header">
+                <img class="footer__logo-jquery" src="/06-jquery-desarrolloweb.com/01-manual-jquery/src/img/logo-jquery/jquery-logo-ico-original.ico" alt="Logo jQuery">
+                <h3 class="footer__title"> 1. Manual de jQuery - desarrolloweb.com </h3>
+                <img class="footer__logo-jquery" src="/06-jquery-desarrolloweb.com/01-manual-jquery/src/img/logo-jquery-ui/jquery-ui-icon.svg" alt="Logo jQuery UI">
+            </header>
+            
+            <div class="footer__separator"> </div>
+                        
+        </footer>
+
+    </div>
+   
+   
 </body>
 
 </html>

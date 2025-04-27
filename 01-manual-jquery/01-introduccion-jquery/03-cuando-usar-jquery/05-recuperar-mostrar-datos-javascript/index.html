@@ -1,10 +1,13 @@
-<!--  -----------------------------------------------------------------------------------  -->
-<!--  ----------  /jquery-desarrolloweb.com/  -------------------------------------------  -->
-<!--  ----------      /01-manual-jquery/  -----------------------------------------------  -->
-<!--  ----------          /01-introduccion-jquery/  -------------------------------------  -->
-<!--  ----------              /03-cuando-usar-jquery/  ----------------------------------  -->
-<!--  ----------                  /07-recuperar-mostrar-datos-javascript.html  ----------  -->
-<!--  -----------------------------------------------------------------------------------  -->
+<!--  
+    ---------------------------------------------------------------
+    ----------  /06-jquery-desarrolloweb.com/  --------------------
+    ----------  /01-manual-jquery/  -------------------------------
+    ----------  /01-introduccion-jquery/  -------------------------
+    ----------  /03-cuando-usar-jquery/  --------------------------
+    ----------  /05-recuperar-mostrar-datos-javascript/  ----------
+    ----------  /index.html  --------------------------------------
+    ---------------------------------------------------------------
+-->
 
 
 <!DOCTYPE html>
@@ -12,71 +15,62 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../../assets/favicon/jquery-favicon-original.ico" type="image/x-icon">
-    <title> 7 - Recuperar datos y mostrarlos - JS </title>
-    
-    <style>
-        
-        section {
-            padding: 1rem;
-            background-color: beige;
-            margin-bottom: 1rem;
-        }
+    <link rel="shortcut icon" href="/06-jquery-desarrolloweb.com/01-manual-jquery/src/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> Recuperar Mostrar Datos JavaScript - 1. Manual jQuery - 1. Introducción jQuery </title>
 
-    </style>
+    <link rel="stylesheet" href="/06-jquery-desarrolloweb.com/01-manual-jquery/src/styles/reset.css">
+    <link rel="stylesheet" href="/06-jquery-desarrolloweb.com/01-manual-jquery/src/styles/layout.css">
+    <link rel="stylesheet" href="/06-jquery-desarrolloweb.com/01-manual-jquery/src/styles/01-introduccion-jquery/07-recuperar-mostrar-datos-javascript.css">
+
+    <script type="module" src="/06-jquery-desarrolloweb.com/01-manual-jquery/01-introduccion-jquery/03-cuando-usar-jquery/05-recuperar-mostrar-datos-javascript/main.js"> </script>
 
 </head>
 
 
 <body>
-    
-    <button id="load"> load </button>
 
-    <script>
-        
-        function ready(fn) {
-            if (document.readyState !== 'loading') fn();
-            else document.addEventListener('DOMContentLoaded', fn);
+    <div class="layout">
+
+        <header class="layout__header">
+            <img class="header__logo-jquery" src="/06-jquery-desarrolloweb.com/01-manual-jquery/src/favicon/jquery-favicon-original.ico" alt="Logo jQuery">
+            <h1 class="header__title"> Recuperar Mostrar Datos JavaScript - Introducción jQuery </h1>
+            <img class="header__logo-jquery" src="/06-jquery-desarrolloweb.com/01-manual-jquery/src/favicon/jquery-favicon-original.ico" alt="Logo jQuery">
+        </header>
+
+        <main class="layout__main">
+
+            <section class="main__recuperar-mostrar-datos-javascript main__background">
+
+                <div class="btn__container">
+                    <button id="load"> load </button>
+                </div>
+                                                
+                <!--  Insertar aqui el contenido  -----  -->
+                  <div id="info"> </div>
+
+
+            </section>
+           
+        </main>
+
+
+        <footer class="layout__footer">
             
-        }
-
-
-        ready(function () {
+            <header class="footer__header">
+                <img class="footer__logo-jquery" src="/06-jquery-desarrolloweb.com/01-manual-jquery/src/img/logo-jquery/jquery-logo-ico-original.ico" alt="Logo jQuery">
+                <h3 class="footer__title"> 1. Manual de jQuery - desarrolloweb.com </h3>
+                <img class="footer__logo-jquery" src="/06-jquery-desarrolloweb.com/01-manual-jquery/src/img/logo-jquery-ui/jquery-ui-icon.svg" alt="Logo jQuery UI">
+            </header>
             
-            document.getElementById('load').addEventListener('click', function () {
-                
-                fetch('https://jsonplaceholder.typicode.com/todos')
-                    .then(response => response.json())
-                    .then(data => showElements(data))
-            });
-        });
+            <div class="footer__separator"> </div>
+                        
+        </footer>
 
-
-        function generateElements(html) {
-            
-            const template = document.createElement('template');
-            template.innerHTML = html.trim();
-            
-            return template.content.children;
-        }
-
-        function showElements(data) {
-            
-            data.forEach(element => {
-                
-                console.log(element);
-                let html = generateElements(`<section><h1>${element.title}</h1><p>Usuario: ${element.userId}</p></section>`);
-                console.log(html);
-                
-                Array.from(html).forEach(element => {
-                    document.body.appendChild(element);
-                });
-            });
-        }
-
-    </script>
-    
+    </div>
+   
+   
 </body>
 
 </html>

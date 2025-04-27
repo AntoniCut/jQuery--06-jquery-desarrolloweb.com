@@ -17,6 +17,7 @@
 
 
     const $load = $("#load");
+    const $info = $("#info");
 
     $load.on('click', () => $.getJSON('https://jsonplaceholder.typicode.com/todos/', showTodos));
 
@@ -24,8 +25,17 @@
     function showTodos(data) {
 
         data.forEach(element => {
-            let html = $(`<section> <h1> ${element.title} </h1> <p> Usuario: ${element.userId} </p> </section>`);
-            $(document.body).append(html);
+            
+            let html = $(`
+                
+                <section> 
+                    <h3> ${element.title} </h3> 
+                    <p> Usuario: ${element.userId} </p> 
+                </section>
+                
+            `);
+
+            $info.append(html);
         })
     }
 
