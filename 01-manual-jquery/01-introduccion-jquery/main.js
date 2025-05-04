@@ -1,12 +1,10 @@
 /*
-    ---------------------------------------------------------------
-    ----------  /06-jquery-desarrolloweb.com/  --------------------
-    ----------  /01-manual-jquery/  -------------------------------
-    ----------  /01-introduccion-jquery/  -------------------------
-    ----------  /03-cuando-usar-jquery/  --------------------------
-    ----------  /04-acceso-api/  ----------------------------------
-    ----------  /main.js  -----------------------------------------
-    ---------------------------------------------------------------
+    -----------------------------------------------------
+    ----------  /06-jquery-desarrolloweb.com/  ----------
+    ----------  /01-manual-jquery/  ---------------------
+    ----------  /01-introduccion-jquery/  ---------------
+    ----------  /main.js  -------------------------------
+    -----------------------------------------------------
 */
 
 
@@ -17,7 +15,7 @@ import { loadJQueryByCdnOLocal } from "/06-jquery-desarrolloweb.com/01-manual-jq
 const cdnJQuery = cdnJQuery_3_6_3;
 const localJQuery = "/06-jquery-desarrolloweb.com/01-manual-jquery/src/libs/jquery/local/jquery-3.7.1.min.js";
 
-const scriptUrl = "/06-jquery-desarrolloweb.com/01-manual-jquery/src/scripts/01-introduccion-jquery/06-acceso-api.js";
+const scriptUrl = "/06-jquery-desarrolloweb.com/01-manual-jquery/src/scripts/01-introduccion-jquery/introduccion-jquery.js";
 
 
 //  ------------------------------------------------------------------------------------
