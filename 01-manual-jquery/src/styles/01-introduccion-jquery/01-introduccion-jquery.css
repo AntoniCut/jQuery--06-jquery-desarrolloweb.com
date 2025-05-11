@@ -1,0 +1,34 @@
+/*
+    -----------------------------------------------------
+    ----------  /06-jquery-desarrolloweb.com/  ----------
+    ----------  /01-manual-jquery/  ---------------------
+    ----------  /src/styles/  ---------------------------
+    ----------  /01-introduccion-jquery/  ---------------
+    ----------  /01-introduccion-jquery.css/  -----------
+    -----------------------------------------------------
+*/
+
+
+/*
+    ----------------------------------------------
+    ----------  1. Introducción jQuery  ----------
+    ----------------------------------------------
+*/
+
+.main__introduccion {
+    max-width: 102.4rem;
+    width: 100%;
+    min-height: 46rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem;
+    border-radius: 0.5rem;
+}
+
+#capa {
+    padding: 2rem; 
+    color: #fff;
+    background-color: #ff8800;
+    text-align: center;
+}

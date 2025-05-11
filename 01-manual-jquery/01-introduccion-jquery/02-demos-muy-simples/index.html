@@ -1,0 +1,109 @@
+<!--  
+    -----------------------------------------------------
+    ----------  /06-jquery-desarrolloweb.com/  ----------
+    ----------  /01-manual-jquery/  ---------------------
+    ----------  /01-introduccion-jquery/  ---------------
+    ----------  /02-demos-muy-simples/  -----------------
+    ----------  /index.html  ----------------------------
+    -----------------------------------------------------
+-->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/06-jquery-desarrolloweb.com/01-manual-jquery/src/favicon/jquery-favicon-original.ico" type="image/x-icon">
+    <title> Demos muy simples - Manual de jQuery </title>
+
+    <link rel="stylesheet" href="/06-jquery-desarrolloweb.com/01-manual-jquery/src/styles/reset.css">
+    <link rel="stylesheet" href="/06-jquery-desarrolloweb.com/01-manual-jquery/src/styles/layout.css">
+    <link rel="stylesheet" href="/06-jquery-desarrolloweb.com/01-manual-jquery/src/styles/01-introduccion-jquery/02-demos-muy-simples.css">
+
+    <script type="module" src="/06-jquery-desarrolloweb.com/01-manual-jquery/01-introduccion-jquery/02-demos-muy-simples/main.js"> </script>
+
+</head>
+
+
+<body>
+
+    <div class="layout">
+
+        <header class="layout__header">
+            <img class="header__logo-jquery" src="/06-jquery-desarrolloweb.com/01-manual-jquery/src/img/logo-jquery/jquery-logo-ico-original.ico" alt="Logo jQuery">
+            <h1 class="header__title"> 
+                1. Introducción jQuery
+                <br>
+                Demos muy simples
+            </h1>
+            <img class="header__logo-jquery" src="/06-jquery-desarrolloweb.com/01-manual-jquery/src/img/logo-jquery-ui/jquery-ui-icon.svg" alt="Logo jQuery">
+        </header>
+
+        <main class="layout__main">
+
+            <!--  
+                --------------------------------
+                ----------  1. demo1  ----------
+                --------------------------------  
+            -->
+            <section class="main__demo1 main__background">
+
+                <header class="main__header">
+                    <h2 class="main__title"> Demo 1  </h2>
+                </header>
+
+                <div id="capa1"> Haz clic en un botón </div>
+
+                <div class="btn__container">
+                    <input type="button" value="Botón A" onclick="$('#capa1').html('Has hecho clic en el botón <b> A </b>')">
+                    <input type="button" value="Botón B" onclick="$('#capa1').html('Recibido un clic en el botón <b> B </b>')">
+                </div>
+
+            </section>
+
+
+            <!--  
+                --------------------------------
+                ----------  2. demo2  ----------
+                --------------------------------  
+            -->
+            <section class="main__demo2 main__background">
+
+                <header class="main__header">
+                    <h2 class="main__title"> Demo 2  </h2>
+                </header>
+
+                <div id="capa2"> Pon el ratón encima de esta capa </div>
+                
+                <div id="mensaje2"> 
+                    Has puesto el ratón encima!! 
+                    <br> (Ahora quítalo de la capa)
+                </div>
+                
+            </section>
+
+           
+        </main>
+
+
+        <footer class="layout__footer">
+            
+            <header class="footer__header">
+                <img class="footer__logo-jquery" src="/06-jquery-desarrolloweb.com/01-manual-jquery/src/img/logo-jquery/jquery-logo-ico-original.ico" alt="Logo jQuery">
+                <h3 class="footer__title"> 1. Manual de jQuery - desarrolloweb.com </h3>
+                <img class="footer__logo-jquery" src="/06-jquery-desarrolloweb.com/01-manual-jquery/src/img/logo-jquery-ui/jquery-ui-icon.svg" alt="Logo jQuery UI">
+            </header>
+            
+            <div class="footer__separator"> </div>
+                        
+        </footer>
+
+    </div>
+   
+   
+</body>
+
+</html>

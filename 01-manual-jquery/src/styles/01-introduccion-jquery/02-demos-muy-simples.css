@@ -1,0 +1,69 @@
+/*
+    -----------------------------------------------------
+    ----------  /06-jquery-desarrolloweb.com/  ----------
+    ----------  /01-manual-jquery/  ---------------------
+    ----------  /src/styles/  ---------------------------
+    ----------  /01-introduccion-jquery/  ---------------
+    ----------  /02-demos-muy-simples.css/  -------------
+    -----------------------------------------------------
+*/
+
+
+/*
+    --------------------------------
+    ----------  1. demo1  ----------
+    --------------------------------
+*/
+
+.main__demo1 {
+    max-width: 102.4rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem;
+    border-radius: 0.5rem;
+}
+
+#capa1 {
+    padding: 2rem; 
+    color: #fff;
+    background-color: #ff8800;
+    text-align: center;
+}
+
+
+
+/*
+    --------------------------------
+    ----------  2. demo2  ----------
+    --------------------------------
+*/
+
+.main__demo2 {
+    max-width: 102.4rem;
+    width: 100%;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem;
+    border-radius: 0.5rem;
+}
+
+#capa2 {
+    padding: 2rem; 
+    color: #fff;
+    background-color: #ff8800;
+    font-weight: bold;
+    text-align: center;
+}
+
+#mensaje2 {
+    display: none;
+    padding: 2rem;
+    color: #fff;
+    background-color: #8cc3e2;
+    font-weight: bold;
+    text-align: center;
+}
