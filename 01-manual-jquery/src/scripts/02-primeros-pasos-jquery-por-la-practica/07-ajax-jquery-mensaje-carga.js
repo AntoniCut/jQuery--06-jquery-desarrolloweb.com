@@ -27,9 +27,9 @@
         $cargando.css("display", "inline");
         
         $destino.load(
-            "pagina-lenta.php", 
+            "/06-jquery-desarrolloweb.com/01-manual-jquery/src/services/02-primeros-pasos-jquery-por-la-practica/pagina-lenta.php", 
             function () {
-                $("#cargando").css("display", "none");
+                $cargando.css("display", "none");
             }
         );
 

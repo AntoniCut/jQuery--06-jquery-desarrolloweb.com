@@ -16,7 +16,7 @@
     console.warn('----------  01-pasos-jquery-en-web.js  ----------');
 
 
-    const $a = S("a");
+    const $a = $("a");
 
     $a.on('click', function (evento) {
         

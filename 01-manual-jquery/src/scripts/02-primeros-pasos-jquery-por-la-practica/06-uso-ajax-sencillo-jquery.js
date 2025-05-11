@@ -29,7 +29,7 @@
         evento.preventDefault();
 
         //  -----  Aquí pondría el código de la llamada a Ajax  -----
-        $destinoAjax.load("contenido-ajax.html");
+        $destinoAjax.load("/06-jquery-desarrolloweb.com/01-manual-jquery/src/services/02-primeros-pasos-jquery-por-la-practica/contenido-ajax.html");
 
     });
 
@@ -41,7 +41,7 @@
 
         //  -----  Aquí pondría el código de la llamada a Ajax  -----
         $destinoAjaxPhp.load(
-            "recibe-parametros.php", 
+            "/06-jquery-desarrolloweb.com/01-manual-jquery/src/services/02-primeros-pasos-jquery-por-la-practica/recibe-parametros.php", 
             { 
                 nombre: "Pepe", 
                 edad: 45 

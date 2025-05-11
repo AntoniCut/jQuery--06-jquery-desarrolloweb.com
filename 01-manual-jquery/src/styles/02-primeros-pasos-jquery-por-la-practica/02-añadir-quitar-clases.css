@@ -9,19 +9,25 @@
 */
 
 
-.layout__main {
-    margin-top: 15rem;
-    margin-bottom: 5rem;
-}
-
 .main__añadir-quitar-clases {
     max-width: 102.4rem;
     width: 100%;
+    min-height: 46rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 2rem;
     padding: 3rem;
     border-radius: 0.5rem;
+}
+
+#capa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ff8800;
+    height: 6rem;
 }
 
 a {
@@ -41,6 +47,9 @@ a:hover {
 }
 
 .clasecss {
+    color: white !important;
     background-color: #ff8800;
     font-weight: bold;
+    border-radius: 5px;
+    padding: 2rem;
 }
