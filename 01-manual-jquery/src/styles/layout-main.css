@@ -15,7 +15,7 @@
     flex-direction: column;
     align-items: center;
     gap: 5rem;
-    margin-top: 20rem;
+    margin-top: 15rem;
     margin-bottom: 5rem;
 }
 
@@ -26,7 +26,22 @@
 
 .main__header {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
     text-align: center;
+}
+
+.main__banner {
+    max-width: 102.4rem;
+    width: 100%;
+    padding: 5rem;
+}
+
+.banner__img {
+    width: 100%;
+    height: auto;
 }
 
 .main__title {
