@@ -4,7 +4,7 @@
     ----------  /01-manual-jquery/  ---------------------
     ----------  /src/styles/  ---------------------------
     ----------  /01-introduccion-jquery/  ---------------
-    ----------  /01-introduccion-jquery.css/  -----------
+    ----------  /01-introduccion-jquery.css  ------------
     -----------------------------------------------------
 */
 
@@ -32,4 +32,23 @@
     color: #fff;
     background-color: #ff8800;
     text-align: center;
+}
+
+
+/*  -----  Responsive  -----  */
+
+@media (max-width: 1024px) {
+    
+    .main__introduccion {
+        padding: 2rem;
+        padding-top: 5rem;
+    }
+}
+
+@media (max-width: 568px) {
+    
+    .main__introduccion {
+        padding: 1rem;
+        padding-top: 3rem;
+    }
 }

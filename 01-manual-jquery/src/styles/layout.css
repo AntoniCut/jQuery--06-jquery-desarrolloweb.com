@@ -9,6 +9,7 @@
 
 
 @import '/06-jquery-desarrolloweb.com/01-manual-jquery/src/styles/layout-header.css';
+@import '/06-jquery-desarrolloweb.com/01-manual-jquery/src/styles/layout-navbar.css';
 @import '/06-jquery-desarrolloweb.com/01-manual-jquery/src/styles/layout-main.css';
 @import '/06-jquery-desarrolloweb.com/01-manual-jquery/src/styles/layout-footer.css';
 
@@ -59,5 +60,3 @@ button:hover,
 input[type="button"]:hover {
     background-color: rgb(24, 56, 116)
 }
-
-/* background-color: rgb(230, 235, 241); */

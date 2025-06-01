@@ -171,16 +171,17 @@
     background-color: #C8D5EC;
 }
 
-section {
+
+.data {
     padding: 2rem;
     background-color: beige;
     margin-bottom: 1rem;
 }
 
-section h3 {
+.data h3 {
     font-size: 1.4rem;
 }
 
-section p {
+.data p {
     font-size: 1.2rem;
 }

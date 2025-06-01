@@ -223,10 +223,12 @@
             console.log(element);
 
             const html = generateElements(`
-                <section> 
+                
+                <section class="data"> 
                     <h3>${element.title}</h3>
                     <p>Usuario: ${element.userId}</p>
                 </section>
+
             `);
 
             Array.from(html).forEach(element => {
@@ -256,7 +258,7 @@
 
             let html = $(`
                 
-                <section> 
+                <section class="data"> 
                     <h3> ${element.title} </h3> 
                     <p> Usuario: ${element.userId} </p> 
                 </section>

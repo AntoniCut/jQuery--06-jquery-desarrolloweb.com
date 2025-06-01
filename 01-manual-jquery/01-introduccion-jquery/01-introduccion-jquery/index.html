@@ -17,7 +17,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/06-jquery-desarrolloweb.com/01-manual-jquery/src/favicon/jquery-favicon-original.ico" type="image/x-icon">
-    <title> Introducción a jQuery - Manual de jQuery </title>
+    <title> 1. Introducción a jQuery - 1. Manual de jQuery </title>
 
     <link rel="stylesheet" href="/06-jquery-desarrolloweb.com/01-manual-jquery/src/styles/reset.css">
     <link rel="stylesheet" href="/06-jquery-desarrolloweb.com/01-manual-jquery/src/styles/layout.css">
@@ -30,31 +30,35 @@
 
 <body>
 
+
+    <!--  ----------  LAYOUT  ----------  -->
     <div class="layout">
 
-        <header class="layout__header">
-            <img class="header__logo-jquery" src="/06-jquery-desarrolloweb.com/01-manual-jquery/src/img/logo-jquery/jquery-logo-ico-original.ico" alt="Logo jQuery">
-            <h1 class="header__title"> 
-                1. Introducción jQuery
-                <br>
-                Introduccion a jQuery
-            </h1>
-            <img class="header__logo-jquery" src="/06-jquery-desarrolloweb.com/01-manual-jquery/src/img/logo-jquery-ui/jquery-ui-icon.svg" alt="Logo jQuery">
-        </header>
 
+        <!--  ----------  HEADER  ----------  -->
+        <div class="header__container" id="layoutHeader"> </div>
+        
+
+        <!--  ----------  NAVBAR  ----------  -->
+        <div class="navbar__container" id="layoutNavbar"> </div>
+            
+
+        <!--  ----------  MAIN  ----------  -->
         <main class="layout__main">
 
             
-            <!--  ------------------------------  -->
-            <!--  ----------  Banner  ----------  -->
-            <!--  ------------------------------  -->
+             <!--  
+                ------------------------------
+                ----------  Banner  ----------
+                ------------------------------  
+            -->
             <section class="main__banner main__background">
 
                 <img 
-                src="/06-jquery-desarrolloweb.com//01-manual-jquery/src/img/01-introduccion-jquery/img-01-introduccion.webp"
-                class="banner__img"
-                alt="Introducción jQuery" 
-                title="Introducción jQuery"
+                    src="/06-jquery-desarrolloweb.com//01-manual-jquery/src/img/01-introduccion-jquery/img-01-introduccion.webp"
+                    class="banner__img"
+                    alt="Introducción jQuery" 
+                    title="Introducción jQuery"
             >
 
             </section>
@@ -82,17 +86,8 @@
         </main>
 
 
-        <footer class="layout__footer">
-            
-            <header class="footer__header">
-                <img class="footer__logo-jquery" src="/06-jquery-desarrolloweb.com/01-manual-jquery/src/img/logo-jquery/jquery-logo-ico-original.ico" alt="Logo jQuery">
-                <h3 class="footer__title"> 1. Manual de jQuery - desarrolloweb.com </h3>
-                <img class="footer__logo-jquery" src="/06-jquery-desarrolloweb.com/01-manual-jquery/src/img/logo-jquery-ui/jquery-ui-icon.svg" alt="Logo jQuery UI">
-            </header>
-            
-            <div class="footer__separator"> </div>
-                        
-        </footer>
+        <!--  ----------  FOOTER  ----------  -->
+        <div class="footer__container" id="layoutFooter"> </div>
 
     </div>
    
