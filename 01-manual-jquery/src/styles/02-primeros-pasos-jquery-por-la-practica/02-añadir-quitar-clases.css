@@ -9,19 +9,6 @@
 */
 
 
-.main__añadir-quitar-clases {
-    max-width: 102.4rem;
-    width: 100%;
-    min-height: 46rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    padding: 3rem;
-    border-radius: 0.5rem;
-}
-
 #capa {
     display: flex;
     justify-content: center;
@@ -30,7 +17,7 @@
     height: 6rem;
 }
 
-a {
+#enlace {
     padding: 2rem;
     color: #fff;
     background-color: rgb(147, 182, 248);
@@ -39,7 +26,7 @@ a {
     border-radius: 5px;
 }
 
-a:hover {
+#enlace:hover {
     padding: 2rem;
     color: #fff;
     background-color: rgb(32, 74, 153);

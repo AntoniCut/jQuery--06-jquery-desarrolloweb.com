@@ -40,6 +40,7 @@ loadJQueryByCdnOLocal(cdnJQuery, localJQuery)
         //  -----  cargamos el script que carga los componentes de la layout y el script principal del proyecto  -----
         loadComponentsLayout(headerTitle);
         loadScript(scriptUrl);
+        
     })
 
     .catch(err => console.error("Error al cargar jQuery:", err));

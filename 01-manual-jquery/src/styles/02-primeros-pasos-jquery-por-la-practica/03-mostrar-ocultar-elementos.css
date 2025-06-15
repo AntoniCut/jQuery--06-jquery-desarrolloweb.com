@@ -9,22 +9,6 @@
 */
 
 
-.layout__title {
-    font-size: 2.4rem;
-}
-
-.main__mostrar-ocultar-elementos {
-    max-width: 102.4rem;
-    width: 100%;
-    min-height: 46rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    padding: 3rem;
-    border-radius: 0.5rem;
-}
 
 form {
     width: 300px;

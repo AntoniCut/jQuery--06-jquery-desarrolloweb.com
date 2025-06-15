@@ -11,11 +11,15 @@
 
 import { cdnJQuery_3_6_3 } from "/06-jquery-desarrolloweb.com/01-manual-jquery/src/libs/jquery/cdn/cdn-jquery-3.6.3.js";
 import { loadJQueryByCdnOLocal } from "/06-jquery-desarrolloweb.com/01-manual-jquery/src/libs/jquery/load/load-jquery-by-cdn-local.js";
+import { loadComponentsLayout } from "/06-jquery-desarrolloweb.com/01-manual-jquery/src/scripts/load-components-layout.js";
 
 
+//  -----  scripts libs jQuery  -----
 const cdnJQuery = cdnJQuery_3_6_3;
 const localJQuery = "/06-jquery-desarrolloweb.com/01-manual-jquery/src/libs/jquery/local/jquery-3.7.1.min.js";
 
+//  -----  declarar el tilulo del header, url script del proyecto  -----
+const headerTitle = 'Sección 2. Primeros pasos jQuery por la práctica <br> 4. Efectos rápidos';
 const scriptUrl = "/06-jquery-desarrolloweb.com/01-manual-jquery/src/scripts/02-primeros-pasos-jquery-por-la-practica/04-efectos-rapidos.js";
 
 
@@ -32,9 +36,10 @@ loadJQueryByCdnOLocal(cdnJQuery, localJQuery)
         console.log('\n');
         console.warn("jQuery cargado correctamente - Version:", $.fn.jquery);
 
-        //  -----  cargamos el script principal del proyecto  -----
-        //scriptMain($);
+        //  -----  cargamos el script que carga los componentes de la layout y el script principal del proyecto  -----
+        loadComponentsLayout(headerTitle);
         loadScript(scriptUrl);
+        
     })
 
     .catch(err => console.error("Error al cargar jQuery:", err));

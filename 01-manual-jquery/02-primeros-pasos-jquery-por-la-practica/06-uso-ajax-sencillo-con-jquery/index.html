@@ -30,65 +30,69 @@
 
 <body>
 
+    <!--  ----------  LAYOUT  ----------  -->
     <div class="layout">
 
-        <header class="layout__header">
-            <img class="header__logo-jquery" src="/06-jquery-desarrolloweb.com/01-manual-jquery/src/favicon/jquery-favicon-original.ico" alt="Logo jQuery">
-            <h1 class="header__title"> 
-                2. Primeros pasos jQuery por la práctica
-                <br>
-                Uso de AJAX sencillo con jQuery
-            </h1>
-            <img class="header__logo-jquery" src="/06-jquery-desarrolloweb.com/01-manual-jquery/src/favicon/jquery-favicon-original.ico" alt="Logo jQuery">
-        </header>
 
+        <!--  ----------  HEADER  ----------  -->
+        <div class="header__container" id="layoutHeader"> </div>
+        
+
+        <!--  ----------  NAVBAR  ----------  -->
+        <div class="navbar__container" id="layoutNavbar"> </div>
+            
+
+        <!--  ----------  MAIN  ----------  -->
         <main class="layout__main">
 
 
+            <!--  
+                ------------------------------
+                ----------  Banner  ----------
+                ------------------------------  
+            -->
+            <section class="main__section">
 
-            <!--  ------------------------------  -->
-            <!--  ----------  Banner  ----------  -->
-            <!--  ------------------------------  -->
-            <section class="main__banner main__background">
+                <h2 class="main__title"> 
+                    Seccion 2 - Primeros pasos jQuery por la práctica
+                    <br> 
+                    6 - Uso de AJAX sencillo con jQuery
+                </h2>
 
                 <img 
                     src="/06-jquery-desarrolloweb.com//01-manual-jquery/src/img/02-primeros-pasos-jquery-por-la-practica/img-06-ajax-sencillo-jquery.webp"
                     class="banner__img"
-                    alt="Introducción jQuery" 
-                    title="Introducción jQuery"
+                    alt="AJAX sencillo con jQuery" 
+                    title="AJAX sencillo con jQuery"
             >
 
             </section>
 
 
-            <section class="main__uso-ajax-sencillo-jquery main__background">
+            <section class="main__section">
 
                 <div class="btn__container">
-                    <a href="#" id="enlaceAjax"> Haz clic! - Carga con AJAX </a>
-                    <a href="#" id="enlaceAjaxPhp"> Haz clic! - Carga con AJAX archivo PHP </a>
+                    <a href="#" id="enlaceAjax" class="enlace"> Haz clic! - Carga con AJAX </a>
+                    <a href="#" id="enlaceAjaxPhp" class="enlace"> Haz clic! - Carga con AJAX archivo PHP </a>
                 </div>
                     
                 <hr>
-                <div id="destinoAjax"> </div>
                 
-                <div id="destinoAjaxPhp"> </div>
+                <div class="section__salida">
+
+                    <div id="destinoAjax"> </div>
+                    <div id="destinoAjaxPhp"> </div>
+
+                </div>
+                                
 
             </section>
            
         </main>
 
 
-        <footer class="layout__footer">
-            
-            <header class="footer__header">
-                <img class="footer__logo-jquery" src="/06-jquery-desarrolloweb.com/01-manual-jquery/src/img/logo-jquery/jquery-logo-ico-original.ico" alt="Logo jQuery">
-                <h3 class="footer__title"> 1. Manual de jQuery - desarrolloweb.com </h3>
-                <img class="footer__logo-jquery" src="/06-jquery-desarrolloweb.com/01-manual-jquery/src/img/logo-jquery-ui/jquery-ui-icon.svg" alt="Logo jQuery UI">
-            </header>
-            
-            <div class="footer__separator"> </div>
-                        
-        </footer>
+        <!--  ----------  FOOTER  ----------  -->
+        <div class="footer__container" id="layoutFooter"> </div>
 
     </div>
    

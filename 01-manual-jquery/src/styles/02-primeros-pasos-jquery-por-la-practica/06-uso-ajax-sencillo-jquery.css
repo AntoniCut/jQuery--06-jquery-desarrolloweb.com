@@ -9,18 +9,19 @@
 */
 
 
-.main__uso-ajax-sencillo-jquery {
-    max-width: 160rem;
+.section__salida {
     width: 100%;
-    min-height: 70rem;
+    height: 70rem;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    padding: 3rem;
-    border-radius: 0.5rem;
+    align-items: center;
+    gap: 3rem;
+    padding: 2rem;
+    text-align: center;
+    background-color: #c8c8f1;
 }
 
-a {
+.enlace {
     padding: 1rem 2rem;
     color: #fff;
     background-color: rgb(147, 182, 248);
@@ -29,8 +30,12 @@ a {
     border-radius: 5px;
 }
 
-a:hover {
+.enlace:hover {
     color: #fff;
     background-color: rgb(32, 74, 153);
     cursor: pointer;
+}
+
+.contenido__ajax {
+    width: 100%;
 }

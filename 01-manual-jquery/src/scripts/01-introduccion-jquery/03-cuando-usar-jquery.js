@@ -140,7 +140,9 @@
                 <br>
                 <div class="dato">
                     <h3> ${json.title} </h3>
+                    <br>
                     <p> Usuario: ${json.userId} </p>
+                    <br>
                     <p> Completado: ${json.completed ? 'Sí' : 'No'} </p>
                 </div>
             `);
@@ -159,7 +161,9 @@
             <br>
             <div class="dato">
                 <h3> ${data.title} </h3>
+                <br>
                 <p> Usuario: ${data.userId} </p>
+                <br>
                 <p> Completado: ${data.completed ? 'Sí' : 'No'} </p>
             </div>
         `);

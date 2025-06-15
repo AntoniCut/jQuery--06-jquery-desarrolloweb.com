@@ -30,46 +30,56 @@
 
 <body>
 
+    <!--  ----------  LAYOUT  ----------  -->
     <div class="layout">
 
 
-        <header class="layout__header">
-            <img class="header__logo-jquery" src="/06-jquery-desarrolloweb.com/01-manual-jquery/src/favicon/jquery-favicon-original.ico" alt="Logo jQuery">
-            <h1 class="header__title"> 
-                2. Primeros Pasos jQuery con la Práctica 
-                <br>
-                Añadir y Quitar Clases
-            </h1>
-            <img class="header__logo-jquery" src="/06-jquery-desarrolloweb.com/01-manual-jquery/src/favicon/jquery-favicon-original.ico" alt="Logo jQuery">
-        </header>
+        <!--  ----------  HEADER  ----------  -->
+        <div class="header__container" id="layoutHeader"> </div>
+        
 
+        <!--  ----------  NAVBAR  ----------  -->
+        <div class="navbar__container" id="layoutNavbar"> </div>
+            
 
+        <!--  ----------  MAIN  ----------  -->
         <main class="layout__main">
 
 
-            <!--  ------------------------------  -->
-            <!--  ----------  Banner  ----------  -->
-            <!--  ------------------------------  -->
-            <section class="main__banner main__background">
+            <!--  
+                ------------------------------
+                ----------  Banner  ----------
+                ------------------------------  
+            -->
+            <section class="main__section">
+
+                <h2 class="main__title"> 
+                    Seccion 2 - Primeros pasos jQuery por la práctica
+                    <br> 
+                    2 - Añadir y quitar clases
+                </h2>
 
                 <img 
                     src="/06-jquery-desarrolloweb.com//01-manual-jquery/src/img/02-primeros-pasos-jquery-por-la-practica/img-02-clases-jquery.webp"
                     class="banner__img"
-                    alt="Introducción jQuery" 
-                    title="Introducción jQuery"
+                    alt="Añadir y quitar clases" 
+                    title="Añadir y quitar clases"
                 >
 
             </section>
 
 
-            <section class="main__añadir-quitar-clases main__background">
+            <section class="main__section">
 
                 <div id="capa">
                     Esta capa es independiente y voy a añadir y eliminar clases css sobre ella
                 </div>
                                 
                 <div class="btn__container">
-                    <a href="https://desarrolloweb.com"> Añadir y quitar clase en la capa de arriba </a>
+                    <a 
+                        id="enlace"
+                        href="https://desarrolloweb.com"
+                        > Añadir y quitar clase en la capa de arriba </a>
                 </div>
                 
             </section>
@@ -77,17 +87,8 @@
         </main>
 
 
-        <footer class="layout__footer">
-            
-            <header class="footer__header">
-                <img class="footer__logo-jquery" src="/06-jquery-desarrolloweb.com/01-manual-jquery/src/img/logo-jquery/jquery-logo-ico-original.ico" alt="Logo jQuery">
-                <h3 class="footer__title"> 1. Manual de jQuery - desarrolloweb.com </h3>
-                <img class="footer__logo-jquery" src="/06-jquery-desarrolloweb.com/01-manual-jquery/src/img/logo-jquery-ui/jquery-ui-icon.svg" alt="Logo jQuery UI">
-            </header>
-            
-            <div class="footer__separator"> </div>
-                        
-        </footer>
+        <!--  ----------  FOOTER  ----------  -->
+        <div class="footer__container" id="layoutFooter"> </div>
 
     </div>
    

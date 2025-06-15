@@ -30,41 +30,49 @@
 
 <body>
 
+    <!--  ----------  LAYOUT  ----------  -->
     <div class="layout">
 
-        <header class="layout__header">
-            <img class="header__logo-jquery" src="/06-jquery-desarrolloweb.com/01-manual-jquery/src/favicon/jquery-favicon-original.ico" alt="Logo jQuery">
-            <h1 class="header__title"> 
-                2. Primeros pasos jQuery por la práctica
-                <br>
-                AJAX con jQuery mensaje de carga
-            </h1>
-            <img class="header__logo-jquery" src="/06-jquery-desarrolloweb.com/01-manual-jquery/src/favicon/jquery-favicon-original.ico" alt="Logo jQuery">
-        </header>
 
+        <!--  ----------  HEADER  ----------  -->
+        <div class="header__container" id="layoutHeader"> </div>
+        
+
+        <!--  ----------  NAVBAR  ----------  -->
+        <div class="navbar__container" id="layoutNavbar"> </div>
+            
+
+        <!--  ----------  MAIN  ----------  -->
         <main class="layout__main">
 
 
+            <!--  
+                ------------------------------
+                ----------  Banner  ----------
+                ------------------------------  
+            -->
+            <section class="main__section">
 
-            <!--  ------------------------------  -->
-            <!--  ----------  Banner  ----------  -->
-            <!--  ------------------------------  -->
-            <section class="main__banner main__background">
+                <h2 class="main__title"> 
+                    Seccion 2 - Primeros pasos jQuery por la práctica
+                    <br> 
+                    7 - AJAX jQuery con mensaje de carga
+                </h2>
 
                 <img 
-                    src="/06-jquery-desarrolloweb.com//01-manual-jquery/src/img/02-primeros-pasos-jquery-por-la-practica/img-06-ajax-sencillo-jquery.webp"
+                    src="/06-jquery-desarrolloweb.com//01-manual-jquery/src/img/02-primeros-pasos-jquery-por-la-practica/img-07-ajax-mensaje-carga-jquery.webp"
                     class="banner__img"
-                    alt="Introducción jQuery" 
-                    title="Introducción jQuery"
+                    alt="AJAX con mensaje de carga" 
+                    title="AJAX con mensaje de carga"
             >
 
             </section>
 
 
-            <section class="main__ajax-jquery-mensaje-carga main__background">
+            <section class="main__section main__section--mensaje-carga">
 
                 <div class="btn__container">
-                    <a href="#" id="enlaceAjax"> Haz clic! </a>
+                    <a href="#" id="enlaceAjax" class="enlace"> Haz clic! </a>
                 </div>
                 
                 <div id="cargando" style="display:none; color: green;"> Cargando... </div>
@@ -75,17 +83,8 @@
         </main>
 
 
-        <footer class="layout__footer">
-            
-            <header class="footer__header">
-                <img class="footer__logo-jquery" src="/06-jquery-desarrolloweb.com/01-manual-jquery/src/img/logo-jquery/jquery-logo-ico-original.ico" alt="Logo jQuery">
-                <h3 class="footer__title"> 1. Manual de jQuery - desarrolloweb.com </h3>
-                <img class="footer__logo-jquery" src="/06-jquery-desarrolloweb.com/01-manual-jquery/src/img/logo-jquery-ui/jquery-ui-icon.svg" alt="Logo jQuery UI">
-            </header>
-            
-            <div class="footer__separator"> </div>
-                        
-        </footer>
+        <!--  ----------  FOOTER  ----------  -->
+        <div class="footer__container" id="layoutFooter"> </div>
 
     </div>
    

@@ -9,47 +9,12 @@
 */
 
 
-
-/*
-    -----------------------------------------
-    ----------  1. definir-evento  ----------
-    -----------------------------------------
-*/
-
-.main__definir-evento {
-    max-width: 102.4rem;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 3rem;
-    border-radius: 0.5rem;
-}
-
 #capa3 {
     padding: 2rem; 
     color: #fff;
     background-color: #90a5ad;
     text-align: center;
 }
-
-
-/*
-    -----------------------------------------
-    ----------  2. document-ready  ----------
-    -----------------------------------------
-*/
-
-.main__document-ready {
-    max-width: 102.4rem;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 3rem;
-    border-radius: 0.5rem;
-}
-
 
 #capa4 {
     padding: 2rem; 
@@ -58,24 +23,8 @@
     text-align: center;
 }
 
-
-/*
-    --------------------------------------------
-    ----------  3. recorrer-parrafos  ----------
-    --------------------------------------------
-*/
-
-.main__recorrer-parrafos {
-    max-width: 102.4rem;
+.main__section p {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 3rem;
-    border-radius: 0.5rem;
-}
-
-.main__recorrer-parrafos p {
     border-radius: 1rem;
     padding: 1rem;
     color: #fff;
@@ -88,23 +37,6 @@
 
 .azul {
     background-color: blue !important;
-}
-
-
-/*
-    -------------------------------------
-    ----------  4. acceso-api  ----------
-    -------------------------------------
-*/
-
-.main__acceso-api {
-    max-width: 102.4rem;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-    padding: 3rem;
-    border-radius: 0.5rem;
 }
 
 #info1,
@@ -134,34 +66,6 @@
     font-size: 1.6rem;
 }
 
-
-/*
-    -------------------------------------------------------------
-    ----------  5. recuperar-mostrar-datos-javascript  ----------
-    ----------  6. recuperar-mostrar-datos-jquery  --------------
-    -------------------------------------------------------------
-*/
-
-.main__recuperar-mostrar-datos-javascript {
-    max-width: 160rem;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 3rem;
-    border-radius: 0.5rem;
-}
-
-.main__recuperar-mostrar-datos-jquery {
-    max-width: 160rem;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 3rem;
-    border-radius: 0.5rem;
-    margin-bottom: 5rem;
-}
 
 #info3,
 #info4 {

@@ -16,7 +16,7 @@ const cdnJQuery = cdnJQuery_3_6_3;
 const localJQuery = "/06-jquery-desarrolloweb.com/01-manual-jquery/src/libs/jquery/local/jquery-3.7.1.min.js";
 
 //  -----  declarar el tilulo del header  -----
-const headerTitle = 'Sección 1. Introducción a jQuery <br> 1. Manual de jQuery';
+const headerTitle = 'Sección 1. Introducción a jQuery <br> 3. Cuando usar jQuery';
 
 
 //  ------------------------------------------------------------------------------------

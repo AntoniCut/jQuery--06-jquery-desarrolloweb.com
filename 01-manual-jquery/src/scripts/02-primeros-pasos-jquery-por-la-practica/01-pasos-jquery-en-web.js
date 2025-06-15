@@ -16,9 +16,9 @@
     console.warn('----------  01-pasos-jquery-en-web.js  ----------');
 
 
-    const $a = $("a");
+    const $enlace = $('#enlace');
 
-    $a.on('click', function (evento) {
+    $enlace.on('click', function (evento) {
         
         alert("Has pulsado el enlace...\nAhora serás enviado a DesarrolloWeb.com");
         evento.preventDefault();
