@@ -1,0 +1,16 @@
+/*
+    -----------------------------------------
+    ----------  /01-curso-jquery/  ----------
+    ----------  /src/styles/  ---------------
+    ----------  /styles.css  ----------------
+    -----------------------------------------
+*/
+
+
+@import '/06-jquery-desarrolloweb.com//src/styles/layout/reset.css';
+@import '/06-jquery-desarrolloweb.com//src/styles/layout/layout.css';
+@import '/06-jquery-desarrolloweb.com//src/styles/layout/layout-header.css';
+@import '/06-jquery-desarrolloweb.com//src/styles/layout/layout-navbar.css';
+@import '/06-jquery-desarrolloweb.com//src/styles/layout/layout-main.css';
+@import '/06-jquery-desarrolloweb.com//src/styles/layout/layout-footer.css';
+
